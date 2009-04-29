@@ -1,13 +1,6 @@
-% Defines the settings for the TUM report document
-
-\renewcommand{\sectfont}{\normalfont \bfseries}        % Schriftart der Kopfzeile
-
 \usepackage{scrpage2}
 \pagestyle{scrheadings}
 \ifoot[\footertext]{\footertext} % \footertext set in INFO.TEX
-
-\setkomafont{pagehead}{\normalfont\rmfamily}
-\setkomafont{pagenumber}{\normalfont\rmfamily}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -31,6 +24,8 @@
 
 \usepackage{styles/tumlogo}
 \usepackage{styles/shortoverview}
+\usepackage{styles/secnum}
+
 
 \usepackage[pdftex,colorlinks=true,linkcolor=red,citecolor=red,%
 anchorcolor=red,urlcolor=red,bookmarks=true,%
