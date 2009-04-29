@@ -1,50 +1,21 @@
-\usepackage{scrpage2}
 \pagestyle{scrheadings}
 \ifoot[\footertext]{\footertext} % \footertext set in INFO.TEX
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman,english]{babel}
 \selectlanguage{english}
 
-\usepackage[pdftex]{graphicx}
 \graphicspath{{figures/}}
 
-\usepackage{cmbright}
-
-\usepackage{ifthen}
-\usepackage{subfigure}
-\usepackage{colortbl}
-\usepackage{multirow}
-\usepackage{url}
-\usepackage{color}
-\usepackage{makeidx}
-\usepackage{float}
-\usepackage{rotating}
-
-\usepackage{styles/tumlogo}
-\usepackage{styles/shortoverview}
-\usepackage{styles/secnum}
-
-
-\usepackage[pdftex,colorlinks=true,linkcolor=red,citecolor=red,%
-anchorcolor=red,urlcolor=red,bookmarks=true,%
-bookmarksopen=true,bookmarksopenlevel=0,plainpages=false%
-bookmarksnumbered=true,hyperindex=false,pdfstartview=%
-]{hyperref}
+\parskip1.5ex
 
 \hypersetup{%
   pdftitle    = \title,
-  pdfsubject  = {Bachelor thesis},
-  pdfauthor   = {Daniel Siegel},
+  pdfsubject  = \doctype,
+  pdfauthor   = \author,
   colorlinks  = true,
   linkcolor   = blue,
   urlcolor    = red,
   breaklinks  = true,
 }
-
-
-%% Fancy chapters
 
 % set the bibliography style
 \bibliographystyle{styles/bauermaNum}
@@ -56,6 +27,3 @@ bookmarksnumbered=true,hyperindex=false,pdfstartview=%
 \clubpenalty = 10000
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
-
-%% mark text as preliminary
-\usepackage[draft,german,scrtime]{prelim2e}
