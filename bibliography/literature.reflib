@@ -153,21 +153,6 @@
     <bib_year>2007</bib_year>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/information_security_technology-don%E2%80%99t_rely_on_it.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>informationse</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>information_security_technology-don’t_rely_on_it</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>1995</bib_year>
-  </doc>
-  <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering.pdf</filename>
     <relative_filename></relative_filename>
     <key>socialenginee-2</key>
@@ -181,21 +166,6 @@
     <bib_number></bib_number>
     <bib_pages></bib_pages>
     <bib_year>2007</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/ressource/hevner04.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>hevner04</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>hevner04</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2003</bib_year>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/semantic_analytics_on_social_networks.pdf</filename>
@@ -241,6 +211,43 @@
     <bib_number></bib_number>
     <bib_pages></bib_pages>
     <bib_year>2007</bib_year>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>mitnick2003</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>The Art of Deception: Controlling the Human Element of Security</bib_title>
+    <bib_authors>Mitnick, Kevin D. and Simon, William L.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2003</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="Isbn">076454280X</bib_extra>
+    <bib_extra key="publisher">John Wiley \&amp; Sons, Inc.</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/information_security_technology-don%E2%80%99t_rely_on_it.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>winkler1995</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Information security technology? ...don’t rely on it: a case study in social engineering</bib_title>
+    <bib_authors>Winkler, Ira S. and Dealy, Brian</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1995</bib_year>
+    <bib_extra key="address">Berkeley, CA, USA</bib_extra>
+    <bib_extra key="booktitle">SSYM’95: Proceedings of the 5th conference on USENIX UNIX Security Symposium</bib_extra>
+    <bib_extra key="Location">Salt Lake City, Utah</bib_extra>
+    <bib_extra key="publisher">USENIX Association</bib_extra>
   </doc>
 </doclist>
 </library>
