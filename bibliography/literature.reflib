@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<manage_target braces="true" utf8="true">literature.bib</manage_target>
+<library_folder monitor="true"></library_folder>
+<taglist>
+</taglist>
+<doclist>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_networks_and_context-aware_spam.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>brown2008</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1460563.1460628</bib_doi>
+    <bib_title>Social networks and context-aware spam</bib_title>
+    <bib_authors>Garrett Brown and Travis Howe and Micheal Ihbe and Atul Prakash and Kevin Borders</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages>403-412</bib_pages>
+    <bib_year>2008</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="booktitle">CSCW ’08: Proceedings of the ACM 2008 conference on Computer supported cooperative work</bib_extra>
+    <bib_extra key="Isbn">978-1-60558-007-4</bib_extra>
+    <bib_extra key="Location">San Diego, CA, USA</bib_extra>
+    <bib_extra key="publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/privatsph%C3%A4renschutz_in_soziale-netzwerke-plattformen.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>fraunhofer2008</key>
+    <notes></notes>
+    <bib_type>techreport</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Privatsphärenschutz in Soziale-Netzwerke-Plattformen</bib_title>
+    <bib_authors>{Fraunhofer-Institut-Institut für Sichere Informationstechnologie SIT}</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2008</bib_year>
+    <bib_extra key="address">Rheinstraße 75, 64295 Darmstadt, Deutschland</bib_extra>
+    <bib_extra key="Editor">SIT, Fraunhofer-Institut-Institut für Sichere Informationstechnologie</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/information_revelation_and_privacy_in_online_social_networks.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>gross2005</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1102199.1102214</bib_doi>
+    <bib_title>Information revelation and privacy in online social networks</bib_title>
+    <bib_authors>Ralph Gross and Alessandro Acquisti and Heinz III, H.  John</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages>71-80</bib_pages>
+    <bib_year>2005</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="booktitle">WPES ’05: Proceedings of the 2005 ACM workshop on Privacy in the electronic society</bib_extra>
+    <bib_extra key="Isbn">1-59593-228-3</bib_extra>
+    <bib_extra key="Location">Alexandria, VA, USA</bib_extra>
+    <bib_extra key="publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/fourth-factor_authentication%3A_somebody_you_know.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>fourth-factor</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>fourth-factor_authentication:_somebody_you_know</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2006</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering%3A_the_dark_art.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>socialenginee</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>social_engineering:_the_dark_art</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2005</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/psychological_based_social_engineering.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>psychological</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>psychological_based_social_engineering</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2004</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering%3A_understanding_and_auditing.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>socialenginee-1</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>social_engineering:_understanding_and_auditing</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2004</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/hacking_human%3A_data-archaeology_and_surveillance_in_social_networks.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>hackinghuman:</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>hacking_human:_data-archaeology_and_surveillance_in_social_networks</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2005</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/why_we_twitter%3A_understanding_microblogging_usage_and_communities.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>whywetwitter</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>why_we_twitter:_understanding_microblogging_usage_and_communities</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2007</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/information_security_technology-don%E2%80%99t_rely_on_it.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>informationse</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>information_security_technology-don’t_rely_on_it</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1995</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>socialenginee-2</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>social_engineering</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2007</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/ressource/hevner04.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>hevner04</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>hevner04</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2003</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/semantic_analytics_on_social_networks.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>semanticanaly</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>semantic_analytics_on_social_networks</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2006</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/the_urgency_for_effective_user_privacy-education_to_counter_social_engineering_attacks_on_secure_computer_systems.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>theurgencyfo</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>the_urgency_for_effective_user_privacy-education_to_counter_social_engineering_attacks_on_secure_computer_systems</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2004</bib_year>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_phishing.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>socialphishin</key>
+    <notes></notes>
+    <bib_type>Article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>social_phishing</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2007</bib_year>
+  </doc>
+</doclist>
+</library>
