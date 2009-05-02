@@ -1,6 +1,19 @@
 % The main file for TUM reports
 
-\documentclass[11pt,a4paper,oneside,listof=totoc,bibliography=totoc,index=totoc,headsepline,footsepline,footinclude=false,BCOR12mm]{scrbook}
+\documentclass[
+               11pt,                % font size
+               a4paper,             % paper size
+               oneside,             % one sided
+               listof=totoc,        % add lists of figures and tables to toc
+               bibliography=totoc,  % add bibliography to toc
+               index=totoc,         % add index to toc
+               headsepline,         % add a separation line between head and content
+               footsepline,         % add a separation line between foot and content
+               footinclude,         % determine whether the page footer are considered as part
+               headinclude,         % of the page body for the calculation of the type area.
+               BCOR12mm,            % binding correction
+               draft,               % show badboxes and hide graphics
+               ]{scrbook}
 
 \input{components/info}
 \input{components/packages}
