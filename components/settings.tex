@@ -23,6 +23,13 @@
 %\bibliographystyle{alpha}
 %\bibliographystyle{plain}
 
+% keep the contents of a reference in the same page
+\let\oldbibitem=\bibitem
+\renewcommand{\bibitem}{%
+  \filbreak
+  \oldbibitem
+}
+
 \setkomafont{pagenumber}{\normalfont\normalcolor\sffamily}
 \setkomafont{pagefoot}{\normalfont\normalcolor\sffamily}
 \setkomafont{pagehead}{\normalfont\normalcolor\sffamily}
@@ -32,3 +39,4 @@
 \clubpenalty = 10000
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
+
