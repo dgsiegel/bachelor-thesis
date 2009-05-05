@@ -3,6 +3,14 @@
 <manage_target braces="true" utf8="true">literature.bib</manage_target>
 <library_folder monitor="true"></library_folder>
 <taglist>
+  <tag>
+    <uid>0</uid>
+    <name>social networks</name>
+  </tag>
+  <tag>
+    <uid>1</uid>
+    <name>social engineering</name>
+  </tag>
 </taglist>
 <doclist>
   <doc>
@@ -10,6 +18,7 @@
     <relative_filename></relative_filename>
     <key>brown2008</key>
     <notes></notes>
+    <tagged>0</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1460563.1460628</bib_doi>
     <bib_title>Social networks and context-aware spam</bib_title>
@@ -30,6 +39,7 @@
     <relative_filename></relative_filename>
     <key>fraunhofer2008</key>
     <notes></notes>
+    <tagged>0</tagged>
     <bib_type>techreport</bib_type>
     <bib_doi></bib_doi>
     <bib_title>Privatsphärenschutz in Soziale-Netzwerke-Plattformen</bib_title>
@@ -41,12 +51,14 @@
     <bib_year>2008</bib_year>
     <bib_extra key="address">Rheinstraße 75, 64295 Darmstadt, Deutschland</bib_extra>
     <bib_extra key="Editor">SIT, Fraunhofer-Institut-Institut für Sichere Informationstechnologie</bib_extra>
+    <bib_extra key="institution">{Fraunhofer-Institut-Institut für Sichere Informationstechnologie SIT}</bib_extra>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/information_revelation_and_privacy_in_online_social_networks.pdf</filename>
     <relative_filename></relative_filename>
     <key>gross2005</key>
     <notes></notes>
+    <tagged>0</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1102199.1102214</bib_doi>
     <bib_title>Information revelation and privacy in online social networks</bib_title>
@@ -217,6 +229,7 @@
     <relative_filename></relative_filename>
     <key>mitnick2003</key>
     <notes></notes>
+    <tagged>1</tagged>
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
     <bib_title>The Art of Deception: Controlling the Human Element of Security</bib_title>
@@ -234,10 +247,12 @@
     <filename>file:///home/dgsiegel/uni/bachelor/papers/information_security_technology-don%E2%80%99t_rely_on_it.pdf</filename>
     <relative_filename></relative_filename>
     <key>winkler1995</key>
-    <notes></notes>
+    <notes>
+</notes>
+    <tagged>1</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>Information security technology? ...don’t rely on it: a case study in social engineering</bib_title>
+    <bib_title>Information Security Technology? ...Don’t Rely on It. A Case Study in Social Engineering</bib_title>
     <bib_authors>Winkler, Ira S. and Dealy, Brian</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
