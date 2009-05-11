@@ -1,6 +1,69 @@
 \chapter{Analysis of the social network \Twitter}
 \label{chapter:analysis}
 
+The work now wants to take a closer look at a concrete social network.
+There are of course many social networks, which can be used for harvesting
+data, however, as a case study, the author wants to concentrate on a big social
+network, which is widely used by employees and individuals. Moreover,
+an \textit{API} is needed to gather data automatically.
+
+As a case study, the author had the choice between \textit{Facebook} and
+\Twitter. Both are widely used, however \Twitter{} was chosen due to many
+already existing programs and platform bindings. Furthermore \Twitter{} is
+somewhat more dynamic than \textit{Facebook}, as it offers the possibility to
+parse \Twitter{} messages and not just static data.
+
+\Twitter{} is a popular social networking and micro-blogging service, that
+enables users to post messages and to let other users follow those messages.
+The term \textit{micro-blogging} describes a form of communication, that
+consists of brief messages in text form, which then can be send over a variety
+of ways, like instant messages, mobile phones, e-mail or other \cite{java2007}.
+
+Micro-blogging itself is relatively new, though already widely used and
+provided by services like
+\textit{Twitter}\footnote{http://www.twitter.com},
+\textit{identi.ca}\footnote{http://identi.ca},
+\textit{Jaiku}\footnote{http://www.jaiku.com} and others. \Twitter{} is one of
+the most popular micro-blogging services \cite{java2007} and currently .
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.75, transform shape,
+                    root concept/.append style={concept color=skyblue1},
+                    level 1 concept/.append style={concept color=chameleon2},
+                    text=white, mindmap]
+
+\tikzstyle{every annotation}=[fill=skyblue3, font=\sf]
+
+  \node[concept] (Twitter) {Twitter}
+    child[concept, grow=160] {node [concept] {Web Interface}}
+    child[concept, grow=125] {node [concept] {Twitter API}
+    child[concept, grow=left] {node [concept] {User Applications}}}
+    child[concept, grow=90] {node [concept] {Facebook}}
+    child[concept, grow=55] {node [concept] (top) {IM}}
+    child[concept, grow=20] {node [concept] {SMS}}
+%
+    child[concept, grow=200] {node [concept] {Web Interface}}
+    child[concept, grow=235] {node [concept] {Twitter API}
+    child[concept, grow=170] {node [concept] {RSS}}
+    child[concept, grow=210] {node [concept] {User Applications}}}
+    child[concept, grow=270] {node [concept] {Facebook}}
+    child[concept, grow=305] {node [concept] (bottom) {SMS}}
+    child[concept, grow=340] {node [concept] {IM}};
+
+  \node[annotation, above] at (top.north east) {Twitter Input Methods};
+  \node[annotation, below] at (bottom.south east) {Twitter Output Methods};
+
+  \draw (2,0) -- (6,0);
+  \draw (-2,0) -- (-6,0);
+
+\end{tikzpicture}
+\caption{\Twitter{} input and output methods, on the basis of \cite{krishnamurthy2008}}
+\end{center}
+\end{figure}
+
+
+
 \section{Reasons for choosing this social network}
 
 \section{Threats and risks}
