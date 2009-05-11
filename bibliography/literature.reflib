@@ -14,7 +14,7 @@
 </taglist>
 <doclist>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_networks_and_context-aware_spam.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/brown2008.pdf</filename>
     <relative_filename></relative_filename>
     <key>brown2008</key>
     <notes></notes>
@@ -35,7 +35,7 @@
     <bib_extra key="publisher">ACM</bib_extra>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/privatsph%C3%A4renschutz_in_soziale-netzwerke-plattformen.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/fraunhofer2008.pdf</filename>
     <relative_filename></relative_filename>
     <key>fraunhofer2008</key>
     <notes></notes>
@@ -54,7 +54,7 @@
     <bib_extra key="institution">{Fraunhofer-Institut-Institut für Sichere Informationstechnologie SIT}</bib_extra>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/information_revelation_and_privacy_in_online_social_networks.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/gross2005.pdf</filename>
     <relative_filename></relative_filename>
     <key>gross2005</key>
     <notes></notes>
@@ -150,21 +150,6 @@
     <bib_year>2005</bib_year>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/why_we_twitter%3A_understanding_microblogging_usage_and_communities.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>whywetwitter</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>why_we_twitter:_understanding_microblogging_usage_and_communities</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2007</bib_year>
-  </doc>
-  <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering.pdf</filename>
     <relative_filename></relative_filename>
     <key>socialenginee-2</key>
@@ -244,7 +229,7 @@
     <bib_extra key="publisher">John Wiley \&amp; Sons, Inc.</bib_extra>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/information_security_technology-don%E2%80%99t_rely_on_it.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/winkler1995.pdf</filename>
     <relative_filename></relative_filename>
     <key>winkler1995</key>
     <notes>
@@ -263,6 +248,46 @@
     <bib_extra key="booktitle">SSYM’95: Proceedings of the 5th conference on USENIX UNIX Security Symposium</bib_extra>
     <bib_extra key="Location">Salt Lake City, Utah</bib_extra>
     <bib_extra key="publisher">USENIX Association</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/java2007.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>java2007</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1348549.1348556</bib_doi>
+    <bib_title>Why we twitter: understanding microblogging usage and communities</bib_title>
+    <bib_authors>Java, Akshay and Song, Xiaodan and Finin, Tim and Tseng, Belle</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages>56-65</bib_pages>
+    <bib_year>2007</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="booktitle">WebKDD/SNA-KDD ’07: Proceedings of the 9th WebKDD and 1st SNA-KDD 2007 workshop on Web mining and social network analysis</bib_extra>
+    <bib_extra key="Isbn">978-1-59593-848-0</bib_extra>
+    <bib_extra key="Location">San Jose, California</bib_extra>
+    <bib_extra key="publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/krishnamurthy2008.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>krishnamurthy2008</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1397735.1397741</bib_doi>
+    <bib_title>A few chirps about twitter</bib_title>
+    <bib_authors>Krishnamurthy, Balachander and Gill, Phillipa and Arlitt, Martin</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages>19-24</bib_pages>
+    <bib_year>2008</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="booktitle">WOSP ’08: Proceedings of the first workshop on Online social networks</bib_extra>
+    <bib_extra key="Isbn">978-1-60558-182-8</bib_extra>
+    <bib_extra key="Location">Seattle, WA, USA</bib_extra>
+    <bib_extra key="publisher">ACM</bib_extra>
   </doc>
 </doclist>
 </library>
