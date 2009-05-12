@@ -11,6 +11,10 @@
     <uid>1</uid>
     <name>social engineering</name>
   </tag>
+  <tag>
+    <uid>2</uid>
+    <name>twitter</name>
+  </tag>
 </taglist>
 <doclist>
   <doc>
@@ -254,6 +258,7 @@
     <relative_filename></relative_filename>
     <key>java2007</key>
     <notes></notes>
+    <tagged>2</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1348549.1348556</bib_doi>
     <bib_title>Why we twitter: understanding microblogging usage and communities</bib_title>
@@ -274,6 +279,7 @@
     <relative_filename></relative_filename>
     <key>krishnamurthy2008</key>
     <notes></notes>
+    <tagged>2</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1397735.1397741</bib_doi>
     <bib_title>A few chirps about twitter</bib_title>
@@ -294,6 +300,7 @@
     <relative_filename></relative_filename>
     <key>whitworth2009</key>
     <notes></notes>
+    <tagged>2</tagged>
     <bib_type>misc</bib_type>
     <bib_doi></bib_doi>
     <bib_title>Twitter growth explodes in a year</bib_title>
