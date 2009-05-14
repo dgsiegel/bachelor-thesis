@@ -53,6 +53,18 @@ to hours to think up and write a blog post. As it now takes less time to think
 and write a message, the frequency one can write such, increases and a
 micro-blogger may posts several messages a day.
 
+Users may choose to make their messages visible to all users (even those not
+logged into \Twitter{}) or to just make them available to \textit{friends}. A
+\textit{friend} is a relation inside the \Twitter{} platform, and allows a user
+to \textit{follow} the messages from other members, who are added as a
+\textit{friend}. Users, who are not a friend to another user can still follow
+the user, who they are not friend with, but are then called \textit{follower}.
+The friend relation is not forced to be mutual, but can be single-way too. In
+addition, a user can choose to make his messages public or just available to
+his friends. If the messages are marked as public, they will be displayed in
+the public timeline, which can be accessed by the URL
+\url{http://twitter.com/public_timeline}.
+
 \cite{java2007} has found, that the types of user interactions are daily
 chatter, conversations, sharing informations and reporting news. This of course
 leads us to question, which information can be dangerous and which can be used
@@ -151,7 +163,8 @@ out of those fields.
                  To see the list, one has to be logged in.
 \item[Followers] This gives us a list of users on the \Twitter{} network, who
                  are \textit{following} the profile owner. To see the list, one has to be logged in.
-\item[Favorites] A user can mark his messages as a favorite, which displays a
+\item[Favorites] A user can mark his messages or the messages from other users as
+                 a favorite, which displays a
                  yellow star beneath them. A users favorite messages can be viewed
                  by visiting \url{http://twitter.com/favorites?user=[username]}.
 \item[Messages] Finally the messages, which are composed by the actual message,
@@ -159,11 +172,99 @@ out of those fields.
                 was written and by which mean. A message is identified by a unique
                 id, e.g. 1767572233 and can be accessed by
                 \url{http://twitter.com/[username]/status/[message id]}.
+
+                \Twitter{} also offers special commands, which can enhance a
+                message or turn a \Twitter{} into a query tool.
+  \begin{description}
+    \item[@username + message]
+      A message can be sent directly to another person, though still visible
+      publicly.\\
+      \textit{Example: @petersample yes, you are totally right!}
+
+    \item[D username + message]
+      In contrast to the command above, this message is entirely private and
+      not visible by other users.\\
+      \textit{Example: D petersample this is a private message for peter!}
+
+    \item[WHOIS username]
+      retrieves information of any public user on the \Twitter{} platform.
+      Currently, this command returns the real name, the date since the user
+      has an account on \Twitter{}, the one line bio, the website and the
+      location.\\
+      \textit{Example: WHOIS petersample}\\
+      \textit{Answer: Peter Sample, since May 2009. bio: I am a computer
+              science expert and work for example.com. location: Munich web:
+              \url{http://www.petersample.com/}}
+
+    \item[GET username]
+      gets the last message this user posted.\\
+      \textit{Example: GET petersample}\\
+      \textit{Answer: petersample: This is my latest message (1 day ago)}
+
+    \item[NUDGE username]
+      sends a note to the user, reminding him to post a message.\\
+      \textit{Example: NUDGE petersample}\\
+      \textit{Answer (sent to petersample): You've been nudged! [my-username] wants to know what you're doing. Reply to this
+      message to update your Twitter friends.}
+
+    \item[FAV username]
+      marks the last message of username as a favorite\\
+      \textit{Example: FAV petersample}
+
+    \item[STATS]
+      returns the number of followers and how many users the account itself is
+      following.\\
+      \textit{Example: STATS}\\
+      \textit{Answer: followers: 135 following: 47}
+
+    \item[INVITE phone number]
+      sends an invite SMS to the phone number\\
+      \textit{Example: INVITE 123 456 7890}
+
+\end{description}
+\end{description}
+
+
+
+\section{Message classification}
+
+\cite{java2007} described a classification of the messages on the \Twitter{}
+platform. After they gained a dataset, the author and his team tried to
+categorize each message. The results were the following:
+
+\begin{description}[\setlabelphantom{Reporting news}]
+
+\item[Daily Chatter]
+Most users on \Twitter{} post about what they are currently doing or similar
+things. Of course, they are answering the question \flqq{}What are you
+doing?\frqq{}, which can be found over the input field of a message. This is
+the most common use of the \Twitter{} platform.
+
+\item[Conversations]
+There are two ways to communicate with another user, one is by public
+messaging, which features the @ symbol like stated above, the other one is
+private messaging, which uses the D character. \cite{java2007} discovered, that
+about one eighth of all posts in their dataset contained a public conversation
+and about 21\% of the users in their dataset used this type of messaging. Of
+course, there is no data available about private messages.
+
+\item[Reporting news]
+Another big piece of the cake is done by users, who report or comment news and
+events. Some of them are automated and post weather reports, other are
+eyewitnesses and report and event in their location.
+
+\item[Sharing information/URLs]
+Many users also share information and websites, and therefore uses services,
+like \textit{TinyURL}\footnote{\url{http://tinyurl.com/}} or
+\textit{tr.im}\footnote{\url{http://tr.im/}}. According to \cite{java2007},
+about 13\% of all posts in the dataset contain at least one URL.
+
 \end{description}
 
 
 \section{Threats and risks}
 
+\section{Methodology}
 \section{Relevant data and the security risks of those at individuals and companies}
 \subsection{The challenge of extracting data automatically}
 \subsection{Ontology and classification of the data}
