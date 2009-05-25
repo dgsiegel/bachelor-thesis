@@ -13,7 +13,7 @@
 \usepackage{url}
 \usepackage{tangocolors}
 \usepackage{tikz}
-\usetikzlibrary{arrows,backgrounds,snakes}
+\usetikzlibrary{arrows,backgrounds,snakes,mindmap}
 
 \setbeamerfont{subtitle}{size=\Large}
 \setbeamerfont{author}{size=\large}
@@ -256,10 +256,39 @@ werden.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Twitter I/O}
-\vspace{-1.3em}
+\begin{frame}[t]
+\vspace{-0.85em}
   \begin{center}
-    \includegraphics[width=0.85\textwidth]{twitter_io}
+    \begin{tikzpicture}[scale=0.65, transform shape,
+                         root concept/.append style={concept color=skyblue1},
+                         level 1 concept/.append style={concept color=chameleon2},
+                         text=white, mindmap]
+
+    \tikzstyle{every annotation}=[fill=skyblue3, font=\sf]
+
+    \node[concept] (Twitter) {Twitter}
+      child[concept, grow=160] {node [concept] {Web Interface}}
+      child[concept, grow=125] {node [concept] {Twitter API}
+      child[concept, grow=left] {node [concept] {User Applications}}}
+      child[concept, grow=90] {node [concept] {Facebook}}
+      child[concept, grow=55] {node [concept] {IM}}
+      child[concept, grow=20] {node [concept] {SMS}}
+      %
+      child[concept, grow=200] {node [concept] {Web Interface}}
+      child[concept, grow=235] {node [concept] {Twitter API}
+      child[concept, grow=170] {node [concept] {RSS}}
+      child[concept, grow=210] {node [concept] {User Applications}}}
+      child[concept, grow=270] {node [concept] {Facebook}}
+      child[concept, grow=305] {node [concept] {IM}}
+      child[concept, grow=340] {node [concept] {SMS}};
+
+    \node[annotation] at (52.5:7.5) {Twitter Input Methods};
+    \node[annotation] at (307.5:7.5) {Twitter Output Methods};
+
+    \draw (2,0) -- (6,0);
+    \draw (-2,0) -- (-6,0);
+
+  \end{tikzpicture}
   \end{center}
 \end{frame}
 
