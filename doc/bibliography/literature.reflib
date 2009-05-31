@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
 <manage_target braces="true" utf8="true">literature.bib</manage_target>
-<library_folder monitor="false"></library_folder>
+<library_folder monitor="true"></library_folder>
 <taglist>
   <tag>
     <uid>0</uid>
@@ -79,34 +79,19 @@
     <bib_extra key="publisher">ACM</bib_extra>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/fourth-factor_authentication%3A_somebody_you_know.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/thornburgh2004.pdf</filename>
     <relative_filename></relative_filename>
-    <key>fourth-factor</key>
+    <key>thornburgh2004</key>
     <notes></notes>
-    <bib_type>Article</bib_type>
+    <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>fourth-factor_authentication:_somebody_you_know</bib_title>
-    <bib_authors></bib_authors>
+    <bib_title>FIXME Social Engineering: The &quot;Dark Art&quot;</bib_title>
+    <bib_authors>Tim Thornburgh</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
-    <bib_year>2006</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering%3A_the_dark_art.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>socialenginee</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>social_engineering:_the_dark_art</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2005</bib_year>
+    <bib_year>2004</bib_year>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/psychological_based_social_engineering.pdf</filename>
@@ -124,13 +109,13 @@
     <bib_year>2004</bib_year>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering%3A_understanding_and_auditing.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering_understanding_and_auditing.pdf</filename>
     <relative_filename></relative_filename>
-    <key>socialenginee-1</key>
+    <key>jones2003</key>
     <notes></notes>
-    <bib_type>Article</bib_type>
+    <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>social_engineering:_understanding_and_auditing</bib_title>
+    <bib_title>social engineering: understanding and auditing</bib_title>
     <bib_authors></bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -186,11 +171,11 @@
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/the_urgency_for_effective_user_privacy-education_to_counter_social_engineering_attacks_on_secure_computer_systems.pdf</filename>
     <relative_filename></relative_filename>
-    <key>theurgencyfo</key>
+    <key>orgill2004</key>
     <notes></notes>
-    <bib_type>Article</bib_type>
+    <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>the_urgency_for_effective_user_privacy-education_to_counter_social_engineering_attacks_on_secure_computer_systems</bib_title>
+    <bib_title>the urgency for effective user privacy-education to counter social engineering attacks on secure computer systems</bib_title>
     <bib_authors></bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -313,6 +298,21 @@
     <bib_extra key="howpublished">\url{http://news.bbc.co.uk/newsbeat/hi/technology/newsid_7948000/7948092.stm}</bib_extra>
     <bib_extra key="month">March</bib_extra>
     <bib_extra key="note">Last accessed, May 2009</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>jargon</key>
+    <notes></notes>
+    <bib_type>article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>The Jargon Dictionary</bib_title>
+    <bib_authors></bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year></bib_year>
   </doc>
 </doclist>
 </library>

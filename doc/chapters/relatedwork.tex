@@ -1,6 +1,175 @@
 \chapter{Related Work}
 \label{chapter:relatedwork}
 
+\section{Social Engineering}
+
+In most companies and private networks, the main focus on security aims towards
+secure technology, like firewalls or anti-virus programs and other defense
+strategies. However, most companies and private persons are unaware of social
+engineering, which sometimes is a lot more dangerous than the IT-security
+suggests. Kevin Mitnick, a famous Hacker and one of the most famous social
+engineers, states that it is often easier to use social engineering to get
+access to a system than searching for security holes \cite{mitnick2003}.
+
+\comment{correct citation and full cite}
+The Jargon Dictionary \cite{jargon} defines the term social engineering as
+following: \glqq{}A Term for cracking techniques that rely on weaknesses in
+wetware rather than software; the aim is to trick people into revealing
+passwords or other information that compromises a target system's security.\grqq{}
+
+Beside the definition it is also important, to understand, how a social
+engineer relates to a hacker in general. \cite{thornburgh2004} proposes, that
+social engineers are not hackers themselves, but are \textit{hacker-enablers}.
+The goal of the social engineer is to gain direct either physical or
+digital access to an information of the target or an information system.
+Afterwards the social engineer can enable a hacker to access and penetrate the
+system, delete, alter and steal information and to disrupt services, as
+\cite{thornburgh2004} shows. The social engineer can of course be also the
+hacker. \cite{jones2003} states, that unlike hacking, social engineering
+uses psychology and the human mindset, like what people expect from each other
+and their natural tendency to be helpful.
+
+\subsection{The cycle of an social engineering attack}
+
+Defining the profile of an social engineering attack is quite difficult, as
+every attack includes people, who are not discrete like a computer, but their
+behaviour changes from time to time, their mood and other things. However,
+\cite{mitnick2003} identified four stages of a social engineering attack:
+research, developing rapport and trust, exploiting trust and utilizing
+information. A single cycle does not have to be limited to a single cycle, but
+can contain several other cycles until the objective is reached, as
+\cite{thornburgh2004} states. The process itself can be therefore recursive and
+iterative, depending on the attack and used methods.
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{cycle}
+    \caption{A tipical social engineering attack cycle}
+  \end{center}
+\end{figure}
+
+\subsubsection{Research}
+
+This phase consists of several methodologies to gain as much information about
+the target as possible. Depending however if the target is a company or a
+private person, different methods might be used. The ultimate goal of this
+phase is to gain as much information as possible to develop a relationship,
+rapport and trust in the next phase. Of course, there are enormous
+possibilities to get information about companies and individuals, the most
+known are described by \cite{jones2003,mitnick2003,thornburgh2004}, but of
+course are not limited to those.
+
+\begin{description}[\setlabelphantom{Personal Homepage}]
+
+\item[Corporate Website] The Website of a company might be the first place to
+  start looking out for information. Lists of employees,
+  company directors, or company brochures are often viewable on such websites. 
+\item[Personal Homepage] If the target is an individual, the personal homepage
+  of the target might offer more information, than the company website. If the
+  target is running a blog, information about the workplace can be accessed
+  also quite often. This information however can be used to attack the
+  employer.
+\item[Dumpster Diving] This is a technique was and is also used by certain
+  information intelligence agencies [CITATION NEEDED]. It included the search
+  for useful information in the dumpster of companies and individuals. While
+  this seems a strange technique, a social engineer still can gain much
+  information out of this.
+\item[Phishing] Fake e-mails or websites are set up and send or accessed by
+  individuals. They both have the goal to make the target believe, that they are
+  watching a regular e-mail or website and entering sensitive information.
+  Phishing can also be described as a whole social engineering attack, however
+  it can also be used to just get special information.
+\item[Trojan Horses and other Malware] This tools have the same goal like
+  phishing, however they are acting by themselves and often do not require any
+  user interaction, except might for installing the software. Again, they can
+  be used for other things as well, but for example a keylogger or a tool,
+  which logs the website the target is accessing or the e-mails can be
+  important information too.
+\item[Newsgroups and mailing lists] Several employees or individuals are
+  subscribed to public accessible newsgroups and mailing lists. Often these are
+  technical groups and lists and therefore expose information, like what system
+  is getting used and how it is configured.
+\item[Job Sites] Companies are often looking for new people to hire and many
+  times, they have to include sensitive information, if they are looking for
+  people with experience in that field. Like above, information about the
+  computer systems can also be obtained here.
+\end{description}
+
+
+\subsubsection{Rapport and trust}
+
+In this phase, the social engineer will make contact via several ways of
+communication. The attacker uses techniques like name-dropping, where he will
+tell several names of verifiable employees or persons to make the target
+believe, the attacker is who he pretends. Once the attacker has established
+himself as authentic, he will go on with the next phase. \cite{jones2003} shows
+the following physical settings, an attack can happen:
+
+\begin{description}[\setlabelphantom{Workplace}]
+\item[Telephone] The most common type of social engineering attacks are those
+  made by using the telephone. Quite every person is vulnerable to this type,
+  especially call desks, but also individuals and employees.
+\item[Workplace] This is a quite dangerous type, as an attacker has to gain
+  physical access to the targets workplace. However, there are many
+  possibilities, a talented attacker can gain legitimate access to a building.
+  Once inside, the attacker can look out for passwords, sensitive documents,
+  do shoulder-surfing or access computers and network, which are left
+  accessible unguarded.
+\item[E-Mail] The social engineer can compose an original looking document,
+  either from the company, the target works for, another company or a service,
+  the target uses, like a social network.
+\item[Chat] Like the above, the attacker connects to the victim directly,
+  forcing the target to install malicious software or exposing sensitive
+  information.
+\end{description}
+
+
+\subsubsection{Exploiting trust}
+
+Once the connection has been established, the attacker can exploit the trust by
+\glqq{}weaving a story that plays upon the emotions of the
+victim\grqq{} \cite{thornburgh2004}. Social engineers heavily rely on
+psychology to exploit their trust. \cite{jones2003} lists the following:
+
+\begin{description}[\setlabelphantom{Workplace}]
+\item[Authority] This is can be a highly effective psychological weapon, for
+  example when impersonating the boss of the company. \cite{orgill2004} has
+  showed in a real case study, that social engineering attacks are even more
+  effective, when the supervisor of an employees supports the attack or and
+  attacker impersonates a supervisor.
+\item[Natural tendency to be helpful] Psychology shows, that it is a natural
+  tendency, to be helpful. A social engineer can use this to his advantage.
+  Several examples are showed by \cite{mitnick2003}, like desperate calls in
+  the night to the help desk, or a person with many boxes in his hand, trying
+  to get access to the building.
+\item[Liking and similarity] A personal connection might be helpful for the
+  attacker. Psychology shows, that it is natural to like people who are like
+  themselves. If information about hobbies or interests are available, a social
+  engineer might use that information to establish a relationship based on that
+  information. Once this connections has been made, the victim may feel more
+  responsive to the attacker and therefore might be offer more sensitive
+  information.
+\item[Reciprocation] Social interaction is often based on the fact, that if
+  someone gives something, one might give him something back. In social
+  engineering, this is called \textit{reverse social engineering}. Here, a
+  social engineer tries to help the victim and in return requests a favour of
+  the victim.
+\item[Low involvement] If a person has low to no involvement in the company or
+  to a victim, it might have little interest in what the social engineer is
+  asking. Often, receptionists, the cleaning crew and similar people are the
+  favourite victims.
+\end{description}
+
+\subsubsection{Utilizing Information}
+
+This phase finally utilizes the gained information to either implement a
+technical attack or to use the gained information for a new social engineering
+attack \cite{thornburgh2004}. The actual attack and the threat it exposes is
+created in this phase. It is interesting, that the attack created here, does
+not limit itself to technical attacks, but can also be used to publish
+sensitive information or other.
+
 \section{Threats and risks through social engineering attacks}
 
 \section{Social engineering attacks}
