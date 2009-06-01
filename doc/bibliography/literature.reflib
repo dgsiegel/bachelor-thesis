@@ -96,12 +96,12 @@
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/psychological_based_social_engineering.pdf</filename>
     <relative_filename></relative_filename>
-    <key>psychological</key>
+    <key>lively2003</key>
     <notes></notes>
-    <bib_type>Article</bib_type>
+    <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>psychological_based_social_engineering</bib_title>
-    <bib_authors></bib_authors>
+    <bib_title>psychological based social engineering</bib_title>
+    <bib_authors>Lively</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
@@ -116,7 +116,7 @@
     <bib_type>article</bib_type>
     <bib_doi></bib_doi>
     <bib_title>social engineering: understanding and auditing</bib_title>
-    <bib_authors></bib_authors>
+    <bib_authors>Jones</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
@@ -169,14 +169,14 @@
     <bib_year>2006</bib_year>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/the_urgency_for_effective_user_privacy-education_to_counter_social_engineering_attacks_on_secure_computer_systems.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/orgill2004.pdf</filename>
     <relative_filename></relative_filename>
     <key>orgill2004</key>
     <notes></notes>
     <bib_type>article</bib_type>
     <bib_doi></bib_doi>
     <bib_title>the urgency for effective user privacy-education to counter social engineering attacks on secure computer systems</bib_title>
-    <bib_authors></bib_authors>
+    <bib_authors>Orgill</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
@@ -307,8 +307,23 @@
     <bib_type>article</bib_type>
     <bib_doi></bib_doi>
     <bib_title>The Jargon Dictionary</bib_title>
-    <bib_authors></bib_authors>
+    <bib_authors>FIXME</bib_authors>
     <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1980</bib_year>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>manske2000</key>
+    <notes></notes>
+    <bib_type>article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>An introduction to social engineering</bib_title>
+    <bib_authors>Manske K.</bib_authors>
+    <bib_journal>Information Systems Security</bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
