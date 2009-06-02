@@ -79,45 +79,30 @@
     <bib_extra key="publisher">ACM</bib_extra>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/thornburgh2004.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>thornburgh2004</key>
-    <notes></notes>
-    <bib_type>article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>FIXME Social Engineering: The &quot;Dark Art&quot;</bib_title>
-    <bib_authors>Tim Thornburgh</bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2004</bib_year>
-  </doc>
-  <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/psychological_based_social_engineering.pdf</filename>
     <relative_filename></relative_filename>
     <key>lively2003</key>
     <notes></notes>
     <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>psychological based social engineering</bib_title>
-    <bib_authors>Lively</bib_authors>
-    <bib_journal></bib_journal>
+    <bib_title>Psychological Based Social Engineering</bib_title>
+    <bib_authors>Charles E. Lively</bib_authors>
+    <bib_journal>SANS Institute</bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
-    <bib_year>2004</bib_year>
+    <bib_year>2003</bib_year>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering_understanding_and_auditing.pdf</filename>
     <relative_filename></relative_filename>
-    <key>jones2003</key>
+    <key>jones2004</key>
     <notes></notes>
     <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>social engineering: understanding and auditing</bib_title>
-    <bib_authors>Jones</bib_authors>
-    <bib_journal></bib_journal>
+    <bib_title>Social Engineering: Understanding and Auditing</bib_title>
+    <bib_authors>Chris Jones</bib_authors>
+    <bib_journal>SANS Institute</bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
@@ -152,36 +137,6 @@
     <bib_number></bib_number>
     <bib_pages></bib_pages>
     <bib_year>2007</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/semantic_analytics_on_social_networks.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>semanticanaly</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>semantic_analytics_on_social_networks</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2006</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/orgill2004.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>orgill2004</key>
-    <notes></notes>
-    <bib_type>article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>the urgency for effective user privacy-education to counter social engineering attacks on secure computer systems</bib_title>
-    <bib_authors>Orgill</bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2004</bib_year>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/social_phishing.pdf</filename>
@@ -302,32 +257,77 @@
   <doc>
     <filename></filename>
     <relative_filename></relative_filename>
-    <key>jargon</key>
-    <notes></notes>
-    <bib_type>article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>The Jargon Dictionary</bib_title>
-    <bib_authors>FIXME</bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>1980</bib_year>
-  </doc>
-  <doc>
-    <filename></filename>
-    <relative_filename></relative_filename>
     <key>manske2000</key>
     <notes></notes>
     <bib_type>article</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>An introduction to social engineering</bib_title>
-    <bib_authors>Manske K.</bib_authors>
+    <bib_title>An Introduction to Social Engineering</bib_title>
+    <bib_authors>Manske, Kurt</bib_authors>
     <bib_journal>Information Systems Security</bib_journal>
+    <bib_volume>9</bib_volume>
+    <bib_number>5</bib_number>
+    <bib_pages>1-7</bib_pages>
+    <bib_year>2000</bib_year>
+    <bib_extra key="Bibsource">DBLP, http://dblp.uni-trier.de</bib_extra>
+    <bib_extra key="Ee">http://dx.doi.org/10.1201/1086/43312.9.5.20001112/31378.10</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>raymond1996</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>The new hacker’s dictionary (3rd ed.)</bib_title>
+    <bib_authors>Raymond, Eric S.</bib_authors>
+    <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
-    <bib_year></bib_year>
+    <bib_year>1996</bib_year>
+    <bib_extra key="address">Cambridge, MA, USA</bib_extra>
+    <bib_extra key="Isbn">0-262-68092-0</bib_extra>
+    <bib_extra key="publisher">MIT Press</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/thornburgh2004.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>thornburgh2004</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1059524.1059554</bib_doi>
+    <bib_title>Social engineering: the &quot;Dark Art&quot;</bib_title>
+    <bib_authors>Thornburgh, Tim</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages>133-135</bib_pages>
+    <bib_year>2004</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="booktitle">InfoSecCD ’04: Proceedings of the 1st annual conference on Information security curriculum development</bib_extra>
+    <bib_extra key="Isbn">1-59593-048-5</bib_extra>
+    <bib_extra key="Location">Kennesaw, Georgia</bib_extra>
+    <bib_extra key="publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/orgill2004.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>orgill2004</key>
+    <notes></notes>
+    <bib_type>inproceedings</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1029533.1029577</bib_doi>
+    <bib_title>The urgency for effective user privacy-education to counter social engineering attacks on secure computer systems</bib_title>
+    <bib_authors>Orgill, Gregory L. and Romney, Gordon W. and Bailey, Michael G. and Orgill, Paul M.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages>177-181</bib_pages>
+    <bib_year>2004</bib_year>
+    <bib_extra key="address">New York, NY, USA</bib_extra>
+    <bib_extra key="booktitle">CITC5 ’04: Proceedings of the 5th conference on Information technology education</bib_extra>
+    <bib_extra key="Isbn">1-58113-936-5</bib_extra>
+    <bib_extra key="Location">Salt Lake City, UT, USA</bib_extra>
+    <bib_extra key="publisher">ACM</bib_extra>
   </doc>
 </doclist>
 </library>
