@@ -94,7 +94,7 @@
     <bib_year>2003</bib_year>
   </doc>
   <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering_understanding_and_auditing.pdf</filename>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/jones2004.pdf</filename>
     <relative_filename></relative_filename>
     <key>jones2004</key>
     <notes></notes>
@@ -107,21 +107,6 @@
     <bib_number></bib_number>
     <bib_pages></bib_pages>
     <bib_year>2004</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/hacking_human%3A_data-archaeology_and_surveillance_in_social_networks.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>hackinghuman:</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>hacking_human:_data-archaeology_and_surveillance_in_social_networks</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2005</bib_year>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering.pdf</filename>
@@ -328,6 +313,41 @@
     <bib_extra key="Isbn">1-58113-936-5</bib_extra>
     <bib_extra key="Location">Salt Lake City, UT, USA</bib_extra>
     <bib_extra key="publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/nolan2005.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>nolan2005</key>
+    <notes></notes>
+    <bib_type>article</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1067721.1067728</bib_doi>
+    <bib_title>Hacking human: data-archaeology and surveillance in social networks</bib_title>
+    <bib_authors>Nolan, Jason and Levesque, Michelle</bib_authors>
+    <bib_journal>SIGGROUP Bull.</bib_journal>
+    <bib_volume>25</bib_volume>
+    <bib_number>2</bib_number>
+    <bib_pages>33-37</bib_pages>
+    <bib_year>2005</bib_year>
+    <bib_extra key="Address">New York, NY, USA</bib_extra>
+    <bib_extra key="Publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename>file:///home/dgsiegel/uni/bachelor/papers/jagatic2007.pdf</filename>
+    <relative_filename></relative_filename>
+    <key>jagatic2007</key>
+    <notes></notes>
+    <bib_type>article</bib_type>
+    <bib_doi>http://doi.acm.org/10.1145/1290958.1290968</bib_doi>
+    <bib_title>Social phishing</bib_title>
+    <bib_authors>Jagatic, Tom N. and Johnson, Nathaniel A. and Jakobsson, Markus and Menczer, Filippo</bib_authors>
+    <bib_journal>Commun. ACM</bib_journal>
+    <bib_volume>50</bib_volume>
+    <bib_number>10</bib_number>
+    <bib_pages>94-100</bib_pages>
+    <bib_year>2007</bib_year>
+    <bib_extra key="Address">New York, NY, USA</bib_extra>
+    <bib_extra key="Issn">0001-0782</bib_extra>
+    <bib_extra key="Publisher">ACM</bib_extra>
   </doc>
 </doclist>
 </library>
