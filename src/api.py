@@ -1,5 +1,6 @@
 # python twitter tools (http://mike.verdone.ca/twitter/) by
 # Mike Verdone was used as a reference for this API, thanks!
+# python twitter tools is licenced under the MIT licence
 
 import sys
 import os
