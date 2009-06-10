@@ -328,3 +328,122 @@ points:
 \end{description}
 
 \section{Bridging the gap}
+
+The research phase in an social engineering attack is probably the most
+important, as the following phases and attacks heavily rely on good, valid and
+usable informations. Of course, a social engineer will choose the appropriate
+methods to gain access to the needed informations. If a method is easy to use
+and will offer large amount of usable data, a social engineer certainly won't
+deny this method.
+
+The Internet is such a place, which stores large amount of data.
+\cite{nolan2005} points out, that data found on the internet is not created in
+real time, but is cached data, which is considered unimportant or out of date.
+Together with this, there is data about how people really do present
+themselves. Furthermore the authors claim that almost everything on the
+Internet is some sort of text and therefore can be crawled, searched and read.
+Combining the data will allow a social engineer to create a data map about an
+individual or a company, that can be used to extract more information, than
+just the single pieces of data. Moreover the authors sum it up as following:
+
+\begin{quote}
+\textit{Though the Internet is a massive crypt full of ostensibly dead
+information, broken links, changed email addresses, it is far from useless. The
+Internet is a data graveyard, but it is graveyard waiting for a forensic
+archaeologist with a desire to \glqq{}condense fact from a nuance of
+vapor\grqq{}.}
+\end{quote}
+
+\subsection{Social networks}
+
+Social Networks gained million of members on their platforms in the last years.
+They are widely used in both private and business networking. Social networks
+allow individuals to present their own identity and to share and keep
+relationships to other members of those services.
+
+Many studies, like \cite{fraunhofer2008,gross2005} show already, that privacy
+and information revelation in social networks is massive problem. The following
+sections however want to take a deeper approach and characterize what actual
+security issues social networks disclose. The related work can be shared in two
+sections: \textit{active} attacks and \textit{passive} attacks, whereas
+\textit{active} attacks contain attacks, which exploit
+services and users of social networks, like messaging services, birthday
+invitations and other. \textit{Passive} attacks however mean, that the attack is
+driven passively by harvesting data and eavesdropping, often without having
+access to the network.
+It is important to note, that the active
+attacks are rather real attacks whilst the passive attacks are more an
+information gathering, on which an attack then follows.
+
+\subsubsection{Active attacks on social networks}
+
+\cite{jagatic2007} ran a phishing attack against a number of students of the
+Indiana University, aged between 18 and 24 years. They harvested freely
+available date on social networks and build a dataset out of that data. Next,
+they spoofed an email message between two friends on a social network, using
+the first person as a sender and the second as the recipient. The message
+contained a phishing site clearly marked as a phishing URL, which then asked
+the recipient to enter his university credentials. In a control group, they
+sent the same message, but with an unknown sender. The result showed, that
+about 72\% of all students did enter their university credentials on the
+insecure site, while only 16\% of the control group did the same. The authors
+mentioned, that the result was much higher than anticipated, as there were many
+ways to detect the phishing attack, for example the non-university URL of the
+site, a bogus authentication message, the whois entry and other. Though many
+students did change the password afterwards and installed anti virus software,
+as they assumed malware on their computers. Of course useless,
+as the attackers would already have obtained the access.
+
+A more concrete attack was carried out by \cite{brown2008}. The researchers
+did get sample data out of a popular group on the Facebook social network. Then
+they analyzed the publicly available attributes of each group member, trying to
+determine how they could be attacked. They described three types of attack,
+which they actually carried out on Facebook, but probably are transferable to
+other social networks as well. 
+
+\begin{description}
+\item[Relationship-based attacks]
+Attacks in this category only use the relationship information of several
+users for the attack. No attributes other than the relationship are used. The
+attack by \cite{jagatic2007} described above falls into this category. As an
+additional example attack, they spoofed a message notification looking the
+official one, sent by an actual friend of the recipient and contained a
+phishing URL.
+
+\item[Unshared-attribute attacks]
+These are attacks, which use attributes of only one user together
+with the relationship information to carry out the attack. The authors created
+a sample attack, in which they either sent a birthday greeting card or an
+birthday invitation on the actual birthday date of a user to him or to his
+friends, containing again a phishing URL.
+
+\item[Shared-attribute attacks]
+Similar to above, these attacks use the relationship information together with
+attributes, which are shared by both users. As a sample attack, they did create
+a message again, containing a link to a photo site, where photos of a common
+event are located. Again, the URL in the message pointed to a phishing site.
+\end{description}
+
+The results of the attacks mentioned above are listed in table
+\ref{tab:context-aware-spam}, containing the three types of attacks based on
+profile openness. Furthermore, they estimated that about 85\% of the users
+could be accurately targeted by such attacks and even users with closed
+profiles or strict privacy settings are almost equally vulnerable.
+
+\begin{table*}[ht]
+  \centering
+  \ra{1.3}
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    & Open profiles & Close profiles & All\\
+    \midrule
+    Relationship-only attacks & 85 \% & 84 \% & 85 \% \\
+    Birthday greeting         & 74 \% & 0 \% & 50 \% \\
+    Birthday invitation       & 84 \% & 84 \% & 84 \% \\
+    \bottomrule
+  \end{tabular}
+  \caption{Results of the case study of \cite{brown2008}}
+  \label{tab:context-aware-spam}
+\end{table*}
+
+\subsubsection{Passive attacks on social networks}
