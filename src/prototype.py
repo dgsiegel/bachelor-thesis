@@ -13,12 +13,23 @@ from exceptions import Exception
 
 try:
   from api import TwitterAPI, dump
+  from plugin import Plugin, init_plugin_system, find_plugins
 except ImportError:
   print "The prototype modules can not be found."
   sys.exit(1)
 
 twitter = TwitterAPI("petersample", "petersample")
-id = twitter.users.show(id="twitter")['id']
-u = twitter.statuses.show(id=1472669360)
 
-dump(u)
+init_plugin_system()
+
+data = {"id": "twitter"}
+#data = None
+
+for plugin in find_plugins():
+  plugin.download (twitter, None)
+
+
+#id = twitter.users.show(id="twitter")['id']
+#u = twitter.statuses.show(id=1472669360)
+#
+#dump(u)
