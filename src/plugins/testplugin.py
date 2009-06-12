@@ -9,10 +9,11 @@ class TestPlugin (Plugin):
     self.data = None
   def download (self, api, args):
     if (args and "id" in args):
-      self.data = api.users.show(id=args["id"])
+      print "args with id"
     else:
-      self.data = api.statuses.public_timeline()
+      print "args without id"
   def parse (self):
-    self.data = self.data['name']
+    print "parsing"
+    #self.data = self.data['name']
   def output (self):
-    print self.data
+    print "output"

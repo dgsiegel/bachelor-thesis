@@ -25,10 +25,14 @@ init_plugin_system()
 data = {"id": "twitter"}
 #data = None
 
+output = ""
+
 for plugin in find_plugins():
   plugin.download (twitter, data)
   plugin.parse ()
-  plugin.output ()
+  output = plugin.output ()
+
+print output
 
 obj = (twitter.account.rate_limit_status())
 dump(obj)

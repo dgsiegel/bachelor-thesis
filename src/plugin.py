@@ -4,6 +4,7 @@ import os
 PLUGIN_PATH = "plugins/"
 PLUGINS_ENABLED = [
     "testplugin",
+    "user",
     ]
 
 class Plugin (object):
