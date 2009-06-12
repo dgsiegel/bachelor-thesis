@@ -12,6 +12,8 @@ import json
 
 from exceptions import Exception
 
+cache = {}
+
 TWITTER_API_METHODS_POST = [
     "create",       # in blocks/
                     #    favorites/
@@ -79,14 +81,20 @@ class TwitterAPICall (object):
     if (self.username):
       headers["Authorization"] = "Basic " + b64encode ("%s:%s" %(self.user, self.password))
 
-    url = urllib2.Request ("http://%s%s.%s%s" %(self.domain, uri, self.format, query),
-                           post, headers)
-    try:
-      handle = urllib2.urlopen(url)
-      return json.loads(handle.read())
-    except urllib2.HTTPError, e:
-      raise TwitterAPIError ("HTTP response code %i on URL: %s.%s using parameters: (%s)\ndetails: %s"
-                          %(e.code, uri, self.format, urlencode(args.items()), e.fp.read()))
+    if uri in cache:
+      return cache[uri]
+    else:
+      url = urllib2.Request ("http://%s%s.%s%s" %(self.domain, uri, self.format, query),
+                             post, headers)
+      try:
+        handle = urllib2.urlopen(url)
+        result = json.loads(handle.read())
+        cache[uri] = result
+        return result
+
+      except urllib2.HTTPError, e:
+        raise TwitterAPIError ("HTTP response code %i on URL: %s.%s using parameters: (%s)\ndetails: %s"
+                            %(e.code, uri, self.format, urlencode(args.items()), e.fp.read()))
 
 class TwitterAPIError (Exception):
   pass

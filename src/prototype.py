@@ -12,7 +12,7 @@ import json
 from exceptions import Exception
 
 try:
-  from api import TwitterAPI, dump
+  from twitterapi import TwitterAPI, dump
   from plugin import Plugin, init_plugin_system, find_plugins
 except ImportError:
   print "The prototype modules can not be found."
@@ -26,9 +26,12 @@ data = {"id": "twitter"}
 #data = None
 
 for plugin in find_plugins():
-  plugin.download (twitter, None)
+  plugin.download (twitter, data)
+  plugin.parse ()
+  plugin.output ()
 
-
+obj = (twitter.account.rate_limit_status())
+dump(obj)
 #id = twitter.users.show(id="twitter")['id']
 #u = twitter.statuses.show(id=1472669360)
 #
