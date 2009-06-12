@@ -2,7 +2,6 @@ import sys
 import os
 
 from plugin import Plugin
-from twitterapi import TwitterAPI, dump
 
 class TestPlugin (Plugin):
   def __init__ (self):
