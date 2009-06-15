@@ -14,7 +14,21 @@ class TestPlugin (Plugin):
     self.keywords = ["Obama", "health"]
   def download (self, api, args):
     if (args and "id" in args):
-      self.data = api.statuses.user_timeline(id=args["id"], count=50)
+      i = 1
+
+      # FIXME: keep attention on the max limit
+      tmp = api.statuses.user_timeline(id=args["id"], count=200, page=i)
+      self.data = tmp
+
+      while tmp:
+        i += 1
+        tmp = api.statuses.user_timeline(id=args["id"], count=200, page=i)
+        if tmp:
+          self.data.extend(tmp)
+
+      for i in self.data:
+        print i["id"]
+
     else:
       raise Exception("The User ID is needed for this plugin")
   def parse (self):
