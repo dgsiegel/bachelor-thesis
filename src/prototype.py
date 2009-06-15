@@ -8,12 +8,19 @@ from base64 import b64encode
 from urllib import urlencode
 import urllib2
 import json
+import time
+import codecs
 
 from exceptions import Exception
+
+import markup
+from markup import oneliner as e
 
 try:
   from twitterapi import TwitterAPI, dump
   from plugin import Plugin, init_plugin_system, find_plugins
+
+
 except ImportError:
   print "The prototype modules can not be found."
   sys.exit(1)
@@ -22,17 +29,37 @@ twitter = TwitterAPI("petersample", "petersample")
 
 init_plugin_system()
 
-data = {"id": "twitter"}
+id = "barackobama"
+data = {"id": id}
 #data = None
 
-output = ""
 
+date = "Created on %s" % time.asctime()
+title = "Fact Sheet"
+
+page = markup.page()
+page.init(css="style.css", title=title + " (%s)" % date)
+page.h1(title)
+page.h5(date)
+
+page.div(class_="fact_sheet")
 for plugin in find_plugins():
   plugin.download (twitter, data)
   plugin.parse ()
-  output = plugin.output ()
 
-print output
+  page.div(class_="plugin " + str(plugin.__module__))
+  plugin.output (page)
+  page.div.close()
+
+page.div.close()
+
+#htmlfile=tempfile.mktemp("foo.html")
+htmlfile="output.html"
+
+#fd=open(htmlfile, "w", "utf-8")
+fd=codecs.open(htmlfile, "w", encoding="utf-8")
+fd.write(page())
+fd.close()
 
 obj = (twitter.account.rate_limit_status())
 dump(obj)
