@@ -81,15 +81,16 @@ class TwitterAPICall (object):
     if (self.username):
       headers["Authorization"] = "Basic " + b64encode ("%s:%s" %(self.user, self.password))
 
-    if uri in cache:
-      return cache[uri]
+    cache_uri = "%s.%s%s" %(uri, self.format, query)
+    if cache_uri in cache:
+      return cache[cache_uri]
     else:
       url = urllib2.Request ("http://%s%s.%s%s" %(self.domain, uri, self.format, query),
                              post, headers)
       try:
         handle = urllib2.urlopen(url)
         result = json.loads(handle.read())
-        cache[uri] = result
+        cache[cache_uri] = result
         return result
 
       except urllib2.HTTPError, e:
