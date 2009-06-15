@@ -1,6 +1,8 @@
 import sys
 import os
 
+from markup import oneliner as e
+
 from plugin import Plugin
 
 class TestPlugin (Plugin):
@@ -13,21 +15,45 @@ class TestPlugin (Plugin):
     else:
       raise Exception("The User ID is needed for this plugin")
   def parse (self):
-    self.out["Real name"] = self.data["name"]
-    self.out["Username"] = self.data["screen_name"]
-    self.out["Description"] = self.data["description"]
-    self.out["Profile Creation date"] = self.data["created_at"]
-    self.out["User ID"] = repr(self.data["id"])
-    self.out["Followers"] = repr(self.data["followers_count"])
-    self.out["Friends"] = repr(self.data["friends_count"])
-    self.out["Location"] = self.data["location"]
-    self.out["Image"] = self.data["profile_image_url"]
-    self.out["Messages"] = repr(self.data["statuses_count"])
-    self.out["Time Zone"] = self.data["time_zone"]
-    self.out["Homepage"] = self.data["url"]
+    self.out = {
+      "Real name": "name",
+      "Username": "screen_name",
+      "Description": "description",
+      "Profile Creation date": "created_at",
+      "User ID": "id",
+      "Followers": "followers_count",
+      "Friends (Count)": "friends_count",
+      "Location": "location",
+      "Image": "profile_image_url",
+      "Messages": "statuses_count",
+      "Time Zone": "time_zone",
+      "Homepage": "url",
+    }
+    for k, v in self.out.iteritems():
+      if self.data[v] != "" and self.data[v] != None:
+        self.out[k] = str(self.data[v])
+      else:
+        self.out[k] = "<span style=\"font-style: italic;\">none</span>"
 
-  def output (self):
-    ret = ""
+  def output (self, page):
+    page.div(class_="block_top block_user_top")
+    page.img(src=self.out["Image"])
+    page.div(self.out["Real name"] + " (" + self.out["Username"] + ")")
+    page.div.close()
+
+    del self.out["Real name"]
+    del self.out["Image"]
+
+    page.div(class_="clearboth")
+    page.div.close()
+
+    page.div(class_="block_user_bottom")
+
     for v in self.out:
-      ret += v + ": " + self.out[v] + "\n"
-    return ret
+      page.div(class_="block_user_entry")
+      page.div(v + ":", class_="block_user_entry_key")
+      page.div(self.out[v], class_="block_user_entry_value")
+      page.div.close()
+
+    page.div.close()
+
