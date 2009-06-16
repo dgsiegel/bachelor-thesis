@@ -4,3 +4,4 @@ main*
 *.pyc
 output.html
 cache/
+src/figures/
