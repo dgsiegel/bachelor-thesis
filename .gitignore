@@ -3,3 +3,4 @@ main*
 *.swp
 *.pyc
 output.html
+cache/
