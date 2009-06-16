@@ -61,7 +61,7 @@ fd=codecs.open(htmlfile, "w", encoding="utf-8")
 fd.write(page())
 fd.close()
 
-obj = (twitter.account.rate_limit_status())
+obj = (twitter.account.rate_limit_status(no_cache=True))
 dump(obj)
 #id = twitter.users.show(id="twitter")['id']
 #u = twitter.statuses.show(id=1472669360)

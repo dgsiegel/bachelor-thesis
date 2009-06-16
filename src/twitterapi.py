@@ -7,12 +7,17 @@ import os
 
 from base64 import b64encode
 from urllib import urlencode
+from hashlib import md5
 import urllib2
 import json
+import tempfile
+import time
+import codecs
+import pickle
 
 from exceptions import Exception
 
-cache = {}
+DEFAULT_CACHE_TIMEOUT = 600
 
 TWITTER_API_METHODS_POST = [
     "create",       # in blocks/
@@ -44,18 +49,19 @@ def dump (obj):
   print json.dumps(obj, sort_keys=True, indent=2)
 
 class TwitterAPICall (object):
-  def __init__ (self, user=None, password=None, domain="twitter.com", uri=""):
+  def __init__ (self, cache, user=None, password=None, domain="twitter.com", uri=""):
     self.user = user
     self.password = password
     self.domain = domain
     self.uri = uri
     self.format = "json"
+    self.cache = cache
 
   def __getattr__ (self, arg):
     try:
       return object.__getattr__ (self, arg)
     except AttributeError:
-      return TwitterAPICall (self.user, self.password, self.domain,
+      return TwitterAPICall (self.cache, self.user, self.password, self.domain,
                              self.uri + "/" + arg)
   def __call__ (self, **args):
     method = "GET"
@@ -67,6 +73,12 @@ class TwitterAPICall (object):
     uri = self.uri
     if ("id" in args):
       uri += "/%s" % args.pop("id")
+
+    no_cache = False
+    if "no_cache" in args:
+      if args["no_cache"]:
+        no_cache = True
+      args.pop("no_cache")
 
     headers = {}
     query = ""
@@ -82,15 +94,24 @@ class TwitterAPICall (object):
       headers["Authorization"] = "Basic " + b64encode ("%s:%s" %(self.user, self.password))
 
     cache_uri = "%s.%s%s" %(uri, self.format, query)
-    if cache_uri in cache:
-      return cache[cache_uri]
+
+    cached_item = False
+    if not no_cache:
+      cached_item = self.cache.is_cached(cache_uri)
+
+    if cached_item:
+      ttl = round(self.cache.timeout - (time.time() - self.cache._get_cache_time(cache_uri)))
+      print "cache hit for: " + cache_uri + " (TTL: %i minutes, %i seconds)" % (divmod(ttl, 60))
+      return self.cache.get(cache_uri)
     else:
+      print "cache miss for: " + cache_uri
       url = urllib2.Request ("http://%s%s.%s%s" %(self.domain, uri, self.format, query),
                              post, headers)
       try:
         handle = urllib2.urlopen(url)
         result = json.loads(handle.read())
-        cache[cache_uri] = result
+        if not no_cache:
+          self.cache.set(cache_uri, result)
         return result
 
       except urllib2.HTTPError, e:
@@ -102,5 +123,68 @@ class TwitterAPIError (Exception):
 
 class TwitterAPI (TwitterAPICall):
   def __init__ (self, user=None, password=None, domain="twitter.com"):
-    TwitterAPICall.__init__(self, user, password, domain, "")
+    filecache = FileCache()
+    TwitterAPICall.__init__(self, filecache, user, password, domain, "")
+
+class FileCache (object):
+  def __init__(self):
+    self.timeout = DEFAULT_CACHE_TIMEOUT
+    self.cache_dir = "cache"
+    if not os.path.exists(self.cache_dir):
+      os.mkdir(self.cache_dir)
+
+  def is_cached(self, key):
+    path = self._get_key_path(key)
+    if os.path.exists(path):
+      last_cached = self._get_cache_time(key)
+      if not last_cached or time.time() >= last_cached + self.timeout:
+        return False
+      else:
+        return True
+    else:
+      return False
+
+  def get(self, key):
+    path = self._get_key_path(key)
+    if os.path.exists(path):
+      last_cached = self._get_cache_time(key)
+
+      if not last_cached or time.time() >= last_cached + self.timeout:
+        return None
+      else:
+        file = open(path, "r")
+        ret = pickle.load(file)
+        file.close()
+        return ret
+
+    else:
+      return None
+
+  def set(self, key, data):
+    path = self._get_key_path(key)
+
+    temp_fd, temp_path = tempfile.mkstemp()
+    temp_fp = os.fdopen(temp_fd, "w")
+    pickle.dump(data, temp_fp)
+    temp_fp.close()
+
+    if os.path.exists(path):
+      os.remove(path)
+    os.rename(temp_path, path)
+    print path + " " + key
+
+  def _get_key_path (self, key):
+    try:
+      hashed_key = md5(key).hexdigest()
+    except TypeError:
+      hashed_key = md5.new(key).hexdigest()
+
+    return os.path.join(self.cache_dir, hashed_key)
+
+  def _get_cache_time(self, key):
+    path = self._get_key_path(key)
+    if os.path.exists(path):
+      return os.path.getmtime(path)
+    else:
+      return None
 
