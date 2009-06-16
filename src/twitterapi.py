@@ -17,7 +17,7 @@ import pickle
 
 from exceptions import Exception
 
-DEFAULT_CACHE_TIMEOUT = 600
+DEFAULT_CACHE_TIMEOUT = 3600
 
 TWITTER_API_METHODS_POST = [
     "create",       # in blocks/
@@ -171,7 +171,6 @@ class FileCache (object):
     if os.path.exists(path):
       os.remove(path)
     os.rename(temp_path, path)
-    print path + " " + key
 
   def _get_key_path (self, key):
     try:
