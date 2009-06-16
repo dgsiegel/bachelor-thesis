@@ -5,7 +5,7 @@ from markup import oneliner as e
 
 from plugin import Plugin
 
-class TestPlugin (Plugin):
+class UserPlugin (Plugin):
   def __init__ (self):
     self.data = None
     self.out = {}

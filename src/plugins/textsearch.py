@@ -7,7 +7,7 @@ from markup import oneliner as e
 from plugin import Plugin
 from markup import escape
 
-class TestPlugin (Plugin):
+class TextsearchPlugin (Plugin):
   def __init__ (self):
     self.data = None
     self.out = []
@@ -25,9 +25,6 @@ class TestPlugin (Plugin):
         tmp = api.statuses.user_timeline(id=args["id"], count=200, page=i)
         if tmp:
           self.data.extend(tmp)
-
-      for i in self.data:
-        print i["id"]
 
     else:
       raise Exception("The User ID is needed for this plugin")
