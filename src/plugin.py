@@ -6,6 +6,7 @@ PLUGINS_ENABLED = [
 #    "testplugin",
     "user",
     "textsearch",
+    "sources",
     ]
 
 class Plugin (object):
