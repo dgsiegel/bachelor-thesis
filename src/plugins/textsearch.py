@@ -1,6 +1,7 @@
 import sys
 import os
 import string
+import re
 
 from markup import oneliner as e
 
@@ -32,7 +33,7 @@ class TextsearchPlugin (Plugin):
 
     for v in self.data:
       for k in self.keywords:
-        if k in v["text"]:
+        if re.search(k, v["text"], re.IGNORECASE):
           found = False
           for w in self.out:
             if w["id"] == v["id"]:
@@ -54,8 +55,8 @@ class TextsearchPlugin (Plugin):
     for v in self.out:
       v["text"] = escape(v["text"]).encode('ascii', 'xmlcharrefreplace')
       for k in self.keywords:
-        if k in v["text"]:
-          v["text"] = v["text"].replace(k, "<span class=\"keyword\">"+k+"</span>")
+         for r in re.findall(k, v["text"], re.IGNORECASE):
+           v["text"] = re.sub(r, "<span class=\"keyword\">"+r+"</span>", v["text"])
 
       page.div(class_="block_textsearch_entry")
       page.div(v["text"], class_="block_textsearch_entry_value")
