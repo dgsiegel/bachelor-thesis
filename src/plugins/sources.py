@@ -8,7 +8,7 @@ from markup import oneliner as e
 
 from plugin import Plugin
 from markup import escape
-from util import strip_html_tags
+from util import strip_html_tags, bar_graph
 
 class SourcesPlugin (Plugin):
   def __init__ (self):
@@ -34,7 +34,6 @@ class SourcesPlugin (Plugin):
   def parse (self):
 
     self.count = self.data[0]["user"]["statuses_count"]
-    print self.count
     for v in self.data:
       src = str(strip_html_tags(v["source"]))
 
@@ -53,23 +52,6 @@ class SourcesPlugin (Plugin):
 
     page.div(class_="block_sources_bottom")
 
-    rc('text', usetex=True)
-    rc('font',**{'family':'sans-serif','sans-serif':['Computer Modern Sans Serif']})
-    rc("text", color="#2E3436")
-
-    x = arange(len(self.out))
-
-    keys= []
-    values = []
-
-    for k in self.out:
-      keys.append(k)
-      values.append(self.out[k])
-
-    bar(x, values, color="#73d216",align='center')
-
-    xticks( x ,  keys)
-
-    savefig("figures/inputsources.png")
+    bar_graph(self.out, output_name="figures/inputsources.png")
     page.img(src="figures/inputsources.png", width="720px")
     page.div.close()
