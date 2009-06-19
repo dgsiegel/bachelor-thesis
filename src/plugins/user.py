@@ -5,16 +5,20 @@ from markup import oneliner as e
 
 from plugin import Plugin
 
+
 class UserPlugin (Plugin):
-  def __init__ (self):
+
+  def __init__(self):
     self.data = None
     self.out = {}
-  def download (self, api, args):
-    if (args and "id" in args):
+
+  def download(self, api, args):
+    if args and "id" in args:
       self.data = api.users.show(id=args["id"])
     else:
       raise Exception("The User ID is needed for this plugin")
-  def parse (self):
+
+  def parse(self):
     self.out = {
       "Real name": "name",
       "Username": "screen_name",
@@ -35,7 +39,7 @@ class UserPlugin (Plugin):
       else:
         self.out[k] = "<span style=\"font-style: italic;\">none</span>"
 
-  def output (self, page):
+  def output(self, page):
     page.div(class_="block_top block_user_top")
     page.img(src=self.out["Image"])
     page.div(self.out["Real name"] + " (" + self.out["Username"] + ")")
@@ -56,4 +60,3 @@ class UserPlugin (Plugin):
       page.div.close()
 
     page.div.close()
-

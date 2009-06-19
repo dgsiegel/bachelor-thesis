@@ -2,7 +2,7 @@
 
 import sys
 import os
-#sys.path.append(os.getcwd()+ '/')
+#sys.path.append(os.getcwd()+ "/")
 
 from base64 import b64encode
 from urllib import urlencode
@@ -33,7 +33,6 @@ id = "barackobama"
 data = {"id": id}
 #data = None
 
-
 date = "Created on %s" % time.asctime()
 title = "Fact Sheet"
 
@@ -44,26 +43,26 @@ page.h5(date)
 
 page.div(class_="fact_sheet")
 for plugin in find_plugins():
-  plugin.download (twitter, data)
-  plugin.parse ()
+  plugin.download(twitter, data)
+  plugin.parse()
 
   page.div(class_="plugin " + str(plugin.__module__))
-  plugin.output (page)
+  plugin.output(page)
   page.div.close()
 
 page.div.close()
 
 #htmlfile=tempfile.mktemp("foo.html")
-htmlfile="output.html"
+htmlfile = "output.html"
 
 #fd=open(htmlfile, "w", "utf-8")
-fd=codecs.open(htmlfile, "w", encoding="utf-8")
+fd = codecs.open(htmlfile, "w", encoding="utf-8")
 fd.write(page())
 fd.close()
 
-obj = (twitter.account.rate_limit_status(no_cache=True))
+obj = twitter.account.rate_limit_status(no_cache=True)
 dump(obj)
-#id = twitter.users.show(id="twitter")['id']
+#id = twitter.users.show(id="twitter")["id"]
 #u = twitter.statuses.show(id=1472669360)
 #
 #dump(u)

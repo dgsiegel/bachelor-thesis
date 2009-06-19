@@ -45,11 +45,15 @@ TWITTER_API_METHODS_POST = [
     "update_profile_image",
 ]
 
-def dump (obj):
+
+def dump(obj):
   print json.dumps(obj, sort_keys=True, indent=2)
 
-class TwitterAPICall (object):
-  def __init__ (self, cache, user=None, password=None, domain="twitter.com", uri=""):
+
+class TwitterAPICall(object):
+
+  def __init__(self, cache, user=None, password=None,
+               domain="twitter.com", uri=""):
     self.user = user
     self.password = password
     self.domain = domain
@@ -57,16 +61,17 @@ class TwitterAPICall (object):
     self.format = "json"
     self.cache = cache
 
-  def __getattr__ (self, arg):
+  def __getattr__(self, arg):
     try:
-      return object.__getattr__ (self, arg)
+      return object.__getattr__(self, arg)
     except AttributeError:
-      return TwitterAPICall (self.cache, self.user, self.password, self.domain,
-                             self.uri + "/" + arg)
-  def __call__ (self, **args):
+      return TwitterAPICall(self.cache, self.user, self.password, self.domain,
+                            self.uri + "/" + arg)
+
+  def __call__(self, **args):
     method = "GET"
     for action in TWITTER_API_METHODS_POST:
-        if self.uri.endswith (action):
+        if self.uri.endswith(action):
             method = "POST"
             break
 
@@ -86,14 +91,14 @@ class TwitterAPICall (object):
 
     if (method == "GET"):
       if (args):
-        query = "?%s" %(urlencode(args.items()))
+        query = "?%s" % (urlencode(args.items()))
     else:
       post = urlencode(args.items())
 
     if (self.username):
-      headers["Authorization"] = "Basic " + b64encode ("%s:%s" %(self.user, self.password))
+      headers["Authorization"] = "Basic " + b64encode("%s:%s" %(self.user, self.password))
 
-    cache_uri = "%s.%s%s" %(uri, self.format, query)
+    cache_uri = "%s.%s%s" % (uri, self.format, query)
 
     cached_item = False
     if not no_cache:
@@ -105,8 +110,8 @@ class TwitterAPICall (object):
       return self.cache.get(cache_uri)
     else:
       print "cache miss for: " + cache_uri
-      url = urllib2.Request ("http://%s%s.%s%s" %(self.domain, uri, self.format, query),
-                             post, headers)
+      url = urllib2.Request("http://%s%s.%s%s" % (self.domain, uri, self.format, query),
+                            post, headers)
       try:
         handle = urllib2.urlopen(url)
         result = json.loads(handle.read())
@@ -115,18 +120,23 @@ class TwitterAPICall (object):
         return result
 
       except urllib2.HTTPError, e:
-        raise TwitterAPIError ("HTTP response code %i on URL: %s.%s using parameters: (%s)\ndetails: %s"
-                            %(e.code, uri, self.format, urlencode(args.items()), e.fp.read()))
+        raise TwitterAPIError("HTTP response code %i on URL: %s.%s using parameters: (%s)\ndetails: %s"
+                              % (e.code, uri, self.format, urlencode(args.items()), e.fp.read()))
 
-class TwitterAPIError (Exception):
+
+class TwitterAPIError(Exception):
   pass
 
-class TwitterAPI (TwitterAPICall):
-  def __init__ (self, user=None, password=None, domain="twitter.com"):
+
+class TwitterAPI(TwitterAPICall):
+
+  def __init__(self, user=None, password=None, domain="twitter.com"):
     filecache = FileCache()
     TwitterAPICall.__init__(self, filecache, user, password, domain, "")
 
-class FileCache (object):
+
+class FileCache(object):
+
   def __init__(self):
     self.timeout = DEFAULT_CACHE_TIMEOUT
     self.cache_dir = "cache"
@@ -172,7 +182,7 @@ class FileCache (object):
       os.remove(path)
     os.rename(temp_path, path)
 
-  def _get_key_path (self, key):
+  def _get_key_path(self, key):
     try:
       hashed_key = md5(key).hexdigest()
     except TypeError:
@@ -186,4 +196,3 @@ class FileCache (object):
       return os.path.getmtime(path)
     else:
       return None
-

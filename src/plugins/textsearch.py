@@ -8,12 +8,15 @@ from markup import oneliner as e
 from plugin import Plugin
 from markup import escape
 
-class TextsearchPlugin (Plugin):
-  def __init__ (self):
+
+class TextsearchPlugin(Plugin):
+
+  def __init__(self):
     self.data = None
     self.out = []
     self.keywords = ["Obama", "health"]
-  def download (self, api, args):
+
+  def download(self, api, args):
     if (args and "id" in args):
       i = 1
 
@@ -29,8 +32,8 @@ class TextsearchPlugin (Plugin):
 
     else:
       raise Exception("The User ID is needed for this plugin")
-  def parse (self):
 
+  def parse(self):
     for v in self.data:
       for k in self.keywords:
         if re.search(k, v["text"], re.IGNORECASE):
@@ -41,8 +44,7 @@ class TextsearchPlugin (Plugin):
           if not found:
             self.out.append(v)
 
-
-  def output (self, page):
+  def output(self, page):
     page.div(class_="block_top block_textsearch_top")
     page.div("Text search for: " + string.join(self.keywords, ", "))
     page.div.close()
@@ -53,10 +55,10 @@ class TextsearchPlugin (Plugin):
     page.div(class_="block_textsearch_bottom")
 
     for v in self.out:
-      v["text"] = escape(v["text"]).encode('ascii', 'xmlcharrefreplace')
+      v["text"] = escape(v["text"]).encode("ascii", "xmlcharrefreplace")
       for k in self.keywords:
-         for r in re.findall(k, v["text"], re.IGNORECASE):
-           v["text"] = re.sub(r, "<span class=\"keyword\">"+r+"</span>", v["text"])
+        for r in re.findall(k, v["text"], re.IGNORECASE):
+          v["text"] = re.sub(r, "<span class=\"keyword\">"+r+"</span>", v["text"])
 
       page.div(class_="block_textsearch_entry")
       page.div(v["text"], class_="block_textsearch_entry_value")

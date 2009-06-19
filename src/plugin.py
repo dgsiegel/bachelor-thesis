@@ -9,21 +9,29 @@ PLUGINS_ENABLED = [
     "sources",
     ]
 
-class Plugin (object):
-  def download (self):
+
+class Plugin(object):
+
+  def download(self):
     pass
-  def parse (self):
+
+  def parse(self):
     pass
-  def present (self):
+
+  def present(self):
     pass
+
 
 def init_plugin_system():
   if not PLUGIN_PATH in sys.path:
     sys.path.insert(0, PLUGIN_PATH)
   for plugin in PLUGINS_ENABLED:
-    __import__ (plugin)
+    __import__(plugin)
+
 
 _instances = {}
+
+
 def find_plugins():
   result = []
   for plugin in Plugin.__subclasses__():

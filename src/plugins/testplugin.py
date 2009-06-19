@@ -3,16 +3,20 @@ import os
 
 from plugin import Plugin
 
+
 class TestPlugin (Plugin):
-  def __init__ (self):
+
+  def __init__(self):
     self.data = None
-  def download (self, api, args):
+
+  def download(self, api, args):
     if (args and "id" in args):
       print "args with id"
     else:
       print "args without id"
-  def parse (self):
+
+  def parse(self):
     print "parsing"
-    #self.data = self.data['name']
-  def output (self):
+
+  def output(self):
     print "output"
