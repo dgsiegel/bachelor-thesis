@@ -1,2 +1,154 @@
-\chapter{Social Engineering Attacks}
+\chapter{Concrete Social Engineering Attacks}
 \label{chapter:attacks}
+\comment{add a better chapter title}
+
+The previous chapter showed already sample social engineering attacks, the
+threats it exposes and countermeasures. Now, a few social engineering attacks
+are going to be introduced. All of those are described by \cite{mitnick2003}
+and are happened in the past.
+
+\section{Phishing mail}
+
+The victim, a retired insurance salesman named Edgar, received an email from
+\textit{PayPal}\footnote{\url{http://www.paypal.com}}, which is a company that
+offers a fast and secure way to make online payments. Edgar did use
+\textit{PayPal} often, as he was a collection of antique glass jars. Therefore
+he used the service several times a week. The email he received during the
+holiday season 2001 was looking officially
+from \textit{PayPal}, offering him a requital for updating his
+\textit{PayPal} account. The message looked like the following:
+
+\begin{quote}
+Season's Greetings Valued PayPal Customer;
+
+As the New Year approaches and as we all get ready to move a year ahead,
+PayPal would like to give you a \$5 credit to your account!
+
+All you have to do to claim your \$5 gift from us is update your information on
+our secure Pay Pal site by January 1st, 2002. A year brings a lot of changes,
+by updating your information with us you will allow for us to continue
+providing you and our valued customer service with excellent service and in the
+meantime, keep our records straight! To update your information now and to
+receive \$5 in your PayPal account instantly, click this link:
+
+\url{http://www.paypal-secure.com/cgi-bin}
+
+Thank you for using PayPal.com and helping us grow to be the largest of our
+kind!
+
+Sincerely wishing you a very "Merry Christmas and Happy New Year,"
+
+PayPal Team
+
+\end{quote}
+
+One might notice several signs in the message, that can lead to the belief,
+that something is wrong with the email. For example, the semicolon after the
+greeting line, the blemished text about 
+\glqq{}our valued customer service with excellent service and in the\grqq{} and
+most noticeable the URL, which does not lead to \url{http://www.paypal.com} but
+to a different domain. Edgar clicked on the link, entered the information
+requested, which was name, address, phone number and credit card number. He
+then was waiting for the 5\$ gift to show up, but what showed up was a list of
+charges he never purchased on his credit card bill.
+
+The victim is not a single one, there are many scams which look like the above.
+The attack was also prepared properly, as they knew that Edgar was a PayPal
+customer. If he would not have been, the attack certainly wouldn't have worked.
+
+To use this attack, the attacker has to gain access to the following data: 
+
+\begin{itemize}
+  \item Real name of the victim
+  \item Email address of the victim
+  \item The Knowledge, that the victim is a customer of an electronic payment
+  service, like \textit{PayPal}, \textit{Amazon} or \textit{eBay}
+\end{itemize}
+
+To make the attack even more realistic and effective, the message could also
+been sent to the victims friends and colleagues, if they are also a member of
+the same electronic payment service.
+
+
+\section{Insider attack}
+
+This attack was a real case scenario, involving stealing source code from a
+company containing the encryption algorithms and firmware used in the company
+radio products.
+
+The attacker, called \textit{Danny} by Mitnick, began his information retrieval
+on the internet. He luckily found a years-old message written by an employee of
+the affected company and posted to a public readable newsgroup. This message
+contained a signature containing the employee's name, his phone number and
+workgroup. He now had to check if that person still works for that company. He
+called the employee, who was still working for the same company, and
+manipulated him to reveal the names of the servers, the employees used for
+development work.
+
+In addition, every employee in the company had a small electronic device called
+Secure ID in addition to their username and password. The attacker managed to
+get enough pieces of information about the company together to masquerade as a
+real employee. He now had an employee's name, residence address, phone number,
+department and employee number, the manager's name and phone number.
+Furthermore he knew the servers he needed access for.
+
+Danny now waited for a snow storm in the location of the employee's residence.
+As it was winter, he did not have to wait very long and he launched the attack.
+He telephoned the IT department and talked to a computer operator named Roger
+Kowalski.
+
+The attack went something like this:
+
+\begin{quote}
+\textit{Danny:} \glqq{}This is Bob Billings. I work in the Secure Communications Group. I'm at
+home right now and I can't drive in because of the storm. And the problem is
+that I need to access my workstation and the server from home, and I left my
+Secure ID in my desk. Can you go fetch it for me? Or can somebody? And then
+read off my code when I need to get in? Because my team has a critical deadline
+and there's no way I can get my work done. And there's no way I can get to the
+office--the roads are much too dangerous up my way.\grqq{}\\
+\textit{Roger Kowalski:} \glqq{}I can't leave the Computer Center.\grqq{}\\
+\textit{Danny:} \glqq{}Do you have a Secure ID yourself?.\grqq{}\\
+\textit{Roger Kowalski:} \glqq{}There's one here in the Computer Center, we keep one
+for the operators in case of an emergency.\grqq{}\\
+\textit{Danny:} \glqq{}Listen, can you do me a big favor? When I need to dial into
+the network, can you let me borrow your Secure ID? Just until it's safe to
+drive in.\grqq{}\\
+\textit{Roger Kowalski:} \glqq{}Who are you again? Who do you work for.\grqq{}\\
+\textit{Danny:} \glqq{}For Ed Trenton.\grqq{}\\
+\textit{Roger Kowalski:} \glqq{}Oh, yeah, I know him.\grqq{}\\
+\textit{Danny:} \glqq{}I'm on the second floor, next to Roy Tucker.\grqq{}\\
+
+\end{quote}
+
+The operator of course was uncomfortable walking into the office desk and
+looking through foreign property. But he was uncomfortable not helping either,
+so he asked his manager and actually vouched for the attacker. The manager
+wanted to speak to the attacker personally and the operator gave him the name
+and phone number.
+
+The attacker then called the manager and explained the same story again,
+mentioning that his team has a critical deadline. The manager then allowed him
+to use the Secure ID device in the IT department just for the weekend. From now
+on, Danny just needed to call in and ask the operators to pass him the Secure
+ID token. Furthermore he was able to get a temporary account to bypass the
+firewall restrictions, directly from the operator. Now, he had the whole
+weekend to find a security hole which he found.
+
+For this attack, the following data was needed
+
+\begin{itemize}
+  \item Name, phone number, department, employee number of several employee's
+  \item Name and phone number of the manager
+  \item Residence of a employee
+  \item Weather information
+  \item Company and employee structure
+  \item The knowledge, what security devices were used in the company
+  \item The servers names and location
+\end{itemize}
+
+
+\section{The bank heist}
+
+not sure if I want this example, however here goes an example which is not
+doable with the prototype
