@@ -19,13 +19,13 @@ from markup import oneliner as e
 try:
   from twitterapi import TwitterAPI, dump
   from plugin import Plugin, init_plugin_system, find_plugins
-
+  import conf
 
 except ImportError:
   print "The prototype modules can not be found."
   sys.exit(1)
 
-twitter = TwitterAPI("petersample", "petersample")
+twitter = TwitterAPI(conf.username, conf.password)
 
 init_plugin_system()
 

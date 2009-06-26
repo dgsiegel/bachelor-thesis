@@ -8,13 +8,14 @@ from markup import oneliner as e
 from plugin import Plugin
 from markup import escape
 
+import conf
 
 class TextsearchPlugin(Plugin):
 
   def __init__(self):
     self.data = None
     self.out = []
-    self.keywords = ["Obama", "health"]
+    self.keywords = conf.keywords
 
   def download(self, api, args):
     if (args and "id" in args):
