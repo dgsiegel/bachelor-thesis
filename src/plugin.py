@@ -7,6 +7,7 @@ PLUGINS_ENABLED = [
     "user",
     "textsearch",
     "times",
+    "replies",
     "sources",
     ]
 

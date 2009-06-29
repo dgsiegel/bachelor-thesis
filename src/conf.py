@@ -3,4 +3,6 @@ username = "petersample"
 password = "petersample"
 
 
-keywords = ["supreme"]
+keywords = ["flugzeug", "schwabing"]
+
+replies_min = 7

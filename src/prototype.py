@@ -29,7 +29,7 @@ twitter = TwitterAPI(conf.username, conf.password)
 
 init_plugin_system()
 
-id = "barackobama"
+id = "furukama"
 data = {"id": id}
 #data = None
 
