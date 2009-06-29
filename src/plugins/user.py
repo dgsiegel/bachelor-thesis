@@ -32,12 +32,14 @@ class UserPlugin (Plugin):
       "Messages": "statuses_count",
       "Time Zone": "time_zone",
       "Homepage": "url",
+      "Twitter": "screen_name",
     }
     for k, v in self.out.iteritems():
       if self.data[v] != "" and self.data[v] != None:
         self.out[k] = str(self.data[v])
       else:
         self.out[k] = "<span style=\"font-style: italic;\">none</span>"
+    self.out["Twitter"] = "http://www.twitter.com/" + str(self.out["Twitter"])
 
   def output(self, page):
     page.div(class_="block_top block_user_top")
