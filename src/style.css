@@ -33,6 +33,7 @@ body
   font-size: 30px;
   vertical-align: middle;
   line-height: 48px;
+  margin-left: 1%;
 }
 
 /**************************************************************/
@@ -68,7 +69,6 @@ body
 .block_textsearch_top div
 {
   float: left;
-  margin-left: 1%;
 }
 
 .keyword
