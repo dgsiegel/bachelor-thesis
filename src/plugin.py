@@ -6,6 +6,7 @@ PLUGINS_ENABLED = [
 #    "testplugin",
     "user",
     "textsearch",
+    "times",
     "sources",
     ]
 
@@ -30,7 +31,6 @@ def init_plugin_system():
 
 
 _instances = {}
-
 
 def find_plugins():
   result = []
