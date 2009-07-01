@@ -73,7 +73,7 @@ class RepliesPlugin(Plugin):
     for v in self.mutual:
       page.div(class_="block_friends_entry")
       page.img(src=v["profile_image_url"])
-      page.div(v["name"] + " (" + v["screen_name"] + ")", class_="block_friends_entry_name")
+      page.div(escape(str(v["name"])).encode("ascii", "xmlcharrefreplace") + " (" + v["screen_name"] + ")", class_="block_friends_entry_name")
 
       page.div(class_="clearboth")
       page.div.close()
@@ -84,7 +84,7 @@ class RepliesPlugin(Plugin):
           page.div("http://www.twitter.com/" + str(v[self.out[item]]), class_="block_friends_entry_value")
         else:
           if v[self.out[item]] != "" and v[self.out[item]] != None:
-            page.div(str(v[self.out[item]]), class_="block_friends_entry_value")
+            page.div(escape(str(v[self.out[item]])).encode("ascii", "xmlcharrefreplace"), class_="block_friends_entry_value")
           else:
             page.div("<span style=\"font-style: italic;\">none</span>", class_="block_friends_entry_value")
 

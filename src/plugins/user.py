@@ -1,7 +1,7 @@
 import sys
 import os
 
-from markup import oneliner as e
+from markup import oneliner as e, escape
 
 from plugin import Plugin
 
@@ -36,7 +36,7 @@ class UserPlugin (Plugin):
     }
     for k, v in self.out.iteritems():
       if self.data[v] != "" and self.data[v] != None:
-        self.out[k] = str(self.data[v])
+        self.out[k] = escape(str(self.data[v])).encode("ascii", "xmlcharrefreplace")
       else:
         self.out[k] = "<span style=\"font-style: italic;\">none</span>"
     self.out["Twitter"] = "http://www.twitter.com/" + str(self.out["Twitter"])
