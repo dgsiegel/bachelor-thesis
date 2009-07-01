@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # python twitter tools (http://mike.verdone.ca/twitter/) by
 # Mike Verdone was used as a reference for this API, thanks!
 # python twitter tools is licenced under the MIT licence
@@ -49,6 +51,7 @@ TWITTER_API_METHODS_POST = [
 def dump(obj):
   print json.dumps(obj, sort_keys=True, indent=2)
 
+
 class TwitterAPICall(object):
 
   def __init__(self, cache, user=None, password=None,
@@ -70,12 +73,12 @@ class TwitterAPICall(object):
   def __call__(self, **args):
     method = "GET"
     for action in TWITTER_API_METHODS_POST:
-        if self.uri.endswith(action):
-            method = "POST"
-            break
+      if self.uri.endswith(action):
+        method = "POST"
+        break
 
     uri = self.uri
-    if ("id" in args):
+    if "id" in args:
       uri += "/%s" % args.pop("id")
 
     no_cache = False
@@ -88,14 +91,14 @@ class TwitterAPICall(object):
     query = ""
     post = None
 
-    if (method == "GET"):
-      if (args):
-        query = "?%s" % (urlencode(args.items()))
+    if method == "GET":
+      if args:
+        query = "?%s" % urlencode(args.items())
     else:
       post = urlencode(args.items())
 
-    if (self.username):
-      headers["Authorization"] = "Basic " + b64encode("%s:%s" %(self.user, self.password))
+    if self.username:
+      headers["Authorization"] = "Basic " + b64encode("%s:%s" % (self.user, self.password))
 
     cache_uri = "%s.%s%s" % (uri, self.format, query)
 
@@ -105,35 +108,37 @@ class TwitterAPICall(object):
 
     if cached_item:
       ttl = round(self.cache.timeout - (time.time() - self.cache._get_cache_time(cache_uri)))
-      print "cache hit for: " + cache_uri + " (TTL: %i minutes, %i seconds)" % (divmod(ttl, 60))
+      print "cache hit for: " + cache_uri + " (TTL: %i minutes, %i seconds)" % divmod(ttl, 60)
       return self.cache.get(cache_uri)
     else:
       print "cache miss for: " + cache_uri
 
       rate_status_uri = "twitter.com/account/rate_limit_status"
-      rate_status_url = urllib2.Request("http://%s.%s" % (rate_status_uri, self.format), None, headers)
+      rate_status_url = urllib2.Request("http://%s.%s" % (rate_status_uri,
+                                        self.format), None, headers)
       try:
         handle = urllib2.urlopen(rate_status_url)
         rate_status_result = json.loads(handle.read())
       except urllib2.HTTPError, e:
         raise TwitterAPIError("HTTP response code %i on URL: %s.%s\ndetails: %s"
                               % (e.code, rate_status_uri, self.format, e.fp.read()))
-      if rate_status_result['remaining_hits'] <= 0:
-        print "No API requests left until " + rate_status_result['reset_time']
+      if rate_status_result["remaining_hits"] <= 0:
+        print "No API requests left until " + rate_status_result["reset_time"]
         return
 
-      url = urllib2.Request("http://%s%s.%s%s" % (self.domain, uri, self.format, query),
-                            post, headers)
+      url = urllib2.Request("http://%s%s.%s%s" % (self.domain, uri,
+                            self.format, query), post, headers)
       try:
         handle = urllib2.urlopen(url)
         result = json.loads(handle.read())
         if not no_cache:
           self.cache.set(cache_uri, result)
         return result
-
       except urllib2.HTTPError, e:
+
         raise TwitterAPIError("HTTP response code %i on URL: %s.%s using parameters: (%s)\ndetails: %s"
-                              % (e.code, uri, self.format, urlencode(args.items()), e.fp.read()))
+                              % (e.code, uri, self.format,
+                              urlencode(args.items()), e.fp.read()))
 
 
 class TwitterAPIError(Exception):
@@ -178,14 +183,14 @@ class FileCache(object):
         ret = pickle.load(file)
         file.close()
         return ret
-
     else:
+
       return None
 
   def set(self, key, data):
     path = self._get_key_path(key)
 
-    temp_fd, temp_path = tempfile.mkstemp()
+    (temp_fd, temp_path) = tempfile.mkstemp()
     temp_fp = os.fdopen(temp_fd, "w")
     pickle.dump(data, temp_fp)
     temp_fp.close()
@@ -208,3 +213,5 @@ class FileCache(object):
       return os.path.getmtime(path)
     else:
       return None
+
+
