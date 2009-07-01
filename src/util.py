@@ -1,5 +1,6 @@
 import re
 import time
+import os
 from pylab import *
 
 
@@ -32,6 +33,10 @@ def bar_graph(name_value_dict, graph_title="", output_name="bargraph.png"):
     gca().yaxis.grid(which="major")
 
     fig.autofmt_xdate()
+
+    if not os.path.exists(os.path.dirname(output_name)):
+      os.mkdir(os.path.dirname(output_name))
+
     savefig(output_name)
 
 def bar_date_graph(format, name_value_dict, graph_title="", output_name="bargraph.png"):
@@ -75,4 +80,8 @@ def bar_date_graph(format, name_value_dict, graph_title="", output_name="bargrap
     gca().yaxis.grid(which="major")
 
     fig.autofmt_xdate()
+
+    if not os.path.exists(os.path.dirname(output_name)):
+      os.mkdir(os.path.dirname(output_name))
+
     savefig(output_name)
