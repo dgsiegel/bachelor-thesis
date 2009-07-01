@@ -49,7 +49,6 @@ TWITTER_API_METHODS_POST = [
 def dump(obj):
   print json.dumps(obj, sort_keys=True, indent=2)
 
-
 class TwitterAPICall(object):
 
   def __init__(self, cache, user=None, password=None,
@@ -110,6 +109,19 @@ class TwitterAPICall(object):
       return self.cache.get(cache_uri)
     else:
       print "cache miss for: " + cache_uri
+
+      rate_status_uri = "twitter.com/account/rate_limit_status"
+      rate_status_url = urllib2.Request("http://%s.%s" % (rate_status_uri, self.format), None, headers)
+      try:
+        handle = urllib2.urlopen(rate_status_url)
+        rate_status_result = json.loads(handle.read())
+      except urllib2.HTTPError, e:
+        raise TwitterAPIError("HTTP response code %i on URL: %s.%s\ndetails: %s"
+                              % (e.code, rate_status_uri, self.format, e.fp.read()))
+      if rate_status_result['remaining_hits'] <= 0:
+        print "No API requests left until " + rate_status_result['reset_time']
+        return
+
       url = urllib2.Request("http://%s%s.%s%s" % (self.domain, uri, self.format, query),
                             post, headers)
       try:
