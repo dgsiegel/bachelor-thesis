@@ -45,7 +45,7 @@ class RepliesPlugin(Plugin):
           self.out[v["in_reply_to_screen_name"]] += 1
 
     for key in list(self.out.keys()):
-      if key in self.out and self.out[key] <= conf.replies_min:
+      if key in self.out and self.out[key] < conf.replies_min:
         del self.out[key]
 
   def output(self, page):
