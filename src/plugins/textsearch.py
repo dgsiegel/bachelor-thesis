@@ -55,21 +55,24 @@ class TextsearchPlugin(Plugin):
 
     page.div(class_="block_textsearch_bottom")
 
-    for v in self.out:
-      v["text"] = escape(v["text"]).encode("ascii", "xmlcharrefreplace")
-      for k in self.keywords:
-        for r in re.findall(k, v["text"], re.IGNORECASE):
-          v["text"] = re.sub(r, "<span class=\"keyword\">"+r+"</span>", v["text"])
+    if self.out:
+      for v in self.out:
+        v["text"] = escape(v["text"]).encode("ascii", "xmlcharrefreplace")
+        for k in self.keywords:
+          for r in re.findall(k, v["text"], re.IGNORECASE):
+            v["text"] = re.sub(r, "<span class=\"keyword\">"+r+"</span>", v["text"])
 
-      page.div(class_="block_textsearch_entry")
-      page.div(v["text"], class_="block_textsearch_entry_value")
+        page.div(class_="block_textsearch_entry")
+        page.div(v["text"], class_="block_textsearch_entry_value")
 
-      page.span("Posted on " + v["created_at"] + " using " + v["source"], class_="block_textsearch_entry_value_info")
-      if v["in_reply_to_status_id"] != None:
-        page.span("In reply to status id: " + str(v["in_reply_to_status_id"]), class_="block_textsearch_entry_value_info")
-      if v["in_reply_to_screen_name"] != None:
-        page.span("In reply to screen name: " + str(v["in_reply_to_screen_name"]), class_="block_textsearch_entry_value_info")
+        page.span("Posted on " + v["created_at"] + " using " + v["source"], class_="block_textsearch_entry_value_info")
+        if v["in_reply_to_status_id"] != None:
+          page.span("In reply to status id: " + str(v["in_reply_to_status_id"]), class_="block_textsearch_entry_value_info")
+        if v["in_reply_to_screen_name"] != None:
+          page.span("In reply to screen name: " + str(v["in_reply_to_screen_name"]), class_="block_textsearch_entry_value_info")
 
-      page.div.close()
+        page.div.close()
+    else:
+      page.span("No matches found")
 
     page.div.close()
