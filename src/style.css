@@ -101,3 +101,42 @@ body
   font-size: 10px;
   float: right;
 }
+
+/**************************************************************/
+
+.block_friends_entry img
+{
+  float: left;
+}
+
+.block_friends_entry_name
+{
+  float: left;
+  margin-left: 3%;
+  font-size: 20px;
+  vertical-align: middle;
+  line-height: 48px;
+  margin-bottom: 10px;
+}
+
+.block_friends_entry
+{
+  margin-bottom: 30px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #d3d7cf;
+  padding: 5px;
+}
+
+.block_friends_bottom .block_friends_entry_key
+{
+  float: left;
+  width: 25%;
+}
+
+.block_friends_bottom .block_friends_entry_value
+{
+  margin-left: 25%;
+}
+

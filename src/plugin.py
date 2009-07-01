@@ -9,6 +9,7 @@ PLUGINS_ENABLED = [
     "times",
     "replies",
     "sources",
+    "friends",
     ]
 
 
