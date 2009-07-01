@@ -58,6 +58,9 @@ class RepliesPlugin(Plugin):
 
     page.div(class_="block_replies_bottom")
 
-    bar_graph(self.out, output_name="figures/replies.png")
-    page.img(src="figures/replies.png", width="720px")
+    if self.out:
+      bar_graph(self.out, output_name="figures/replies.png")
+      page.img(src="figures/replies.png", width="720px")
+    else:
+      page.span("No replies found")
     page.div.close()
