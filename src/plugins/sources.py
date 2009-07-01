@@ -22,7 +22,6 @@ class SourcesPlugin (Plugin):
     if (args and "id" in args):
       i = 1
 
-      # FIXME: keep attention on the max limit
       tmp = api.statuses.user_timeline(id=args["id"], count=200, page=i)
       self.data = tmp
 

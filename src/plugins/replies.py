@@ -22,7 +22,6 @@ class RepliesPlugin(Plugin):
     if (args and "id" in args):
       i = 1
 
-      # FIXME: keep attention on the max limit
       tmp = api.statuses.user_timeline(id=args["id"], count=200, page=i)
       self.data = tmp
 
@@ -40,7 +39,7 @@ class RepliesPlugin(Plugin):
     for v in self.data:
       if v["in_reply_to_screen_name"] != None:
         if v["in_reply_to_screen_name"] not in self.out:
-          self.out[str(v["in_reply_to_screen_name"])] = 1
+          self.out[v["in_reply_to_screen_name"]] = 1
         else:
           self.out[v["in_reply_to_screen_name"]] += 1
 
