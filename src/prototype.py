@@ -10,6 +10,7 @@ import urllib2
 import json
 import time
 import codecs
+import webbrowser
 
 from exceptions import Exception
 
@@ -59,6 +60,8 @@ htmlfile = "output.html"
 fd = codecs.open(htmlfile, "w", encoding="utf-8")
 fd.write(page())
 fd.close()
+
+webbrowser.open(htmlfile)
 
 obj = twitter.account.rate_limit_status(no_cache=True)
 dump(obj)
