@@ -19,7 +19,7 @@ import pickle
 
 from exceptions import Exception
 
-DEFAULT_CACHE_TIMEOUT = 3600
+import conf
 
 TWITTER_API_METHODS_POST = [
     "create",       # in blocks/
@@ -155,7 +155,7 @@ class TwitterAPI(TwitterAPICall):
 class FileCache(object):
 
   def __init__(self):
-    self.timeout = DEFAULT_CACHE_TIMEOUT
+    self.timeout = conf.cache_timeout
     self.cache_dir = "cache"
     if not os.path.exists(self.cache_dir):
       os.mkdir(self.cache_dir)
