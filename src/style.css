@@ -173,3 +173,31 @@ body
   float: right;
 }
 
+/**************************************************************/
+
+.block_interests_top div
+{
+  float: left;
+}
+
+.block_interests_entry
+{
+  margin-bottom: 30px;
+}
+
+.block_interests_entry_value
+{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #d3d7cf;
+  padding: 5px;
+}
+
+.block_interests_entry_value_info
+{
+  margin-right: 3%;
+  font-size: 10px;
+  float: right;
+}
+
