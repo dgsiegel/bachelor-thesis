@@ -107,6 +107,7 @@ body
 .block_friends_entry img
 {
   float: left;
+  width: 48px;
 }
 
 .block_friends_entry_name
