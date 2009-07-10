@@ -2,6 +2,9 @@ import re
 import time
 import os
 from pylab import *
+import locale
+
+import conf
 
 
 def strip_html_tags(text):
@@ -40,6 +43,8 @@ def bar_graph(name_value_dict, graph_title="", output_name="bargraph.png"):
     savefig(output_name)
 
 def bar_date_graph(format, name_value_dict, graph_title="", output_name="bargraph.png"):
+    locale.setlocale(locale.LC_TIME, conf.locale)
+
     #fig = figure(figsize=(7.2, 7.2))
     fig = figure()
     title(graph_title, size="x-small")

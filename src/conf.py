@@ -1,3 +1,4 @@
+locale = "en_US.utf8"
 
 username = "petersample"
 password = "petersample"
