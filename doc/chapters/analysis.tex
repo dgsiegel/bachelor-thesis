@@ -264,11 +264,63 @@ about 13\% of all posts in the dataset contain at least one URL.
 
 \section{Threats and risks}
 
+All of the above mentioned fields, but of course also the \textit{tweets}
+themselves create a threat against the user himself, but also to other users,
+who are in contact with him. Even with at first glance useless information,
+information about the user can be extracted. For example, if he shares his
+location and what he is doing job-wise, his workplace and position can be
+easily found. The prototype, which is described in the next chapter, will make
+use of exposed data, building a fact sheet about the user and people, who are
+in contact with.
+
 \section{Methodology}
+
+In this work, a five-step approach was used to characterize useful information,
+extraction and countermeasures. The target was to define the steps needed for
+executing an attack like already described.
+
+\begin{enumerate}
+\item Data was obtained from the \Twitter{} social network from several users.
+The data was taken from famous persons on the network, as well as less famous.
+Furthermore users, who were very active as well as less active users were
+watched.
+\item The data gathered in the first step was studied and it was determined, which
+attacks are possible. 
+\item Three sample attacks, which happened for real in the last years, were
+chosen. All of these attacks are described by \cite{mitnick2003}. The chosen
+attacks were then transfered to the
+prototype and the \Twitter{} social network.
+\item The attacks were tested on sample profiles for their feasibility and efficiency
+\item Countermeasures were elaborated to mitigate the risk of such attacks.
+\end{enumerate}
+
 \section{Relevant data and the security risks of those at individuals and companies}
+
 \subsection{The challenge of extracting data automatically}
+
+The \Twitter{} social network gives access to a \textit{REST} API, which can be
+used by calling either \url{twitter.com} or \textit{search.twitter.com}. The
+first one is used for account settings and methods, posting updates and several
+other things related to users, their relationship and updates. The latter one
+is entirely used for searching for certain updates of users or users
+themselves.
+
+Most API methods require a username and a password, however this is not a
+problem by itself, as a \Twitter{} account can be created within minutes by
+using a mail address. The real challenge however is the limit of 100 API calls
+per hour. If a user is logged in, the user has 100 calls, which he can use on
+API calls. If the user is not logged in, i.e. an anonymous user, the IP address
+is used for tracking this user. To make use of a very deep information
+visualisation of a user, 100 calls are not enough, as for example many users
+have more than 100 friends. However, there are three ways around this problem:
+The first one is to just use the important data, leaving a deep information
+visualisation of e.g. friends aside, the second is to create many accounts, and
+then change the accounts during acquiring the data, and the last one to not log
+in into \Twitter{} and acquiring the data anonymously, while changing the IP
+address after 100 calls. However, many API methods require the user to be
+logged in.
+
 \subsection{Ontology and classification of the data}
-\subsection{Automatic extraction and evaluation}
 
 \section{Accomplishment of attacks}
 
