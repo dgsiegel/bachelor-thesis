@@ -38,7 +38,6 @@ class MailPlugin(Plugin):
       m = re.findall("[a-zA-Z0-9\._%-\+]+@[a-zA-Z0-9\._%-]+\.[a-zA-Z]{2,6}", v["text"])
 
       if m:
-        print m
         found = False
         for w in self.out:
           if w["id"] == v["id"]:
