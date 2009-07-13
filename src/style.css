@@ -3,17 +3,8 @@ body
   color: #2e3436;
   font-family: sans-serif;
   font-size: 13px;
-  margin: 0px;
+  margin: 0;
   padding: 30px;
-}
-
-.plugin
-{
-  border: 1px solid #d3d7cf;
-  width: 722px;
-  float: left;
-  padding: 10px;
-  margin-bottom: 60px;
 }
 
 .clearboth
@@ -21,31 +12,42 @@ body
   clear: both;
 }
 
+.plugin
+{
+  border: 1px solid #d3d7cf;
+  float: left;
+  margin-bottom: 60px;
+  padding: 10px;
+  width: 722px;
+}
+
+.keyword
+{
+  color: #c00;
+}
+
+.value
+{
+  color: #00c;
+}
+
 .block_top
 {
   background: #8ae234;
-  min-height: 48px;
   margin-bottom: 10px;
+  min-height: 48px;
 }
 
 .block_top div
 {
   font-size: 30px;
-  vertical-align: middle;
   line-height: 48px;
   margin-left: 1%;
+  vertical-align: middle;
 }
 
-/**************************************************************/
 
-.block_user_top
-{
-}
 
-.block_user_top img
-{
-  float: left;
-}
 
 .block_user_top div
 {
@@ -58,52 +60,6 @@ body
   margin-left: 10%;
 }
 
-.block_user_bottom .block_user_entry_key
-{
-  float: left;
-  width: 25%;
-}
-
-.block_user_bottom .block_user_entry_value
-{
-  margin-left: 25%;
-}
-
-/**************************************************************/
-
-.block_textsearch_top div
-{
-  float: left;
-}
-
-.keyword
-{
-  color: #cc0000;
-}
-
-.block_textsearch_entry
-{
-  margin-bottom: 30px;
-}
-
-.block_textsearch_entry_value
-{
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #d3d7cf;
-  padding: 5px;
-}
-
-.block_textsearch_entry_value_info
-{
-  margin-right: 3%;
-  font-size: 10px;
-  float: right;
-}
-
-/**************************************************************/
-
 .block_friends_entry img
 {
   float: left;
@@ -113,115 +69,70 @@ body
 .block_friends_entry_name
 {
   float: left;
-  margin-left: 3%;
   font-size: 20px;
-  vertical-align: middle;
   line-height: 48px;
   margin-bottom: 10px;
+  margin-left: 3%;
+  vertical-align: middle;
 }
 
 .block_friends_entry
 {
+  border: 1px solid #d3d7cf;
   margin-bottom: 30px;
-  width: 95%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #d3d7cf;
   padding: 5px;
+  width: 95%;
 }
 
+.block_user_top img,
+.block_textsearch_top div,
+.block_location_top div,
+.block_interests_top div
+{
+  float: left;
+}
+
+.block_user_bottom .block_user_entry_key,
 .block_friends_bottom .block_friends_entry_key
 {
   float: left;
   width: 25%;
 }
 
+.block_user_bottom .block_user_entry_value,
 .block_friends_bottom .block_friends_entry_value
 {
   margin-left: 25%;
 }
 
-/**************************************************************/
-
-.block_location_top div
-{
-  float: left;
-}
-
-.value
-{
-  color: #0000cc;
-}
-
-.block_location_entry
-{
-  margin-bottom: 30px;
-}
-
-.block_location_entry_value
-{
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #d3d7cf;
-  padding: 5px;
-}
-
-.block_location_entry_value_info
-{
-  margin-right: 3%;
-  font-size: 10px;
-  float: right;
-}
-
-/**************************************************************/
-
-.block_interests_top div
-{
-  float: left;
-}
-
-.block_interests_entry
-{
-  margin-bottom: 30px;
-}
-
-.block_interests_entry_value
-{
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #d3d7cf;
-  padding: 5px;
-}
-
-.block_interests_entry_value_info
-{
-  margin-right: 3%;
-  font-size: 10px;
-  float: right;
-}
-
-/**************************************************************/
-
+.block_textsearch_entry,
+.block_location_entry,
+.block_interests_entry,
 .block_mail_entry
 {
   margin-bottom: 30px;
 }
 
+.block_textsearch_entry_value,
+.block_location_entry_value,
+.block_interests_entry_value,
 .block_mail_entry_value
 {
-  width: 95%;
+  border: 1px solid #d3d7cf;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #d3d7cf;
   padding: 5px;
+  width: 95%;
 }
 
+.block_textsearch_entry_value_info,
+.block_location_entry_value_info,
+.block_interests_entry_value_info,
 .block_mail_entry_value_info
 {
-  margin-right: 3%;
-  font-size: 10px;
   float: right;
+  font-size: 10px;
+  margin-right: 3%;
 }
-
