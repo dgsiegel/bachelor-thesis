@@ -136,6 +136,9 @@ class TwitterAPICall(object):
           self.cache.set(cache_uri, result)
         return result
       except urllib2.HTTPError, e:
+        if e.code == 401:
+          print "This profile is closed an we are not authorized to see it"
+          sys.exit()
 
         raise TwitterAPIError("HTTP response code %i on URL: %s.%s using parameters: (%s)\ndetails: %s"
                               % (e.code, uri, self.format,
