@@ -111,7 +111,8 @@ class TwitterAPICall(object):
       print "cache hit for: " + cache_uri + " (TTL: %i minutes, %i seconds)" % divmod(ttl, 60)
       return self.cache.get(cache_uri)
     else:
-      print "cache miss for: " + cache_uri
+      if not no_cache:
+        print "cache miss for: " + cache_uri
 
       rate_status_uri = "twitter.com/account/rate_limit_status"
       rate_status_url = urllib2.Request("http://%s.%s" % (rate_status_uri,
