@@ -115,7 +115,31 @@ listed in Figure \ref{fig:twitter_io}. Several of those are or were
 discontinued for a certain amount of time, but either re-enabled or provided by
 a third party company.
 
+
+\section{Methodology}
+
+In this work, a five-step approach was used to characterize useful information,
+extraction and countermeasures. The target was to define the steps needed for
+executing an attack like already described.
+
+\begin{enumerate}
+\item Data was obtained from the \Twitter{} social network from several users.
+The data was taken from famous persons on the network, as well as less famous.
+Furthermore users, who were very active as well as less active users were
+watched.
+\item The data gathered in the first step was studied and it was determined, which
+attacks are possible. 
+\item Three sample attacks, which happened for real in the last years, were
+chosen. All of these attacks are described by \cite{mitnick2003}. The chosen
+attacks were then transfered to the
+prototype and the \Twitter{} social network.
+\item The attacks were tested on sample profiles for their feasibility and efficiency
+\item Countermeasures were elaborated to mitigate the risk of such attacks.
+\end{enumerate}
+
+
 \section{\Twitter{} profile data}
+\label{sec:twitter_profile_data}
 
 As already mentioned, a \Twitter{} profile page consists of a series of
 elements, which can be used for harvesting data. We now want to take a closer
@@ -132,6 +156,10 @@ out of those fields.
                 Therefore only letters, numbers and underscore are allowed. The maximum length
                 is set to 15 characters. The field is required.\\
                 \textit{Example: petersample}
+\item[User ID] The user id which is handed out automatically. The sequence is
+               not known, however it is mostly agreed, that the user id is not given out
+               sequentially.\\
+               \textit{Example: 1234567}
 \item[E-mail] Though not visible publicly, a \Twitter{} user has to provide an
               e-mail address. As described by \cite{brown2008}, though not provided an e-mail
               address can be build out of a naming scheme and the already
@@ -159,10 +187,14 @@ out of those fields.
 \item[Picture] A user can insert a picture of himself, although it is not
                required to do so. Moreover, if a user publishes an image, it does not have to
                show himself, but can also be anything else.
+\item[Profile Creation date] The date, the profile was created.\\
+              \textit{Example: Fri Nov 02 00:17:11 +0000 2007}
 \item[Following] Describes a list of users, the profile owner is \textit{following}.
                  To see the list, one has to be logged in.
 \item[Followers] This gives us a list of users on the \Twitter{} network, who
                  are \textit{following} the profile owner. To see the list, one has to be logged in.
+\item[Friends] This are users, who have a bidirectional connection. That means,
+               that user A is following user B and vice versa.
 \item[Favorites] A user can mark his messages or the messages from other users as
                  a favorite, which displays a
                  yellow star beneath them. A users favorite messages can be viewed
@@ -273,27 +305,6 @@ easily found. The prototype, which is described in the next chapter, will make
 use of exposed data, building a fact sheet about the user and people, who are
 in contact with.
 
-\section{Methodology}
-
-In this work, a five-step approach was used to characterize useful information,
-extraction and countermeasures. The target was to define the steps needed for
-executing an attack like already described.
-
-\begin{enumerate}
-\item Data was obtained from the \Twitter{} social network from several users.
-The data was taken from famous persons on the network, as well as less famous.
-Furthermore users, who were very active as well as less active users were
-watched.
-\item The data gathered in the first step was studied and it was determined, which
-attacks are possible. 
-\item Three sample attacks, which happened for real in the last years, were
-chosen. All of these attacks are described by \cite{mitnick2003}. The chosen
-attacks were then transfered to the
-prototype and the \Twitter{} social network.
-\item The attacks were tested on sample profiles for their feasibility and efficiency
-\item Countermeasures were elaborated to mitigate the risk of such attacks.
-\end{enumerate}
-
 \section{Relevant data and the security risks of those at individuals and companies}
 
 \subsection{The challenge of extracting data automatically}
@@ -303,7 +314,9 @@ used by calling either \url{twitter.com} or \textit{search.twitter.com}. The
 first one is used for account settings and methods, posting updates and several
 other things related to users, their relationship and updates. The latter one
 is entirely used for searching for certain updates of users or users
-themselves.
+themselves. The API supports \textit{JSON}, \textit{XML}, \textit{RSS},
+\textit{Atom} as output formats, allthough just \textit{JSON} is supported on
+every API method.
 
 Most API methods require a username and a password, however this is not a
 problem by itself, as a \Twitter{} account can be created within minutes by
@@ -317,11 +330,146 @@ The first one is to just use the important data, leaving a deep information
 visualisation of e.g. friends aside, the second is to create many accounts, and
 then change the accounts during acquiring the data, and the last one to not log
 in into \Twitter{} and acquiring the data anonymously, while changing the IP
-address after 100 calls. However, many API methods require the user to be
+address after 100 calls. However, some API methods require the user to be
 logged in.
 
 \subsection{Ontology and classification of the data}
 
-\section{Accomplishment of attacks}
+The \Twitter{} API offers a wide range of methods, however in the first place,
+the attacker is mostly interested in gaining information and not that much in
+using the API methods to do actions. Additionally the attacker is mostly
+interested in a certain person or group, therefore just the methods, which
+allow gathering data about a certain user or group makes sense here. For a
+social engineering attack, the following data might be interesting.
+
+\subsubsection{General data about the user}
+\Twitter{} offers some static fields, which can be altered by the user and
+remains mostly the same over the year. Some other information is created
+automatically and still accessible by other users.
+
+Most of the fields described in chapter \ref{sec:twitter_profile_data} are
+already usable for gaining an already penetrative overview of a person.
+
+\begin{description}
+\item[Name] Gives the real name of the user, which can be used for
+phishing mails or social engineering attacks, where a name is needed.
+
+\item[Username] Many users use the same username on different
+services, like email or other social services. This can be used for some
+attacks.
+
+\item[Description] This description might be useful for gathering other useful
+information, such as workplace or interests.
+
+\item[Homepage] A personal homepage might give additional
+information about the user.
+
+\item[Image] Gives an idea, how the person might
+look like.
+
+\item[User ID] Not relevant.
+
+\item[Time Zone] Gives an idea, where the person
+lives or works.
+
+\item[Location] Together with the Time Zone, an attacker now
+could actually define his work place and home more precise.
+
+\item[Profile Creation date] Tells the attacker
+since when the user is using \Twitter{}. That might be a good indication,
+whether he also uses other services and since when.
+
+\item[Messages] The Message count could tell how active a person using a
+computer or how interested he is in a certain topic.
+
+\item[Followers] An interpretation of the followers count may say how
+famous he is and how much effect he could have on other people.
+
+\item[Friends] While the number of friends is not that interesting,
+the friends can be used for attacks too, as most of them are real friends
+or colleagues.
+\end{description}
+
+\subsubsection{Mail addresses}
+
+As already described earlier, the mail addresses of the users are not visible
+throughout \Twitter{}, though the addresses can be gathered in most cases.
+\cite{brown2008} for example described, that a mail address can be constructed
+out of a naming scheme of given data, like the username or the real name.
+Another possibility is to look through the messages for anything that looks
+like a mail address. Quite often users write messages, about contacting them at
+a special address or that they changed to a new one.
+
+\subsubsection{Times}
+
+An analysis of the time of writing messages can be a good instrument to track
+down working hours and working days or periods the user is using a computer.
+Additionally hours, the user is not available can be tracked too, for example
+when the user is doing holidays.
+
+\subsubsection{Replies and friends}
+
+\Twitter{} by itself does not publish the friends of a user, however it
+promotes followers and users who follow the candidate. With this data however,
+the \textit{hidden} network can be found, which basically is a graph, which
+only consists of bidirectional connections. This is the network, the user is
+actually friend with. By analysing the replies of messages, it can be found,
+with which of the friends, the user has most contact with. This shows then a
+quite good representation of the users friends and or colleagues.
+
+\subsubsection{Input sources}
+
+The \Twitter{} input sources give an overview, what methods the user uses to
+post updates. For example, if he is using a \Twitter{} client, that is only
+available for a certain operating system, this could be exploited. If the
+source is mostly SMS, the location is getting even more important, as location
+tracking could be done in this case. Also there could be a relation between the
+input method and the computer experience the user has, if he is using external
+clients or not.
+
+\subsubsection{Interests}
+
+In most messages, the users represent a certain interest in a single topic.
+This is either done by marking the topic explicitly with a hash sign or by just
+using text to describe the interest. 
+
+\subsubsection{Locations}
+
+Also, many messages include information about the current location, for example
+if they arrive at the workplace, at conferences or other. This data can be
+filtered by analysing the messages. A promising project, that could be used
+here is \textit{TwitterData}\footnote{\url{http://twitterdata.org/}}, which
+marks keywords as key value pairs and actually promotes keys like
+\textit{location}, \textit{lat} and \textit{long} for location, latitude and longitude
+positions.
+
+\subsubsection{Text search}
+
+Finally a text search can be used to get further information about a certain
+topic the user wrote about. 
 
 \section{Countermeasures}
+
+The nature of a social network, especially \Twitter{} is sharing data.
+Therefore it difficult to encounter attacks. As \cite{brown2008} describes,
+there has to be a trade-off between utility and security. Given also, that most
+data comes out of analysing the messages, there are not many ways to minimize
+the risk.
+
+The first way to minimize the risk, would be to mark the profile as closed for
+anonymous users. However, this can be circumvented easily by following the
+user.
+
+Another, possibly extreme, way would be to not publish sensitive information
+about the user himself, his workplace, friends and other. As this would be
+quite hard to accomplish, still lots of information would be easily accessible,
+like the times analysis.
+
+Having a look on the whole social network, \Twitter{} might require to be
+logged in while viewing the messages of other users. However, an account can be
+easily made and so there won't be any surplus.
+
+At last, the social network could limit the API calls and track them more
+precise, so that an automatic extraction is no more possible or at least made
+harder. This is probably the only countermeasure, which really would hinder an
+attacker of gaining information.
