@@ -5,6 +5,7 @@ PLUGIN_PATH = "plugins/"
 PLUGINS_ENABLED = [
 #    "testplugin",
     "user",
+    "mail",
     "textsearch",
     "times",
     "replies",
