@@ -2,7 +2,6 @@
 
 import sys
 import os
-#sys.path.append(os.getcwd()+ "/")
 
 from base64 import b64encode
 from urllib import urlencode, quote_plus
@@ -92,10 +91,8 @@ for plugin in find_plugins():
 
 page.div.close()
 
-#htmlfile=tempfile.mktemp("foo.html")
 htmlfile = "output.html"
 
-#fd=open(htmlfile, "w", "utf-8")
 fd = codecs.open(htmlfile, "w", encoding="utf-8")
 fd.write(page())
 fd.close()
@@ -104,7 +101,3 @@ webbrowser.open(htmlfile)
 
 obj = twitter.account.rate_limit_status(no_cache=True)
 dump(obj)
-#id = twitter.users.show(id="twitter")["id"]
-#u = twitter.statuses.show(id=1472669360)
-#
-#dump(u)
