@@ -1,6 +1,152 @@
 \chapter{Evaluation}
 \label{chapter:evaluation}
 
-\section{Demonstration of an attack using the prototype}
+\section{Demonstration of attacks using the prototype}
+
+\section{Phishing mail}
+
+The attack itself was already described in section \ref{sec:phishing_mail}. Now
+the work wants to repeat the attack together with the prototype against a
+sample profile on \Twitter{}. The following data is therefore needed:
+
+\begin{itemize}
+  \item Real name of the victim
+  \item Email address of the victim
+  \item The Knowledge, that the victim is a customer of an electronic
+  payment service, like \textit{PayPal}, \textit{Amazon} or \textit{eBay}
+\end{itemize}
+
+The attacker now simply starts off with a simple keyword search, as he is not
+interested in a specific person (at least for now). Therefore he runs:
+
+\lstset{language=bash}
+\begin{lstlisting}
+$ python prototype.py -k "paypal"
+\end{lstlisting}
+
+This opens a new website on \url{http://search.twitter.com}, which shows the
+attacker people, who quoted the word \textit{paypal} in one of their messages.
+The attacker now picks a person with the username \textit{petersample}, who writes
+
+\begin{quote}
+did really some transactions over paypal this week, works really great!
+\end{quote}
+
+As the attacker now has a individual he can attack, he is interested in more
+information. Therefore he runs:
+
+\lstset{language=bash}
+\begin{lstlisting}
+$ python prototype.py -u "petersample"
+\end{lstlisting}
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_user}
+    \caption{Prototype output: general information about a user}
+    \label{fig:prototype_user}
+  \end{center}
+\end{figure}
+
+This now produces a fact sheet about Peter Sample. As the attacker already
+knows, that the victim is using \textit{PayPal}, he just needs the real name
+and the mail address. The output of the prototype is displayed in figure
+\ref{fig:prototype_user}. The attacker now knows the real name. The mail
+address was also found by the prototype and is displayed in figure
+\ref{fig:prototype_mail}. Now, every data needed for the phishing mail is
+acquired and the attacker can begin to send the mails out. Just like described,
+it is also possible to include Peter Sample's friends, if they are using
+\textit{PayPal} too. This is simply done by redoing the attack on Peter
+Sample's friends, which the prototype also outputs.
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_mail}
+    \caption{Prototype output: mail address was found}
+    \label{fig:prototype_mail}
+  \end{center}
+\end{figure}
+
+\section{Insider attack}
+
+In the attack described in section \ref{sec:insider_attack},
+the attacker starts again with a keyword search, as he wants to find an
+employee of Sample Company Inc. Quite quickly he finds petersample, who seems to work
+for that company. He launches to information retrieval about that user and gets
+an output like in figure \ref{fig:prototype_user2}.
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_user2}
+    \caption{Prototype output: general information about an employee of Sample
+    Company Inc.}
+    \label{fig:prototype_user2}
+  \end{center}
+\end{figure}
+
+He now knows the real name, the
+company and department Peter Sample works for, the workgroup inside the
+company, and has an approximate idea where the victim could live. A text search
+about some phone specific terms, produces an output like showed in figure
+\ref{fig:prototype_phone}. The employee number is trickier to get, as one must
+rely that the employee posts this number into a message. In this scenario, this
+is not the case and the social engineer has to call Peter Sample at his phone
+number.
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_phone}
+    \caption{Prototype output: text search about phone specific terms}
+    \label{fig:prototype_phone}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_residence}
+    \caption{Prototype output: the residence is revealed}
+    \label{fig:prototype_residence}
+  \end{center}
+\end{figure}
+The prototype also shows the times, showed in figure
+\ref{fig:prototype_times}, Peter Sample mostly writes his
+updates and therefore is most probably available, and not having holidays for
+example. This was also done in the original scenario, however this time much
+less information is needed, as most data can already be get out of the social
+network. Next, he needs the residence of Peter Sample, which the prototype also
+supports and is displayed in figure \ref{fig:prototype_residence}.
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{prototype_times_month} 
+    \includegraphics[width=0.49\textwidth]{prototype_times_day} 
+    \includegraphics[width=0.49\textwidth]{prototype_times_hour}
+    \caption{Prototype output: the average times a user writes his updates: months,
+    week, day average}
+    \label{fig:prototype_times}
+  \end{center}
+\end{figure}
+
+The use of security devices and server names is either determined by the phone
+call mentioned above or by a text search. A text search works quite good, as
+many people write some message about not working things, like a broken
+connection to their development server or that they dislike special security
+devices. This data can be harvested like the phone number before.
+
+The company structure, like the managers name and colleagues of the employee
+can be determined by analyzing the hidden friends network and the replies the
+employee made. By further analyzing the friends networks, replies and applying
+the same data retrieval as above, a quite detailed company and employee
+structure can be determined.
+
+As in the original scenario, the attacker now just has to wait for a snow storm
+in the area of the residence of the employee, which is easy to check, as he
+has the residence address.
+
+\section{The bank heist}
+\ref{sec:bank_heist}
+
+
 
 \section{General feasibility and extrapolation of attacks}
