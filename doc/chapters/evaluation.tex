@@ -145,8 +145,41 @@ in the area of the residence of the employee, which is easy to check, as he
 has the residence address.
 
 \section{The bank heist}
-\ref{sec:bank_heist}
 
+The scenario described in section \ref{sec:bank_heist} is quite different from
+the others, as it requires data, which normally is or at least should not
+published. While the first part of the scenario, like names, phone numbers and
+departments is possible to extract either by using the prototype or by directly
+doing social engineering attacks, the daily wire transfer code is not
+published. While it still might be possible for a social engineer to get the
+code, it is not possible to do that over a social network like \Twitter{}, as
+this sensitive data is not published. Though, the prototype can still save a
+lot of effort, for example by determining the structure of the company or
+analyzing company employees.
 
 
 \section{General feasibility and extrapolation of attacks}
+
+Attacks and information retrieval are possible with the prototype. That was
+shown in the above scenarios. One big barrier though remains private and
+sensitive data, at least if a user of a social network identifies specific data
+as sensitive. However many user do not, and post mail addresses, residence
+addresses, phone numbers, passwords and further more.
+
+Harvesting this data automatically makes the life of a social engineer
+definitely easier, as he just has to execute the attack and is no more
+constrained to do a information research beforehand. When it comes to sensitive
+data, a prototype like the one introduced, can still help to gain data around
+the sensitive data, like company information or user specific information.
+
+With it's plugin architecture, the prototype is easily extendible and more data
+and analysis can be simply done. For this prototype the \Twitter{} social
+network was chosen, however other famous social networks are possible too.
+Putting together more social networks and possibly search engines too, this can
+give a more complete picture of a victim. There is also a lot of optimization
+possible regarding text analysis.
+
+The prototype did get all data legally and can operate almost anonymously, as
+he will not be tracked, with the small amount of data it fetches. Though it has
+a big effect and can lead to very dangerous and above all easy to accomplish
+attacks.
