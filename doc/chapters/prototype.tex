@@ -3,6 +3,20 @@
 
 \section{Goal}
 
+The goal is to develop a prototype, which can cull and evaluate data of one or
+more users of the \Twitter{} social network. The produced data should then be
+assigned to real persons, in order to create a fact sheet for a social
+engineer. It should be shown, that it is easy to file employees of a certain
+company or private persons, just by using legally available data, put online by
+the individuals themselves. The filed data should then enable a social
+engineer to do social engineering attacks against the weakest point.
+
+The prototype developed for this work should make it possible to find persons
+either by their username or by their real name.
+It then should evaluate and display every possible information, which can be
+gathered legally. The data should be saved locally, which the possibility to
+update it.
+
 \section{Description and blueprint of the prototype using software engineering
 methods}
 %\subsection{Use Cases}
@@ -10,7 +24,19 @@ methods}
 %\subsection{Klassendiagramme}
 %\subsection{\dots}
 
-\section{Justification for used programming languages, tools and libraries}
+\section{Used programming languages, tools and libraries}
+
+For the prototype, the \textit{Python}\footnote{http://www.python.org/} programming
+language was used. It is a dynamic object-oriented programming language, that
+offers strong support with many tools and comes with a large amount of standard
+libraries. \textit{Python} allows rapid prototyping, and has many libraries built
+in, used for example to call the \Twitter{} API.
+
+The plotting was done using the
+\textit{matplotlib}\footnote{http://matplotlib.sourceforge.net/} library, which
+is a 2D plotting library, which produces production quality figures and is easy
+accessible through the \textit{Python} programming language.
 
 \section{Documentation and explanation of relevant passages in the source code of the prototype}
 
+This section will now outline a few relevant passages of the prototype.
