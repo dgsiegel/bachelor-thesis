@@ -24,7 +24,7 @@ class Plugin(object):
   def parse(self):
     pass
 
-  def present(self):
+  def output(self):
     pass
 
 
