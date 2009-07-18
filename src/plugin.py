@@ -1,20 +1,9 @@
 import sys
 import os
 
-PLUGIN_PATH = "plugins/"
-PLUGINS_ENABLED = [
-#    "testplugin",
-    "user",
-    "mail",
-    "textsearch",
-    "times",
-    "replies",
-    "sources",
-    "interests",
-    "location",
-    "friends",
-    ]
+import conf
 
+PLUGIN_PATH = "plugins/"
 
 class Plugin(object):
 
@@ -31,7 +20,7 @@ class Plugin(object):
 def init_plugin_system():
   if not PLUGIN_PATH in sys.path:
     sys.path.insert(0, PLUGIN_PATH)
-  for plugin in PLUGINS_ENABLED:
+  for plugin in conf.PLUGINS_ENABLED:
     __import__(plugin)
 
 

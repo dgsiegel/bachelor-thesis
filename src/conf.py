@@ -1,3 +1,16 @@
+PLUGINS_ENABLED = [
+#    "testplugin",
+    "user",
+    "mail",
+    "textsearch",
+    "times",
+    "replies",
+    "sources",
+    "interests",
+    "location",
+    "friends",
+    ]
+
 locale = "en_US.utf8"
 
 username = "petersample"
