@@ -17,26 +17,6 @@ It then should evaluate and display every possible information, which can be
 gathered legally. The data should be saved locally, which the possibility to
 update it.
 
-\section{Description and blueprint of the prototype using software engineering methods}
-\comment{better title needed}
-
-The prototype developed:ta
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\textwidth]{prototype_class.1}
-    \caption{UML class diagram of the developed prototype}
-  \end{center}
-\end{figure}
-
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\textwidth]{prototype_activity.1}
-    \caption{Activity diagram of a generic plugin}
-  \end{center}
-\end{figure}
-
 \section{Used programming languages, tools and libraries}
 
 For the prototype, the \textit{Python}\footnote{http://www.python.org/} programming
@@ -50,6 +30,72 @@ The plotting was done using the
 is a 2D plotting library, which produces production quality figures and is easy
 accessible through the \textit{Python} programming language.
 
-\section{Documentation and explanation of relevant passages in the source code of the prototype}
+\section{Description and blueprint of the prototype}
+\comment{better title needed}
 
-This section will now outline a few relevant passages of the prototype.
+The prototype was developed in a modular approach, to allow easy extensibility
+of the prototype. As the \Twitter{} API is in constant change, this helps to
+keep the prototype working and making it easy to extend it for new data
+sources.
+
+Each information source is developed as a plugin. The plugin downloads the
+needed data, parses it and prepares an output, which then can be put together
+to a fact sheet.
+
+The structure of the prototype is outlined in figure \ref{fig:prototype_class}.
+The starting point is the Prototype module, which holds the starting values,
+loads the plugins, runs them and puts together the output. To allow further
+searches for persons, the main module holds several options.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_class.1}
+    \label{fig:prototype_class}
+    \caption{UML class diagram of the developed prototype}
+  \end{center}
+\end{figure}
+
+\lstset{language=python}
+\lstinputlistingln{30}{36}{../src/prototype.py}
+
+Then the API object is created
+\lstinputlistingln{38}{38}{../src/prototype.py}
+
+What happens now, is quite clever. The API object creates itself and calls the
+\texttt{\_\_init\_\_()} method of the \texttt{TwitterAPICall} object. This means,
+that the prototype has an object of the \texttt{TwitterAPI} object, which then
+creates a new \texttt{TwitterAPICall} object each time called. At the same time
+the \texttt{FileCache} object is created and passed on, which simply stores the
+values downloaded into files.
+\lstinputlistingln{152}{156}{../src/twitterapi.py}
+
+When the \texttt{TwitterAPICall} object is created, it fills it default values,
+with the one passed by the \texttt{TwitterAPI} object.
+\lstinputlistingln{55}{64}{../src/twitterapi.py}
+
+The \texttt{\_\_getattr\_\_()} method, which is a Python default method, is
+called every time an attribute of an object is accessed. The prototype exploits
+this behaviour for the \Twitter{} API. For example, if the prototype wants to
+call the API function \texttt{/users/show}, in the code it just calls the
+method \texttt{twitter.users.show()}. The previous mentioned function then just
+removes the not existing attribute and appends it as an argument to a new
+\texttt{TwitterAPICall} object.
+\lstinputlistingln{66}{71}{../src/twitterapi.py}
+
+If there is no attribute left, the object function is called, where the
+prototype exploits the Python intern function \texttt{\_\_call\_\_} to actually
+connect to the \Twitter{} API and download data. The actual downloading is
+quite trivial. The method just determines if a POST or GET HTTP request
+is needed, puts together the username and password, if given, builds the
+request URL, looks if it is already cached, if there are API calls available
+and if so does the actual call to the \Twitter{} API. The result is then cached
+by using the \texttt{FileCache} object.
+\lstinputlistingln{73}{145}{../src/twitterapi.py}
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_activity.1}
+    \caption{Activity diagram of a generic plugin}
+  \end{center}
+\end{figure}
