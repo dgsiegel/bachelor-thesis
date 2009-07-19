@@ -5,3 +5,5 @@ main*
 output.html
 cache/
 src/figures/
+*.mp.keep
+*.log
