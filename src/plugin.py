@@ -7,13 +7,13 @@ PLUGIN_PATH = "plugins/"
 
 class Plugin(object):
 
-  def download(self):
+  def download(self, api, args):
     pass
 
   def parse(self):
     pass
 
-  def output(self):
+  def output(self, page):
     pass
 
 
