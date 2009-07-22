@@ -1,10 +1,11 @@
-\chapter{Concrete Social Engineering Attacks}
+\chapter{Selection of Social Engineering Attacks}
 \label{chapter:attacks}
-\comment{add a better chapter title}
 
 The previous chapter showed already sample social engineering attacks, the
-threats it exposes and countermeasures. Now, a few social engineering attacks
-are going to be introduced. All of those are described by \cite{mitnick2003}
+threats it exposes and countermeasures. 
+
+
+All of those are described by \cite{mitnick2003}
 and are happened in the past.
 
 \section{Phishing mail}
@@ -57,19 +58,27 @@ The victim is not a single one, there are many scams which look like the above.
 The attack was also prepared properly, as they knew that Edgar was a PayPal
 customer. If he would not have been, the attack certainly wouldn't have worked.
 
-To use this attack, the attacker has to gain access to the following data: 
-
-\begin{itemize}
-  \item Real name of the victim
-  \item Email address of the victim
-  \item The Knowledge, that the victim is a customer of an electronic payment
-  service, like \textit{PayPal}, \textit{Amazon} or \textit{eBay}
-\end{itemize}
-
 To make the attack even more realistic and effective, the message could also
 been sent to the victims friends and colleagues, if they are also a member of
 the same electronic payment service.
 
+\begin{table*}[ht]
+  \centering
+  \ra{1.3}
+  \begin{tabular}{p{0.8\textwidth}c}
+    \toprule
+    Information & Required\\
+    \midrule
+    Real name & X\\
+    Email address & X\\
+    Knowledge of account of an electronic payment service & X\\
+    Email addresses of friends and colleagues & \\
+    Knowledge, which friend or colleague has an account on an electronic
+    payment service & \\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of the required data of the phishing attack}
+\end{table*}
 
 \section{Insider attack}
 \label{sec:insider_attack}
@@ -137,18 +146,30 @@ ID token. Furthermore he was able to get a temporary account to bypass the
 firewall restrictions, directly from the operator. Now, he had the whole
 weekend to find a security hole which he found.
 
-For this attack, the following data was needed
-
-\begin{itemize}
-  \item Name, phone number, department, employee number of several employee's
-  \item Name and phone number of the manager
-  \item Residence of a employee
-  \item Weather information
-  \item Company and employee structure
-  \item The knowledge, what security devices were used in the company
-  \item The servers names and location
-\end{itemize}
-
+\begin{table*}[ht]
+  \centering
+  \ra{1.3}
+  \begin{tabular}{p{0.8\textwidth}c}
+    \toprule
+    Information & Required\\
+    \midrule
+    \multicolumn{2}{l}{Colleagues}\\
+    \hspace{0.5cm} Name & X\\
+    \hspace{0.5cm} Phone number & X\\
+    \hspace{0.5cm} Department &  X\\
+    \hspace{0.5cm} Employee number &  \\
+    \multicolumn{2}{l}{Manager}\\
+    \hspace{0.5cm} Name & X\\
+    \hspace{0.5cm} Phone number & \\
+    Residence of an employee & X\\
+    Weather information & X\\
+    Company and employee structure & X\\
+    The knowledge, what security devices were used in the company & X\\
+    The servers names and location & X\\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of the required data of the insider attack}
+\end{table*}
 
 \section{The bank heist}
 \label{sec:bank_heist}
@@ -173,11 +194,23 @@ He then picked up the money in Switzerland, changed it into diamonds and flew
 back to the United States. As he tried to sell them there, the FBI quickly
 captured him.
 
-For this attack, the following data was needed
-
-\begin{itemize}
-  \item Name and employee number of a bank employee of the wire transfer room
-  \item Name, department, employee number of a bank employee outside the wire
-  \item Phone number of wire transfer room
-  \item Current wire transfer code
-\end{itemize}
+\begin{table*}[ht]
+  \centering
+  \ra{1.3}
+  \begin{tabular}{p{0.8\textwidth}c}
+    \toprule
+    Information & Required\\
+    \midrule
+    \multicolumn{2}{l}{Employee of the wire transfer room}\\
+    \hspace{0.5cm} Name & X\\
+    \hspace{0.5cm} Employee number & X\\
+    \multicolumn{2}{l}{Employee outside the wire transfer room}\\
+    \hspace{0.5cm} Name & X\\
+    \hspace{0.5cm} Department & X\\
+    \hspace{0.5cm} Employee number & X\\
+    Phone number of wire transfer room & X\\
+    Current wire transfer code & X\\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of the required data of the phishing attack}
+\end{table*}
