@@ -4,12 +4,14 @@
 \section{Social Engineering}
 
 In most companies and private networks, the main focus on security aims towards
-secure technology, like firewalls or anti-virus programs and other defense
-strategies. However, companies and private persons often are unaware of social
+security technology, like firewalls or anti-virus programs and other defense
+strategies \cite{winkler1995}. However, companies and private persons often are unaware of social
 engineering, which sometimes is a lot more dangerous than the IT-security
-suggests. Kevin Mitnick, a famous Hacker and one of the most famous social
+suggests \cite{jones2004}. Kevin Mitnick, a hacker and one of the most famous social
 engineers, states that it is often easier to use social engineering to get
 access to a system than searching for security holes \cite{mitnick2003}.
+
+\comment{weitere definition z.b. jones}
 
 The new hacker's dictionary \cite{raymond1996} defines the term social engineering as
 following:
@@ -27,10 +29,14 @@ goal of the social engineer is to gain either physical or digital direct access
 to an information of the target or an information system.  Afterwards the
 social engineer can enable a hacker to access and penetrate the system, delete,
 alter and steal information and to disrupt services, as \cite{thornburgh2004}
-shows. The social engineer can of course be also the hacker. \cite{jones2004}
-states, that unlike hacking, social engineering uses psychology and theories
-about the human mindset, like what people expect from each other and their
-natural tendency to be helpful.
+shows. The social engineer can of course be also the hacker. Hacking
+characteristically involves access to systems through technical means, while
+the social engineer manipulates people to give him access to information, that
+normally would not be available \cite{jones2004}.  Furthermore, social
+engineering uses psychology and theories about the human mindset, like what
+people expect from each other and their natural tendency to be helpful
+\cite{jones2004}.
+
 
 \subsection{The cycle of an social engineering attack}
 
@@ -73,7 +79,7 @@ iterative, depending on the attack and used methods.
 \subsubsection{Research}
 
 This phase consists of several methodologies to gain as much information about
-the target as possible. Depending however if the target is a company or a
+the target as possible. Depending on if the target is a company or a
 private person, different methods might be used. The ultimate goal of this
 phase is to gain as much information as possible to develop a relationship,
 rapport and trust in the next phase. Of course, there are enormous
@@ -100,7 +106,7 @@ course are not limited to those.
   individuals. They both have the goal to make the target believe, that they are
   watching a regular e-mail or website and entering sensitive information.
   Phishing can also be described as a whole social engineering attack, however
-  it can also be used to just get special information.
+  it can also be used to just get the wanted information.
 \item[Trojan Horses and other Malware] This tools have the same goal like
   phishing, however they are acting by themselves and often do not require any
   user interaction, except might for installing the software. Again, they can
@@ -116,6 +122,15 @@ course are not limited to those.
   people with experience in that field. Like above, information about the
   computer systems can also be obtained here.
 \end{description}
+
+As social networks are quite new, the existing literature does not count them
+yet as a research possibility. A social networks however offers a wide range of
+the above mentioned possibilities. For example, the corporate website could be
+replaced, if a large amount of the employees is using a specific social
+network. The personal homepage might be replaced by a social network, if enough
+private data about a person is available on the social network. Social networks
+often also include newsgroups, job sites and more on their platform, making it
+even easier to access a large amount of data about a single person.
 
 
 \subsubsection{Rapport and trust}
@@ -144,6 +159,11 @@ the following physical settings, an attack can happen:
   forcing the target to install malicious software or exposing sensitive
   information.
 \end{description}
+
+Social networks allow an additional way to create a rapport with the victim,
+for example with the often integrated chat, forum and messaging functions. The
+rapport could be established on a thinner basis, depending on the method used,
+however this could also be a desired effect by the social engineer.
 
 
 \subsubsection{Exploiting trust}
@@ -181,6 +201,14 @@ psychology to exploit their trust. \cite{jones2004} lists the following:
   asking. Often, receptionists, the cleaning crew and similar people are the
   favourite victims.
 \end{description}
+
+These constructs can be exploited too by using the information available on
+social networks. For example the authority might not be given on a social
+network, however if an attacker is able to create a large social group around
+himself, he surely has a certain authority against a victim. The gained
+information can even help to exploit the trust, for example if an attacker
+already knows, how helpful the victim is, what the victim likes or dislikes or if
+he shows low involvement.
 
 \subsubsection{Utilizing Information}
 
@@ -327,33 +355,6 @@ points:
   policies cannot assure 100\% protection against social engineering attacks.
 \end{description}
 
-\section{Bridging the gap}
-
-The research phase in an social engineering attack is probably the most
-important, as the following phases and attacks heavily rely on good, valid and
-usable informations. Of course, a social engineer will choose the appropriate
-methods to gain access to the needed informations. If a method is easy to use
-and will offer large amount of usable data, a social engineer certainly won't
-deny this method.
-
-The Internet is such a place, which stores large amount of data.
-\cite{nolan2005} points out, that data found on the internet is not created in
-real time, but is cached data, which is considered unimportant or out of date.
-Together with this, there is data about how people really do present
-themselves. Furthermore the authors claim that almost everything on the
-Internet is some sort of text and therefore can be crawled, searched and read.
-Combining the data will allow a social engineer to create a data map about an
-individual or a company, that can be used to extract more information, than
-just the single pieces of data. Moreover the authors sum it up as following:
-
-\begin{quote}
-\textit{Though the Internet is a massive crypt full of ostensibly dead
-information, broken links, changed email addresses, it is far from useless. The
-Internet is a data graveyard, but it is graveyard waiting for a forensic
-archaeologist with a desire to \glqq{}condense fact from a nuance of
-vapor\grqq{}.}
-\end{quote}
-
 \section{Social networks}
 
 Social Networks gained million of members on their platforms in the last years.
@@ -446,12 +447,14 @@ profiles or strict privacy settings are almost equally vulnerable.
   \label{tab:context-aware-spam}
 \end{table*}
 
-\subsection{Passive attacks on social networks}
+\subsection[Passive attacks on social networks]
+{Passive attacks on social networks (based on \cite{gross2005})}
 
 Information revelation is one of the most important entity in passive attacks,
-as they provide a good information source for further attacks. \cite{gross2005}
+as they provide a good information source for further attacks. Gross et al.
 analyzed \textit{Facebook} and showed potential attacks by just using the
-information presented on profile pages.
+information presented on profile pages \cite{gross2005}. This paper is also one
+of the first, which describes passive attacks in social networks.
 
 The study offers, that \textit{Facebook}, and probably other social networks
 too, provide an enormous amount of information about their users. For example,
