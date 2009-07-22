@@ -39,13 +39,22 @@ keep the prototype working and making it easy to extend it for new data
 sources.
 
 Each information source is developed as a plugin. The plugin downloads the
-needed data, parses it and prepares an output, which then can be put together
+required data, parses it and prepares an output, which then can be put together
 to a fact sheet.
 
 The structure of the prototype is outlined in figure \ref{fig:prototype_class}.
 The starting point is the Prototype module, which holds the starting values,
 loads the plugins, runs them and puts together the output. To allow further
-searches for persons, the main module holds several options.
+searches for persons, the main module holds several options. The prototype
+currently supports the following:
+
+\begin{itemize}
+  \item Search and analyze a user. If the username passed is not found, a
+  search for the name passed is launched.
+  \item Search for a specific keywords
+  \item Search for a location
+  \item Search for a range
+\end{itemize}
 
 \begin{figure}[ht]
   \begin{center}
@@ -55,17 +64,20 @@ searches for persons, the main module holds several options.
   \end{center}
 \end{figure}
 
-\lstset{language=python}
-\lstinputlistingln{30}{36}{../src/prototype.py}
+After choosing the option, the API object is created, passing the username and
+password. If the username and password is empty, the prototype connects
+anonymously to the \Twitter{} API.
 
-Then the API object is created
+\comment{SEQUENCE DIAGRAM OF TWITTER API CALL}
+
+\lstset{language=python}
 \lstinputlistingln{38}{38}{../src/prototype.py}
 
-What happens now, is quite clever. The API object creates itself and calls the
-\texttt{\_\_init\_\_()} method of the \texttt{TwitterAPICall} object. This means,
-that the prototype has an object of the \texttt{TwitterAPI} object, which then
-creates a new \texttt{TwitterAPICall} object each time called. At the same time
-the \texttt{FileCache} object is created and passed on, which simply stores the
+The API object creates itself and calls the \texttt{\_\_init\_\_()} method of
+the \texttt{TwitterAPICall} object. This means, that the prototype has an
+object of the \texttt{TwitterAPI} object, which then creates a new
+\texttt{TwitterAPICall} object each time called. At the same time the
+\texttt{FileCache} object is created and passed on, which simply stores the
 values downloaded into files.
 \lstinputlistingln{152}{156}{../src/twitterapi.py}
 
@@ -90,12 +102,42 @@ is needed, puts together the username and password, if given, builds the
 request URL, looks if it is already cached, if there are API calls available
 and if so does the actual call to the \Twitter{} API. The result is then cached
 by using the \texttt{FileCache} object.
-\lstinputlistingln{73}{145}{../src/twitterapi.py}
 
-
-\begin{figure}
+\begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{prototype_activity.1}
+    \includegraphics[width=0.75\textwidth]{prototype_activity.1}
     \caption{Activity diagram of a generic plugin}
+    \label{fig:prototype_activity}
   \end{center}
 \end{figure}
+
+Next, the plugin system is initialized, which simply imports the plugin files
+by using the Python method \texttt{\_\_import\_\_()}. The list
+\texttt{PLUGINS\_ENABLED} just holds the plugins, which should get loaded, run
+and displayed.
+\lstinputlistingln{20}{24}{../src/plugin.py}
+
+All plugins are children of the \texttt{Plugin} object, which just holds the
+methods \texttt{download()}, \texttt{parse()} and \texttt{output()}. Those
+methods have to be implemented by each plugin. Figure
+\ref{fig:prototype_activity} shows, how a single plugin works.
+\lstinputlistingln{8}{17}{../src/plugin.py}
+
+Now, each plugin has to be addressed somehow. As it was dynamically loaded,
+there is no structure, which holds the plugin itself yet. However, the
+\texttt{Plugin} objects knows, which subclasses or children were loaded. The
+method \texttt{find\_plugins()} returns a list of the loaded plugins. If a
+plugin was not created yet, it creates the specific plugin object.
+\lstinputlistingln{27}{35}{../src/plugin.py}
+
+The prototype can now call the three methods \texttt{download()},
+\texttt{parse()} and \texttt{output()} of each plugin. The output is merged
+gets written to a file.
+
+If a new plugin should be added, a new plugin object has to be created, which
+implements the above mentioned methods. Each API call gets cached and therefore
+it is no overhead, if several modules need the same data to work with. The API
+object just downloads the required data once and then just passes the cached
+data.
+\lstinputlistingln{1}{22}{../src/plugins/testplugin.py}
+
