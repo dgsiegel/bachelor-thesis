@@ -12,17 +12,17 @@ beginfig(1);
   Activity.output_none("Append nothing to", "output stream");
   End.e;
 
-  leftToRight(30)(b, download);
+  leftToRight(30)(b, missing_args);
   leftToRight.top(10)(output_data, output_none);
   Group.output(output_data, output_none);
 
-  topToBottom(20)(download, missing_args, parse, missing_data, output, e);
+  topToBottom(20)(missing_args, download, parse, missing_data, output, e);
 
   drawObjects(b, download, missing_args, missing_data, parse, output, e);
 
-  clink(transition)(b, download);
-  clink(transition)(download, missing_args);
-  clink(transition)(missing_args, parse);
+  clink(transition)(b, missing_args);
+  clink(transition)(missing_args, download);
+  clink(transition)(download, parse);
   clink(transition)(parse, missing_data);
 
   link(transition)(pathStepY(output_data.s, e.n, -10));
