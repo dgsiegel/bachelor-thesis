@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
 <manage_target braces="true" utf8="true">literature.bib</manage_target>
-<library_folder monitor="true"></library_folder>
+<library_folder monitor="false"></library_folder>
 <taglist>
   <tag>
     <uid>0</uid>
@@ -237,7 +237,7 @@
     <bib_year>2009</bib_year>
     <bib_extra key="howpublished">\url{http://news.bbc.co.uk/newsbeat/hi/technology/newsid_7948000/7948092.stm}</bib_extra>
     <bib_extra key="month">March</bib_extra>
-    <bib_extra key="note">Last accessed, May 2009</bib_extra>
+    <bib_extra key="note">Last accessed, July 2009</bib_extra>
   </doc>
   <doc>
     <filename></filename>
@@ -348,6 +348,24 @@
     <bib_extra key="Address">New York, NY, USA</bib_extra>
     <bib_extra key="Issn">0001-0782</bib_extra>
     <bib_extra key="Publisher">ACM</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>microsoft2009</key>
+    <notes></notes>
+    <bib_type>misc</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>What is social engineering?</bib_title>
+    <bib_authors>{Microsoft Inc.}</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>2009</bib_year>
+    <bib_extra key="howpublished">\url{http://www.microsoft.com/protect/computer/basics/social.mspx}</bib_extra>
+    <bib_extra key="month">April</bib_extra>
+    <bib_extra key="note">Last accessed, July 2009</bib_extra>
   </doc>
 </doclist>
 </library>
