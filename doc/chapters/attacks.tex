@@ -2,23 +2,41 @@
 \label{chapter:attacks}
 
 The previous chapter showed already sample social engineering attacks, the
-threats it exposes and countermeasures. 
+threats it exposes and countermeasures. The work wants to assign now selected
+social engineering attacks to social networks and find out, what new threats
+they disclose. Furthermore, the attacks should constitute a part of the demand
+of the prototype, which will be developed.
 
+All of the following attacks are described by Mitnick and Simon
+\cite{mitnick2003} and are happened in the past.
 
-All of those are described by Mitnick and Simon \cite{mitnick2003}
-and are happened in the past.
-
-\section{Phishing mail}
+\section[Phishing mail]{Phishing mail (\cite[pp. 97-100]{mitnick2003})}
 \label{sec:phishing_mail}
+
+The first attack is an attack against a private person, with no affiliation at
+a company. A phishing mail was used to trick the victim into revealing his
+username and password of an online payment service.  A definition of the term
+\textit{phishing} could be the following \cite{jagatic2007}:
+
+\begin{quote}
+\textit{Phishing is a form of deception in which an attacker attempts to
+fraudulently acquire sensitive information from a victim by impersonating a
+trustworthy entity. Phishing attacks typically employ generic
+\glqq{}lures\grqq{}.}
+\end{quote}
+
+The enormous threat, phishing attacks can present, was already showed in 
+section \ref{subsection:active_attacks}. The scenario therefore was chosen because of
+it's relevancy and the fact, that just single users were attacked.
 
 The victim, a retired insurance salesman named Edgar, received an email from
 \textit{PayPal}\footnote{\url{http://www.paypal.com}}, which is a company that
 offers a fast and secure way to make online payments. Edgar did use
 \textit{PayPal} often, as he was a collection of antique glass jars. Therefore
 he used the service several times a week. The email he received during the
-holiday season 2001 was looking officially
-from \textit{PayPal}, offering him a requital for updating his
-\textit{PayPal} account. The message looked like the following:
+holiday season 2001 was looking officially from \textit{PayPal}, offering him a
+requital for updating his \textit{PayPal} account. The message looked like the
+following \cite[p. 97]{mitnick2003}:
 
 \begin{quote}
 Season's Greetings Valued PayPal Customer;
@@ -69,9 +87,9 @@ the same electronic payment service.
     \toprule
     Information & Required\\
     \midrule
-    Real name & X\\
-    Email address & X\\
-    Knowledge of account of an electronic payment service & X\\
+    Real name & \checkmark\\
+    Email address & \checkmark\\
+    Knowledge of account of an electronic payment service & \checkmark\\
     Email addresses of friends and colleagues & \\
     Knowledge, which friend or colleague has an account on an electronic
     payment service & \\
@@ -80,12 +98,16 @@ the same electronic payment service.
   \caption{Overview of the required data of the phishing attack}
 \end{table*}
 
-\section{Insider attack}
+\section[Insider attack]{Insider attack (\cite[pp. 83-89]{mitnick2003})}
 \label{sec:insider_attack}
 
 This attack was a real case scenario, involving stealing source code from a
 company containing the encryption algorithms and firmware used in the company
-radio products.
+radio products. The relevance is the fact, that this was an attack against a
+company, involving getting the information about the company structure,
+security devices used inside the company and having several employees as
+victims. Due to it's manifold character, this attack could be extended to
+similar attacks, which even could require less information.
 
 The attacker, called \textit{Danny} by Mitnick, began his information retrieval
 on the internet. He luckily found a years-old message written by an employee of
@@ -108,7 +130,7 @@ As it was winter, he did not have to wait very long and he launched the attack.
 He telephoned the IT department and talked to a computer operator named Roger
 Kowalski.
 
-The attack went something like this:
+The attack went something like this \cite[p. 86]{mitnick2003}:
 
 \begin{quote}
 \textit{Danny:} \glqq{}This is Bob Billings. I work in the Secure Communications Group. I'm at
@@ -138,6 +160,31 @@ so he asked his manager and actually vouched for the attacker. The manager
 wanted to speak to the attacker personally and the operator gave him the name
 and phone number.
 
+\begin{table*}[h]
+  \centering
+  \ra{1.3}
+  \begin{tabular}{p{0.8\textwidth}c}
+    \toprule
+    Information & Required\\
+    \midrule
+    \multicolumn{2}{l}{Colleagues}\\
+    \hspace{0.5cm} Name & \checkmark\\
+    \hspace{0.5cm} Phone number & \checkmark\\
+    \hspace{0.5cm} Department &  \checkmark\\
+    \hspace{0.5cm} Employee number &  \\
+    \multicolumn{2}{l}{Manager}\\
+    \hspace{0.5cm} Name & \checkmark\\
+    \hspace{0.5cm} Phone number & \\
+    Residence of an employee & \checkmark\\
+    Weather information & \checkmark\\
+    Company and employee structure & \checkmark\\
+    The knowledge, what security devices were used in the company & \checkmark\\
+    The servers names and location & \checkmark\\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of the required data of the insider attack}
+\end{table*}
+
 The attacker then called the manager and explained the same story again,
 mentioning that his team has a critical deadline. The manager then allowed him
 to use the Secure ID device in the IT department just for the weekend. From now
@@ -146,33 +193,13 @@ ID token. Furthermore he was able to get a temporary account to bypass the
 firewall restrictions, directly from the operator. Now, he had the whole
 weekend to find a security hole which he found.
 
-\begin{table*}[ht]
-  \centering
-  \ra{1.3}
-  \begin{tabular}{p{0.8\textwidth}c}
-    \toprule
-    Information & Required\\
-    \midrule
-    \multicolumn{2}{l}{Colleagues}\\
-    \hspace{0.5cm} Name & X\\
-    \hspace{0.5cm} Phone number & X\\
-    \hspace{0.5cm} Department &  X\\
-    \hspace{0.5cm} Employee number &  \\
-    \multicolumn{2}{l}{Manager}\\
-    \hspace{0.5cm} Name & X\\
-    \hspace{0.5cm} Phone number & \\
-    Residence of an employee & X\\
-    Weather information & X\\
-    Company and employee structure & X\\
-    The knowledge, what security devices were used in the company & X\\
-    The servers names and location & X\\
-    \bottomrule
-  \end{tabular}
-  \caption{Overview of the required data of the insider attack}
-\end{table*}
-
 \section{The bank heist}
 \label{sec:bank_heist}
+
+The last attack was chosen, due to the fact, that it uses information, which is
+not available on any social networks or the internet. Again, this is an attack
+against a company, including information about several employees, the company
+structure and the already mentioned secret information.
 
 The bank heist executed in 1978 by Stanley Mark Rifkin was the largest bank
 robbery in U.S. history by that time. He stole 10.2 million U.S. dollars
@@ -202,14 +229,14 @@ captured him.
     Information & Required\\
     \midrule
     \multicolumn{2}{l}{Employee of the wire transfer room}\\
-    \hspace{0.5cm} Name & X\\
-    \hspace{0.5cm} Employee number & X\\
+    \hspace{0.5cm} Name & \checkmark\\
+    \hspace{0.5cm} Employee number & \checkmark\\
     \multicolumn{2}{l}{Employee outside the wire transfer room}\\
-    \hspace{0.5cm} Name & X\\
-    \hspace{0.5cm} Department & X\\
-    \hspace{0.5cm} Employee number & X\\
-    Phone number of wire transfer room & X\\
-    Current wire transfer code & X\\
+    \hspace{0.5cm} Name & \checkmark\\
+    \hspace{0.5cm} Department & \checkmark\\
+    \hspace{0.5cm} Employee number & \checkmark\\
+    Phone number of wire transfer room & \checkmark\\
+    Current wire transfer code & \checkmark\\
     \bottomrule
   \end{tabular}
   \caption{Overview of the required data of the phishing attack}
