@@ -1,17 +1,34 @@
 \chapter{Analysis of the social network \Twitter}
 \label{chapter:analysis}
 
-The work now wants to take a closer look at a concrete social network.
-There are of course many social networks, which can be used for harvesting
-data, however, as a case study, the work wants to concentrate on a big social
-network, which is widely used by employees and individuals. Moreover,
-an \textit{API} is needed to gather data automatically.
+The work wants now take a closer look at a concrete social network in order to
+apply the previous described attacks on it.  Of course there are many social
+networks, which can be used for harvesting data, however, the study wants to
+concentrate on a big social network, which is widely used by employees and
+individuals.
 
-As a case study the choice was between \textit{Facebook} and
-\Twitter. Both are widely used, however \Twitter{} was chosen due to many
-already existing programs and platform bindings. Furthermore \Twitter{} is
-somewhat more dynamic than \textit{Facebook}, as it offers the possibility to
-parse \Twitter{} messages and not just handling static data.
+The requirements for the choice were, as already mentioned, a large number of
+users, content, which is created by the users themselves and which is
+relevant for them and an API, the prototype can use for harvesting the data.
+Two big social networks fulfilled the requirements, \textit{Facebook} and \Twitter. Both are
+widely used, have a large number of users, a lot of content created by the
+users, and an API, which can be accessed by a \textit{REST} interface.
+
+\textit{Facebook} however seems to be more restrictive than \Twitter{} when it
+comes to allowing an application to use their API, as each application needs to
+have an application key supplied by \textit{Facebook}. Furthermore, the
+\textit{Facebook}
+API\footnote{\url{http://wiki.developers.facebook.com/index.php/API}} is quite
+big and does not support harvesting of data that much.
+
+The \Twitter{}
+API\footnote{\url{http://apiwiki.twitter.com/Twitter-API-Documentation}} on the
+other side is constructed for getting and setting data, which supports the
+development of a prototype. Furthermore, using the large number of messages
+written by each \Twitter{} user can tell a lot more, than just using static
+fields, like interests or similar. This will be showed later in this chapter.
+At last, \Twitter{} was chosen due to many already existing programs and
+platform bindings\footnote{\url{http://apiwiki.twitter.com/Libraries}}.
 
 \Twitter{} is a popular social networking and micro-blogging service, that
 enables users to post messages and to let other users follow those messages.
@@ -29,29 +46,31 @@ of ways, like instant messages, mobile phones, e-mail or other \cite{java2007}.
 
 Micro-blogging itself is relatively new, though already widely used and
 provided by services like
-\textit{Twitter}\footnote{http://www.twitter.com},
-\textit{identi.ca}\footnote{http://identi.ca},
-\textit{Jaiku}\footnote{http://www.jaiku.com} and others. \Twitter{} is one of
-the most popular micro-blogging services \cite{java2007} and currently
-exhibiting more than a million users. The accurate number unfortunately is not
-available, however there were estimated about 1.4 million users
-in 2008 \cite{krishnamurthy2008} and more than 1.78 million users in
-2009 \cite{whitworth2009}.
-
-\Twitter{} limits the length of the messages to 140 characters. The messages
-are called \textit{updates} or \textit{tweets}. The scopes of those messages
-range from events, news, daily life and other interests \cite{java2007}. Of
-course, other services like Instant Messaging also offers a way to communicate
-the such informations, however micro-blogging allows to do this publicly.
-
-Micro-blogging is a faster way to communicate compared to other means of
+\textit{Twitter}\footnote{\url{http://www.twitter.com}},
+\textit{identi.ca}\footnote{\url{http://identi.ca}},
+\textit{Jaiku}\footnote{\url{http://www.jaiku.com}} and others. It can be
+defined as a new form of communication, in which people can share short
+messages by instant messaging, mobile phones, e-mail or the internet
+\cite{java2007}. It is a faster way to communicate compared to other means of
 communication, like blogging \cite{java2007}. It requires less time to think
-and write a message, and this of course implements much quicker \flqq{}write
-rate\frqq{}. This is of course one of the main differences between blogging and
+and write a message, and this of course implements much quicker \textit{write
+rate}. This is of course one of the main differences between blogging and
 micro-blogging, whereas an author spends several minutes to hours to think up
 and write a blog post. As it now takes less time to think and write a message,
 the frequency one can write such, increases and a micro-blogger may posts
 several messages a day.
+
+\Twitter{} is one of the most popular micro-blogging services \cite{java2007}
+and currently exhibiting more than a million users. The accurate number
+unfortunately is not available, however there were estimated about 1.4 million
+users in 2008 \cite{krishnamurthy2008} and more than 1.78 million users in
+2009 \cite{whitworth2009}.
+
+The social network limits the length of the messages to 140 characters. The messages
+are called \textit{updates} or \textit{tweets}. The scopes of those messages
+range from events, news, daily life and other interests \cite{java2007}. Of
+course, other services like instant messaging also offers a way to communicate
+the such informations, however micro-blogging allows to do this publicly.
 
 Users may choose to make their messages visible to all users (even those not
 logged into \Twitter{}) or to just make them available to \textit{friends}. A
@@ -115,152 +134,21 @@ listed in figure \ref{fig:twitter_io}. Several of those are or were
 discontinued for a certain amount of time, but either re-enabled or provided by
 a third party company.
 
-
-\section{Methodology}
-
-In this work, a five-step approach was used to characterize useful information,
-extraction and countermeasures. The target was to define the steps needed for
-executing an attack like already described.
-
-\begin{enumerate}
-\item Data was obtained from the \Twitter{} social network from several users.
-The data was taken from famous persons on the network, as well as less famous.
-Furthermore users, who were very active as well as less active users were
-watched.
-\item The data gathered in the first step was studied and it was determined, which
-attacks are possible. 
-\item Three sample attacks, which happened for real in the last years, were
-chosen. All of these attacks are described by Mitnick and Simon \cite{mitnick2003}. The chosen
-attacks were then transfered to the
-prototype and the \Twitter{} social network.
-\item The attacks were tested on sample profiles for their feasibility and efficiency
-\item Countermeasures were elaborated to mitigate the risk of such attacks.
-\end{enumerate}
-
-
 \section{\Twitter{} profile data}
 \label{sec:twitter_profile_data}
 
 As already mentioned, a \Twitter{} profile page consists of a series of
-elements, which can be used for harvesting data. We now want to take a closer
-look at those elements, the content and how a social engineer can extract data
-out of those fields.
-
-\begin{description}
-\item[Name] This fields tells the real name of a user, it is limited to 20
-            characters. It is required to enter a name, albeit a bogus name is
-            also accepted. The field is required.\\
-            \textit{Example: Peter Sample}
-\item[Username] The username is presented with this field. A username is needed
-                to create an URL, which is of the form \url{http://www.twitter.com/[username]}.
-                Therefore only letters, numbers and underscore are allowed. The maximum length
-                is set to 15 characters. The field is required.\\
-                \textit{Example: petersample}
-\item[User ID] The user id which is handed out automatically. The sequence is
-               not known, however it is mostly agreed, that the user id is not given out
-               sequentially.\\
-               \textit{Example: 1234567}
-\item[E-mail] Though not visible publicly, a \Twitter{} user has to provide an
-              e-mail address. Even if an e-mail address is not provided, it
-              can be build out of a naming scheme and the already
-              given data, like the username and the real name \cite{brown2008}. If the user
-              is an employee of a certain company, this might be even easier,
-              as companies often have certain naming schemes. The field is required.\\
-              \textit{Example: petersample@example.com}
-\item[More Info URL] The URL is used to link a visitor of a profile to further
-                     websites, like the blog of the owner. It can link to
-                     any site on the internet. The shown component of the
-                     URL is 17 characters. Except XSS prevention,
-                     \Twitter{} does not rewrite of the URL, and port numbers
-                     after the TLD, spaces, German umlauts and UTF-8 characters were
-                     accepted.\\
-                     \textit{Example:} \url{http://www.petersample.com/},\\
-                     \texttt{http://www.peter sample.com:8080/äöü$\Gamma\Lambda\Sigma\Psi$.htm}
-\item[One Line Bio] A short sentence can be shown on the profile page, where a
-                    user can describe himself. It it limited to 160
-                    characters.\\
-                    \textit{Example: I am a computer science expert and work
-                    for example.com}
-\item[Location] The location will also be shown on the profile page and is
-                limited to 30 characters.\\
-                \textit{Example: Munich}
-\item[Picture] A user can insert a picture of himself, although it is not
-               required to do so. Moreover, if a user publishes an image, it does not have to
-               show himself, but can also be anything else.
-\item[Profile Creation date] The date, the profile was created.\\
-              \textit{Example: Fri Nov 02 00:17:11 +0000 2007}
-\item[Following] Describes a list of users, the profile owner is \textit{following}.
-                 To see the list, one has to be logged in.
-\item[Followers] This gives us a list of users on the \Twitter{} network, who
-                 are \textit{following} the profile owner. To see the list, one has to be logged in.
-\item[Friends] This are users, who have a bidirectional connection. That means,
-               that user A is following user B and vice versa.
-\item[Favorites] A user can mark his messages or the messages from other users as
-                 a favorite, which displays a
-                 yellow star beneath them. A users favorite messages can be viewed
-                 by visiting \url{http://twitter.com/favorites?user=[username]}.
-\item[Messages] Finally the messages, which are composed by the actual message,
-                which is limited to 140 characters, the time, when the message
-                was written and by which mean. A message is identified by a unique
-                id, e.g. 1767572233 and can be accessed by
-                \url{http://twitter.com/[username]/status/[message id]}.
-
-                \Twitter{} also offers special commands, which can enhance a
-                message or turn a \Twitter{} into a query tool.
-  \begin{description}
-    \item[@username + message]
-      A message can be sent directly to another person, though still visible
-      publicly.\\
-      \textit{Example: @petersample yes, you are totally right!}
-
-    \item[D username + message]
-      In contrast to the command above, this message is entirely private and
-      not visible by other users.\\
-      \textit{Example: D petersample this is a private message for peter!}
-
-    \item[WHOIS username]
-      retrieves information of any public user on the \Twitter{} platform.
-      Currently, this command returns the real name, the date since the user
-      has an account on \Twitter{}, the one line bio, the website and the
-      location.\\
-      \textit{Example: WHOIS petersample}\\
-      \textit{Answer: Peter Sample, since May 2009. bio: I am a computer
-              science expert and work for example.com. location: Munich web:
-              \url{http://www.petersample.com/}}
-
-    \item[GET username]
-      gets the last message this user posted.\\
-      \textit{Example: GET petersample}\\
-      \textit{Answer: petersample: This is my latest message (1 day ago)}
-
-    \item[NUDGE username]
-      sends a note to the user, reminding him to post a message.\\
-      \textit{Example: NUDGE petersample}\\
-      \textit{Answer (sent to petersample): You've been nudged! [my-username] wants to know what you're doing. Reply to this
-      message to update your Twitter friends.}
-
-    \item[FAV username]
-      marks the last message of username as a favorite\\
-      \textit{Example: FAV petersample}
-
-    \item[STATS]
-      returns the number of followers and how many users the account itself is
-      following.\\
-      \textit{Example: STATS}\\
-      \textit{Answer: followers: 135 following: 47}
-
-    \item[INVITE phone number]
-      sends an invite SMS to the phone number\\
-      \textit{Example: INVITE 123 456 7890}
-
-\end{description}
-\end{description}
-
-
+elements, which can be used for harvesting data. The complete profile data,
+which can be accessed is described in appendix
+\ref{chapter:twitter_profile_data}. Relating to a social engineering attack,
+not all elements are needed. However, those needed, are described in section
+\ref{sec:relevant_data}.
 
 \section{Message classification}
 
-Java et al. described a classification of the messages on the \Twitter{}
+In order to see, what and how messages can be useful for an attack, a social
+engineer might be interested in a classification of the messages of the victim.
+Java et al. describe a classification of the messages on the \Twitter{}
 platform \cite{java2007}. After they gained a dataset, the author and his team
 tried to categorize each message. The results were the following:
 
@@ -306,21 +194,21 @@ use of exposed data, building a fact sheet about the user and people, who are
 in contact with.
 
 \section{Relevant data and the security risks of those at individuals and companies}
+\label{sec:relevant_data}
 
 \subsection{The challenge of extracting data automatically}
 
 The \Twitter{} social network gives access to a \textit{REST} API, which can be
-used by calling either \url{twitter.com} or \url{search.twitter.com}. The
-first one is used for account settings and methods, posting updates and several
-other things related to users, their relationship and updates. The latter one
-is entirely used for searching for certain updates of users or users
-themselves. The API supports \textit{JSON}, \textit{XML}, \textit{RSS},
-\textit{Atom} as output formats, allthough just \textit{JSON} is supported on
-every API method.
+used by calling either \url{twitter.com} or \url{search.twitter.com}. The first
+one is used for account settings and methods, posting updates and several other
+things related to users, their relationship and updates. The latter one is used
+for searching for certain updates of users or users themselves. The API
+supports \textit{JSON}, \textit{XML}, \textit{RSS} and \textit{Atom} as output
+formats, allthough just \textit{JSON} is supported on every API method.
 
 Most API methods require a username and a password, however this is not a
 problem by itself, as a \Twitter{} account can be created within minutes by
-using a mail address. The real challenge however is the limit of 150 API calls
+using an e-mail address. The real challenge however is the limit of 150 API calls
 per hour. If a user is logged in, the user has 150 calls, which he can use on
 API calls. If the user is not logged in, i.e. an anonymous user, the IP address
 is used for tracking this user. To make use of a very deep information
@@ -335,12 +223,61 @@ logged in.
 
 \subsection{Ontology and classification of the data}
 
-The \Twitter{} API offers a wide range of methods, however in the first place,
+The \Twitter{} API offers a wide range of methods, admittedly in the first place,
 the attacker is mostly interested in gaining information and not that much in
 using the API methods to do actions. Additionally the attacker is mostly
 interested in a certain person or group, therefore just the methods, which
 allow gathering data about a certain user or group makes sense here. For a
 social engineering attack, the following data might be interesting.
+
+\begin{figure}[hbt]
+  \centering
+  \begin{tikzpicture}[scale=0.75, transform shape,
+                      root concept/.append style={concept color=skyblue1},
+                      level 1 concept/.append style={concept color=chameleon2},
+                      text=white, mindmap]
+
+    \tikzstyle{level 2 concept}+=[sibling angle=45]
+
+    \path[mindmap]
+      node[concept] {User}
+      child[concept, grow=0] {
+        node[concept] {Friends}
+        [clockwise from=90]
+        child { node[concept] {Replies} }
+        child { node[concept] {Shared Interests} }
+        child { node[concept] {Friends} }
+        child { node[concept] {Colleagues} }
+        child { node[concept] {Followers} }
+      }
+      child[concept, grow=270] {
+        node[concept] at (-90:1) {General data}
+        [clockwise from=112.5]
+        child { node[concept] {Name/ Username} }
+        child { node[concept] {Personal description} }
+        child { node[concept] {Homepage} }
+        child { node[concept] {Picture} }
+        child { node[concept] {Time Zone} }
+        child { node[concept] {Location} }
+        child { node[concept] {Profile creation date} }
+        child { node[concept] {Messages} }
+      }
+      child[concept, grow=180] {
+        node[concept] {Messages} 
+        [clockwise from=295]
+        child { node[concept] {E-Mail addresses} }
+        child { node[concept] {Times} }
+        child { node[concept] {Replies} }
+        child { node[concept] {Input sources} }
+        child { node[concept] {Interests} }
+        child { node[concept] {Locations} }
+      };
+  \end{tikzpicture}
+
+  \caption{Graphical representation of the data classification.}
+  \label{fig:twitter_ontology}
+\end{figure}
+
 
 \subsubsection{General data about the user}
 \Twitter{} offers some static fields, which can be altered by the user and
@@ -355,7 +292,7 @@ already usable for gaining an already penetrative overview of a person.
 phishing mails or social engineering attacks, where a name is needed.
 
 \item[Username] Many users use the same username on different
-services, like email or other social services. This can be used for some
+services, like e-mail or other social services. This can be used for some
 attacks.
 
 \item[Description] This description might be useful for gathering other useful
@@ -364,7 +301,7 @@ information, such as workplace or interests.
 \item[Homepage] A personal homepage might give additional
 information about the user.
 
-\item[Image] Gives an idea, how the person might
+\item[Picture] Gives an idea, how the person might
 look like.
 
 \item[User ID] Not relevant.
@@ -390,14 +327,14 @@ the friends can be used for attacks too, as most of them are real friends
 or colleagues.
 \end{description}
 
-\subsubsection{Mail addresses}
+\subsubsection{E-mail addresses}
 
-As already described earlier, the mail addresses of the users are not visible
+As already described earlier, the e-mail addresses of the users are not visible
 throughout \Twitter{}, though the addresses can be gathered in most cases.
-Brown et al. for example described, that a mail address can be constructed out
+Brown et al. for example described, that an e-mail address can be constructed out
 of a naming scheme of given data, like the username or the real name
 \cite{brown2008}. Another possibility is to look through the messages for
-anything that looks like a mail address. Quite often users write messages,
+anything that looks like an e-mail address. Quite often users write messages,
 about contacting them at a special address or that they changed to a new one.
 
 \subsubsection{Times}
