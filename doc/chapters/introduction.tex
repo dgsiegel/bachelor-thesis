@@ -1,5 +1,5 @@
 \chapter{Introduction}
-\label{chapter:introduction}
+\label{chap:introduction}
 
 \section{Problem and Motivation}
 
@@ -74,49 +74,53 @@ prototype and the \Twitter{} social network.
 \newpage
 \section{Outline of the thesis}
 
-\noindent {\textbf{Chapter \ref*{chapter:introduction}}: Introduction}
+\let\oldchapterautorefname \chapterautorefname
+\def\chapterautorefname{Chapter}
+
+\noindent{\textbf{\autoref*{chap:introduction}}: \nameref{chap:introduction}}
 \vspace{0.5em}\\
 \noindent This chapter presents an overview of the thesis and introduces the
 reader to the topic of new threats of social networks by exploiting social
 networks.
 
-\noindent {\textbf{Chapter \ref*{chapter:relatedwork}}: Related Work}
+\noindent {\textbf{\autoref*{chap:relatedwork}}: \nameref{chap:relatedwork}}
 \vspace{0.5em}\\
 \noindent The section will outline related works in the field of social
 engineering, the attacks and countermeasures. It will present common attacks
 and how companies and individuals can protect themselves against such attacks.
 
-\noindent {\textbf{Chapter \ref*{chapter:attacks}}: Selection of Social Engineering Attacks of the social network \Twitter}
+\noindent {\textbf{\autoref*{chap:attacks}}: \nameref{chap:attacks}}
 \vspace{0.5em}\\
 \noindent Three social engineering attacks, which happened for real, are chosen
 and being presented to the reader. They are analyzed in order to let the
 prototype repeat the attacks.
 
-\noindent {\textbf{Chapter \ref*{chapter:analysis}}: Analysis of the social network \Twitter}
+\noindent {\textbf{\autoref*{chap:analysis}}: \nameref{chap:analysis}}
 \vspace{0.5em}\\
 \noindent The study takes a deeper look at the social network \Twitter. It will
 show the drawbacks and risks of such social networks, the data, which can be
 extracted automatically, how sample attacks could look like and finally the
 countermeasures against such attacks.
 
-\noindent {\textbf{Chapter \ref*{chapter:prototype}}: Design, analysis and implementation of a prototype}
+\noindent {\textbf{\autoref*{chap:prototype}}: \nameref{chap:prototype}}
 \vspace{0.5em}\\
 \noindent In this chapter, a prototype, who automatically can harvest data and
 present it in a way, that it can be used for social engineering attacks, is
 developed.
 
-\noindent {\textbf{Chapter \ref*{chapter:evaluation}}: Evaluation}
+\noindent {\textbf{\autoref*{chap:evaluation}}: \nameref{chap:evaluation}}
 \vspace{0.5em}\\
 \noindent This chapter wants to examine, whether the already described attacks
 can be achieved by using the prototype and therefore shows sample attacks. It
 will analyse the attack and evaluate the risk against a company or an
 individual.
 
-\noindent {\textbf{Chapter \ref*{chapter:conclusion}}: Conclusion}
+\noindent {\textbf{\autoref*{chap:conclusion}}: \nameref{chap:conclusion}}
 \vspace{0.5em}\\
 \noindent The thesis finally concludes draws together the main findings of the
 study.
 
+\def\chapterautorefname{\oldchapterautorefname}
 \newpage
 
 \section{Glossary}
