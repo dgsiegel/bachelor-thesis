@@ -182,17 +182,6 @@ about 13\% of all posts in the dataset contain at least one URL \cite{java2007}.
 \end{description}
 
 
-\section{Threats and risks}
-
-All of the above mentioned fields, but of course also the \textit{tweets}
-themselves create a threat against the user himself, but also to other users,
-who are in contact with him. Even with at first glance useless information,
-information about the user can be extracted. For example, if he shares his
-location and what he is doing job-wise, his workplace and position can be
-easily found. The prototype, which is described in the next chapter, will make
-use of exposed data, building a fact sheet about the user and people, who are
-in contact with.
-
 \section{Relevant data and the security risks of those at individuals and companies}
 \label{sec:relevant_data}
 
@@ -387,16 +376,49 @@ positions.
 Finally a text search can be used to get further information about a certain
 topic the user wrote about. 
 
+\section{Threats and risks}
+
+All of the above mentioned fields and data, create a threat to the user himself
+and also to other users, who are in contact with him. The threat and risk does
+not directly come from the information gained, but from the fact, that every
+piece of information a social engineer can bring together, builds an even
+better base or starting point for a social engineering attack
+\cite{mitnick2003}. This means, that the information itself, does not create a
+threat, however, the social engineering attack does.  Even with at first glance
+useless information, an attack can be driven. For example, if a user shares his
+location and what he is doing job-wise, his workplace and position can be
+easily found.
+
+There are various scenarios, which are possible using different data. As it is
+possible to create a quite expletive ontology about a person just with the
+fields and data mentioned above, further attacks are supposable.
+
+Another matter is the almost hidden information retrieval possibility. If a
+social engineer has to create a contact to his victim or to other persons, who
+are in contact with the victim over the telephone or e-mail, the attacker could
+be detected. In this scenario however, only the provider of the social network
+tracks the information retrieval. If the attacker now does not stand out in
+relation to other retrievals, as normal clients, which are accessing the social
+network, there is probably no way to detect the attacker. This is a very vital
+matter for a successful social engineering attack.
+
+The prototype, which is described in the next chapter, will make
+use of exposed data, building a fact sheet about the user and people, who are
+in contact with. This is then used to create a social engineering attack,
+showing that such attacks basing on data of social networks are already
+possible.
+
 \section{Countermeasures}
 
 The nature of a social network, especially \Twitter{} is sharing data.
-Therefore it difficult to encounter attacks and there has to be a trade-off
+Therefore it is difficult to encounter attacks and there has to be a trade-off
 between utility and security \cite{brown2008}. Given also, that most data comes
 out of analysing the messages, there are not many ways to exclude the risk.
 However, there are various methods to minimize the likeliness of a social
 engineering attack, based on the data published on \Twitter{}.
 
 \subsection{Preventions by the user}
+\comment{better title needed}
 
 The first way to minimize the risk, would be to protect the updates, which
 basically means, that only users, who are approved by the author of the updates
@@ -418,6 +440,7 @@ based on the data found on \Twitter{}. However, if this solution is suitable
 for everybody, should be left to one's own devices.
 
 \subsection{Preventions by \Twitter{}}
+\comment{better title needed}
 
 Having a look on the whole social network, there are not many solutions, in
 which \Twitter{} could minimize the risk either.
