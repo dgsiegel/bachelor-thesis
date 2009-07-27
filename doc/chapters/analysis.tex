@@ -219,7 +219,10 @@ visualisation of e.g. friends aside, the second is to create many accounts, and
 then change the accounts during acquiring the data, and the last one to not log
 in into \Twitter{} and acquiring the data anonymously, while changing the IP
 address after 150 calls. However, some API methods require the user to be
-logged in.
+logged in. A compromise between these methods might be the best possibility,
+e.g. acquiring as much data as possible about a single user and then repeat the
+same for several other users, who are in contact with him and might be
+interesting for an attack.
 
 \subsection{Ontology and classification of the data}
 
@@ -280,6 +283,7 @@ social engineering attack, the following data might be interesting.
 
 
 \subsubsection{General data about the user}
+\label{sssec:general_data}
 \Twitter{} offers some static fields, which can be altered by the user and
 remains mostly the same over the year. Some other information is created
 automatically and still accessible by other users.
@@ -303,8 +307,6 @@ information about the user.
 
 \item[Picture] Gives an idea, how the person might
 look like.
-
-\item[User ID] Not relevant.
 
 \item[Time Zone] Gives an idea, where the person
 lives or works.
@@ -390,22 +392,48 @@ topic the user wrote about.
 The nature of a social network, especially \Twitter{} is sharing data.
 Therefore it difficult to encounter attacks and there has to be a trade-off
 between utility and security \cite{brown2008}. Given also, that most data comes
-out of analysing the messages, there are not many ways to minimize the risk.
+out of analysing the messages, there are not many ways to exclude the risk.
+However, there are various methods to minimize the likeliness of a social
+engineering attack, based on the data published on \Twitter{}.
 
-The first way to minimize the risk, would be to mark the profile as closed for
-anonymous users. However, this can be circumvented easily by following the
-user.
+\subsection{Preventions by the user}
+
+The first way to minimize the risk, would be to protect the updates, which
+basically means, that only users, who are approved by the author of the updates
+may see them. This however lacks in two facts, first the fields described in
+section \ref{sssec:general_data} are still visible. Second, the attacker could
+just become a friend with the victim and gain access to the messages.
 
 Another, possibly extreme, way would be to not publish sensitive information
-about the user himself, his workplace, friends and other. As this would be
-quite hard to accomplish, still lots of information would be easily accessible,
-like the times analysis.
+about the user himself, his workplace, friends and other.
 
-Having a look on the whole social network, \Twitter{} might require to be
-logged in while viewing the messages of other users. However, an account can be
-easily made and so there won't be any surplus.
+This is of course quite hard to accomplish, as the whole idea about \Twitter{}
+is to share information. Even, if a user would accomplish this, lots of
+information would be still easily accessible, like the times analysis, his
+friends, colleagues and much more.
+
+At last, a user could not use a social network like \Twitter{}. This certainly
+would exclude the chance of being a victim in a social engineering attack,
+based on the data found on \Twitter{}. However, if this solution is suitable
+for everybody, should be left to one's own devices.
+
+\subsection{Preventions by \Twitter{}}
+
+Having a look on the whole social network, there are not many solutions, in
+which \Twitter{} could minimize the risk either.
+
+One possibility would be to require each user to be logged in to view the
+messages of other users. This however would detach the \Twitter{} social
+network from the outside and probably not the right way for a commercial
+oriented company. Anyhow, if that would be the case, an account could be easily
+made and so there won't be any surplus.
 
 At last, the social network could limit the API calls and track them more
 precise, so that an automatic extraction is no more possible or at least made
-harder. This is probably the only countermeasure, which really would hinder an
-attacker of gaining information.
+harder. But to decide, which data is harmless and which could be used for an
+attack is very difficult, as both fetch almost the same data. The only
+difference could be the fact, that an attacker is interested more into a single
+user, while an unoffending \Twitter{} client might be more interested in many
+users. Although, if there would be a way to accomplish this, it would be
+probably the only countermeasure, which really would hinder an attacker of
+gaining information.
