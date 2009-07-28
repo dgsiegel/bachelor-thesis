@@ -30,19 +30,6 @@ beginfig(1);
   clink(transition)(mail, e);
 
   link(transition)(pathStepX(friends.e, picks.e, 30));
-
-  %link(transition)(pathStepY(output_data.s, e.n, -10));
-  %link(transition)(pathStepY(output_none.s, e.n, -10));
-
-  %link(transition)(pathStepX(missing_args.e, e.e, 100));
-
-  %link(transition)(pathStepX(missing_data.e, output_none.n, 43.5));
-
-  %item(iGuard)("Needed arguments not given")(obj.sw = missing_args.s + (6, 6));
-  %item(iGuard)("All needed arguments given")(obj.ne = missing_args.s + (0, -1));
-
-  %item(iGuard)("No data found")(obj.sw = missing_data.s + (6, 6));
-  %item(iGuard)("Data found")(obj.se = missing_data.s + (-6, 6));
 endfig;
 
 end
