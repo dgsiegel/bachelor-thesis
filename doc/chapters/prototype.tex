@@ -1,7 +1,11 @@
 \chapter{Design, analysis and implementation of a prototype}
 \label{chap:prototype}
 
-\section{Goal}
+This chapter is going to introduce the design, analysis and implementation of
+the prototype, which is going to implement the analysis of the previous
+chapter.
+
+\section{Design Goal}
 
 The goal is to develop a prototype, which can cull and evaluate data of one or
 more users of the \Twitter{} social network. The produced data should then be
@@ -10,12 +14,14 @@ engineer. It should be shown, that it is easy to file employees of a certain
 company or private persons, just by using legally available data, put online by
 the individuals themselves. The filed data should then enable a social
 engineer to do social engineering attacks against the weakest point.
+Furthermore, the attacks, which are analyzed in the chapter
+\ref{chap:attacks}, should be possible using the prototype.
 
 The prototype developed for this work should make it possible to find persons
-either by their username or by their real name.
-It then should evaluate and display every possible information, which can be
-gathered legally. The data should be saved locally, which the possibility to
-update it.
+either by their username or by their real name. It then should evaluate and
+display every possible information, which can be gathered legally, based on the
+analysis in section \ref{ssec:ontology}. The data should be saved locally,
+with the possibility to update it.
 
 \section{Used programming languages, tools and libraries}
 
@@ -68,7 +74,13 @@ After choosing the option, the API object is created, passing the username and
 password. If the username and password is empty, the prototype connects
 anonymously to the \Twitter{} API.
 
-\comment{SEQUENCE DIAGRAM OF TWITTER API CALL}
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{prototype_sequence.1}
+    \label{fig:prototype_sequence}
+    \caption{UML state machine diagram of an \Twitter{} API call.}
+  \end{center}
+\end{figure}
 
 \lstset{language=python}
 \lstinputlistingln{38}{38}{../src/prototype.py}
