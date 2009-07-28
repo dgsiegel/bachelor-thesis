@@ -1,13 +1,24 @@
 \chapter{Evaluation}
 \label{chap:evaluation}
 
+This chapter will try to evaluate the new threats disclosed by the prototype.
+First, some sample attacks are driven, then they are analyzed. Last, this
+chapter will try to extrapolate the possibility of further social engineering
+attacks.
+
 \section{Demonstration of attacks using the prototype}
+
+This section wants to demonstrate how the prototype, which was
+developed in the previous chapter, can assist a social engineering attack.
+Therefore, the attacks previous described in chapter \ref{chap:attacks} are
+repeated together with the aid of the prototype.
 
 \section{Phishing mail}
 
-The attack itself was already described in section \ref{sec:phishing_mail}. Now
-the work wants to repeat the attack together with the prototype against a
-sample profile on \Twitter{}. The following data is therefore needed:
+The attack itself was already described in section \ref{sec:phishing_mail}. It
+will now be driven against a sample profile on \Twitter{} using the prototype.
+The attack is visually represented in figure \ref{fig:evaluation_phishing}.
+The following data is therefore needed:
 
 \begin{itemize}
   \item Real name of the victim
@@ -64,6 +75,14 @@ Sample's friends, which the prototype also outputs.
     \includegraphics[width=\textwidth]{prototype_mail}
     \caption{Prototype output: e-mail address was found.}
     \label{fig:prototype_mail}
+  \end{center}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{evaluation_phishing.1}
+    \label{fig:evaluation_phishing}
+    \caption{Activity diagram of the phishing attack.}
   \end{center}
 \end{figure}
 
@@ -176,10 +195,41 @@ With it's plugin architecture, the prototype is easily extendible and more data
 and analysis can be simply done. For this prototype the \Twitter{} social
 network was chosen, however other famous social networks are possible too.
 Putting together more social networks and possibly search engines too, this can
-give a more complete picture of a victim. There is also a lot of optimization
-possible regarding text analysis.
+give a more complete picture of a victim.
+
+Most of the effort put into the prototype was to do text mining. Though is
+also a lot of optimization possible regarding text analysis. However, the
+prototype was able to gain much more information, than a simple or even a more
+complex text search engine could do, for example a search engine. The prototype
+offers a wide range of analysis possibilities, all suited for special social
+engineering attacks. This was shown in the previous sample attacks.
 
 The prototype did get all data legally and can operate almost anonymously, as
 he will not be tracked, with the small amount of data it fetches. Though it has
 a big effect and can lead to very dangerous and above all easy to accomplish
 attacks.
+
+\section{New threats}
+
+Critical attacks based on social engineering techniques are possible, that was
+demonstrated. The question however is now, what new threats this work
+discovered, along with other researches. As already stated before, the threat
+does not come out of the possibility to gather information, it comes out of the
+social engineering attacks, which are based on such information. The work
+showed, that it is possible to gather large amount of sensitive data of several
+users fast and almost anonymously. This means, that the research phase of a
+social engineering attack can be almost replaced and done automatically,
+depending on the attack scenario. By fetching the data automatically and
+without knowledge of the victim, the attacker can prepare the attack while
+remaining hidden and not exposing himself to the danger of being discovered.
+
+Taking this approach one step further, automatic harvesting and attacks could
+be a future scenario. An attacker could define some social engineering attacks,
+like the phishing mail attack, which was showed before, and let them run over a
+social network. As there is no way to stop such an attack, this would have an
+enormous impact. Brown et al. \cite{brown2008} for example were able to create
+a context-aware phishing mail attack inside a social network, which was
+extremely successful. This scenario however is not just restricted to phishing
+mail attacks, but is open to all social engineering attacks, where the attacker
+no longer chooses a suitable attack for a victim, but the victim chooses the
+attack by himself, by just exposing sensitive data.
