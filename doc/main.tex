@@ -4,7 +4,7 @@
                a4paper,             % paper size
                oneside,             % one sided
                listof=totoc,        % add lists of figures and tables to toc
-               bibliography=totoc,  % add bibliography to toc
+%               bibliography=totoc,  % add bibliography to toc
                index=totoc,         % add index to toc
                headsepline,         % add a separation line between head and content
                footsepline,         % add a separation line between foot and content
@@ -36,6 +36,7 @@
 
 %  \input{components/acknowledgements}
 
+  \addtocontents{toc}{\protect\vspace*{2em}\par}
   \input{components/abstract}
 
   \tableofcontents
@@ -57,7 +58,7 @@
   \input{chapters/conclusion}
 
   \part*{Appendix}
-  \addcontentsline{toc}{part}{Appendix}
+  \addcontentsline{toc}{chapter}{Appendix}
 
   \appendix
 
