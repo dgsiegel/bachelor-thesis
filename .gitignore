@@ -7,3 +7,7 @@ cache/
 src/figures/
 *.mp.keep
 *.log
+presentation/einfuehrung*
+!presentation/einfuehrung.tex
+presentation/final*
+!presentation/final.tex
