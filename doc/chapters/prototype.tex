@@ -85,9 +85,9 @@ anonymously to the \Twitter{} API.
 \lstset{language=python}
 \lstinputlistingln{38}{38}{../src/prototype.py}
 
-The API object creates itself and calls the \texttt{\_\_init\_\_()} method of
-the \texttt{TwitterAPICall} object. This means, that the prototype has an
-object of the \texttt{TwitterAPI} object, which then creates a new
+First, the API object gets created, then it calls the \texttt{\_\_init\_\_()}
+method of the \texttt{TwitterAPICall} object. This means, that the prototype
+has an object of the \texttt{TwitterAPI} object, which then creates a new
 \texttt{TwitterAPICall} object each time called. At the same time the
 \texttt{FileCache} object is created and passed on, which simply stores the
 values downloaded into files.
@@ -129,9 +129,9 @@ by using the Python method \texttt{\_\_import\_\_()}. The list
 and displayed.
 \lstinputlistingln{20}{24}{../src/plugin.py}
 
-All plugins are children of the \texttt{Plugin} object, which just holds the
-methods \texttt{download()}, \texttt{parse()} and \texttt{output()}. Those
-methods have to be implemented by each plugin. Figure
+All plugins are inheritances or subclasses of the \texttt{Plugin} object, which
+just holds the methods \texttt{download()}, \texttt{parse()} and
+\texttt{output()}. Those methods have to be implemented by each plugin. Figure
 \ref{fig:prototype_activity} shows, how a single plugin works.
 \lstinputlistingln{8}{17}{../src/plugin.py}
 
