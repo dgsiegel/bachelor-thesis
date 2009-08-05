@@ -1,25 +1,109 @@
 \chapter{Conclusion}
 \label{chap:conclusion}
 
-The work began with the problem and motivation of this topic and defined a
-methodology. It then tried to define social engineering, the attacks and
-countermeasures. Also, common attacks were presented and countermeasures
-against them. Next, three social engineering attacks were analyzed in-depth, in
-order to apply them to the chosen social network afterwards. Then, the
-\Twitter{} social network was dissected, while keeping the main focus on the
+The work began with the problem and motivation of exploiting social networks
+using social engineering. It defined the main goal of the work, which is to
+give an answer to how data of individuals or companies can be automatically
+extracted from social networks and presented in a way, that it can be used for
+a social engineering attack. Furthermore, countermeasures against automatic
+extraction and social engineering attacks were analyzed and developed.
+
+A methodology of how to characterize useful information, extraction and
+countermeasures was defined. This determined the further analysis and the
+constitution of the work.
+
+It then tried to define social engineering, the attacks and countermeasures.
+Therefore the social engineering life cycle was introduced, which outlines a
+social engineering attack and is constituted of four phases: research, developing
+rapport and trust, exploiting trust and utilizing information. A single cycle
+of course is not limited to a single cycle, but can contain several other
+cycles until the objective is reached. The research phase consists of several
+methodologies to gain as much information possible about the victim, which then
+can be used to develop rapport and trust in the next phase. A social engineer
+will make contact to the victim using the information obtained in the phase
+before. This trust, which was established is now exploited to procure the
+information needed, which then is used in the last phase. Also, the threats
+and risks created through social engineering were described. To obviate social
+engineering attacks, countermeasures were demonstrated, however there is no way
+to be absolutely shielded against such attacks. While data retrieval of social
+networks usually does not count to the methods of the research phase of a
+social engineering attack, it was showed, how social networks can replace or
+enhance several \textit{classic} methods. Furthermore, not just the data
+retrieval, which was described as \textit{passive attacks}, was analyzed, but
+also attacks, which are exploiting a social network directly and are known as
+\textit{active attacks}.
+
+Next, three social engineering attacks were analyzed in-depth, in
+order to apply them to the chosen social network afterwards. The attacks
+themselves were analyzed, but also the information needed, and how they could
+be applied to a social network. The first attack is aimed towards a private
+person and should represent this group of attacks. The other two are aimed
+against companies, both using data, which often is not easy available and has
+to be constructed by the social engineer. The last one, however requires
+sensitive data, which is not supposed to be put online.
+
+Then, the \Twitter{} social network was chosen as the social network, the
+attacks should be applied on. It was dissected, while keeping the main focus on the
 risks this social network exposes and the relevant data, which could be used
-for social engineering attacks. It also tried to come up with countermeasures
-against the automatic extraction of sensitive data. Having the requirements and
-the analysis done, the prototype was implemented. The prototype was developed
-to quickly adapt itself on the fast changing \Twitter{} API, but also on new
-information sources or different representations. Last, the prototype was used
-to drive three sample social engineering attacks. The result was then analyzed
-and evaluated.
+for social engineering attacks. It was determined, how automatic extraction of
+data could actually work and the danger of being detected, which is practical
+not existent. Further the data, which could be extracted was classified in
+several groups, which then could be used for the attacks. Again the threats and
+risks of this concrete information retrieval was discussed and the
+countermeasures against automatic extraction were illustrated. However, there
+is no way to exclude the threat and risk. All countermeasures however are able
+to decrease the chance of being a victim of a social engineering attack based
+on data of a social network.
+
+Having the requirements and the analysis done, the prototype, which can
+automatically extract data from the \Twitter{} social network was designed and
+implemented. The prototype was developed to quickly adapt itself on the fast
+changing \Twitter{} API, but also on new information sources or different
+representations. It is able to extract data from the social network and present
+it in a \textit{fact sheet}, which then can help a social engineer to replace
+the research phase by just using the prototype and not exposing himself to the
+victim.
+
+Last, the prototype was used to drive three sample social engineering attacks.
+The attack against a private person was successful and showed, that similar
+attacks are possible too. The second attack was successful too, however
+including the possibility of having to run another social engineering attack to
+gain specific data. Though, this attack can be described as successful too, as
+most of the data required was obtained and a second attack is not always
+needed. Only the last attack failed, which required sensitive information,
+which should not be possible to find on a social network. But of course, the
+prototype managed to retrieve most of the data about the company.
 
 The evaluation showed, that using the prototype would make the life of a social
 engineer much easier, as in most cases, he can use the prototype for doing the
 research about his victim. This also dwindles the chance of being detected,
 which could baffle the social engineering attack.
+
+As the attacks driven before already evidence, both targeted groups are
+vulnerable to such attacks. Regarding to private persons, there is a wide range
+of attacks possible sprawling from online attacks, such as phishing or identity
+theft, to even \textit{offline} attacks. Most social engineering attacks, which
+involve the knowledge of a certain piece of information, seem to be possible by
+exploiting the information found a social network. And even delicts, which do
+not involve social engineering seem to be possible. For example as an extreme
+case not related to social engineering, even burglary would be possible, if a
+picklock has the information, that the victim has holidays and nobody is in his
+home.
+
+Concerning companies as the target of the described attacks, the companies
+themselves are very vulnerable as well, as the work showed. The company
+structure as well as sensitive data could be extracted from the social network.
+Combining the automatic extraction with a social engineer, who is able to gain
+even more information and to establish a relationship to several employees is a
+very dangerous instrument. It was showed, that especially large companies were
+already extremely insecure. Having a method for the automatic extraction of
+company related information, this just increases the risk of an social
+engineering attack.
+
+Combining both groups, could result in a devastating result for the victim. An
+attacker may drive some attacks against several private persons, who are related to a
+specific company. Then he could exploit them to get access at the company, to
+execute his attack. This is probably the worst case scenario for a company.
 
 The prototype was kept very extensible, in order to easily attach new
 information sources or different representation of data. Furthermore it has to
