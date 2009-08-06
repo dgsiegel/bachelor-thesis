@@ -33,33 +33,51 @@
 
 \begin{frame}[t]{Inhalt}
   \begin{itemize}
-    \item Social Engineering
-    \item Soziale Netzwerke
     \item Motivation \& Problemstellung
+    \item Soziale Netzwerke
+    \item Social Engineering
     \item Ein konkretes Soziales Netzwerk: Twitter
     \item Prototyp
-    \item Related Work
+    \item Evaluation \& Ausblick
   \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-\vskip7em
-  \begin{center}
-    {\Huge Exkurs: Sicherheit in der IT}
-  \end{center}
-\end{frame}
-
-\begin{frame}[t]
-\vspace{-1em}
-  \begin{center}
-    \includegraphics[height=0.95\textheight]{security}
-  \end{center}
 \end{frame}
 
 \begin{frame}[t]
 \vspace{-2em}
   \begin{center}
     \includegraphics[height=0.95\textheight]{human}
+  \end{center}
+\end{frame}
+
+\begin{frame}[t]{Problemstellung}
+
+\vskip3em
+\begin{beamercolorbox}[sep=1em]{title page header}
+Wie können Daten bestimmter
+Individuen bzw. Unternehmen über Soziale Plattformen automatisch extrahiert und
+so dargestellt werden, dass sie für einen Social Engineering Angriff benutzt
+werden können. Zudem sollen Gegenmaßnahmen zu diesen Angriffen erarbeitet
+werden.
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}[t]{Soziale Netzwerke}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{growth}
+
+    {\tiny
+    http://www.techcrunch.com/2008/08/12/facebook-is-not-only-the-worlds-largest-social-network-it-is-also-the-fastest-growing/
+    }
+  \end{center}
+\end{frame}
+
+\begin{frame}[t]{Soziale Netzwerke}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{fbmap}
+
+    {\tiny
+    http://venturebeat.com/2009/04/08/trying-to-analyze-facebooks-latest-statistics-more-status-updates-more-content-sharing/
+    }
   \end{center}
 \end{frame}
 
@@ -181,42 +199,10 @@ back.\grqq{}}}\\
   \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Soziale Netzwerke}
-  \begin{center}
-    \includegraphics[width=0.75\textwidth]{growth}
-
-    {\tiny
-    http://www.techcrunch.com/2008/08/12/facebook-is-not-only-the-worlds-largest-social-network-it-is-also-the-fastest-growing/
-    }
-  \end{center}
-\end{frame}
-
-\begin{frame}[t]{Soziale Netzwerke}
-  \begin{center}
-    \includegraphics[width=0.75\textwidth]{fbmap}
-
-    {\tiny
-    http://venturebeat.com/2009/04/08/trying-to-analyze-facebooks-latest-statistics-more-status-updates-more-content-sharing/
-    }
-  \end{center}
-\end{frame}
-
 \begin{frame}[t]{Verlaufszyklus eines Angriffs}
   \begin{center}
     \includegraphics[height=0.75\textheight]{cycle2}
   \end{center}
-\end{frame}
-
-\begin{frame}[t]{Problemstellung}
-
-\vskip3em
-\begin{beamercolorbox}[sep=1em]{title page header}
-Wie können Daten bestimmter
-Individuen bzw. Unternehmen über Soziale Plattformen automatisch extrahiert und
-so dargestellt werden, dass sie für einen Social Engineering Angriff benutzt
-werden können. Zudem sollen Gegenmaßnahmen zu diesen Angriffen erarbeitet
-werden.
-\end{beamercolorbox}
 \end{frame}
 
 \begin{frame}[t]{Ein konkretes Soziales Netzwerk: Twitter}
@@ -452,67 +438,9 @@ about 1 hour ago from web NickiePhilbin\\
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Zeitplan}
-
-  \begin{tikzpicture}[thick]
-    \filldraw[color=chameleon1] (-3,-1.8) rectangle (-0.2,-1.6)
-      node[color=black,pos=0.5,above]{Quellensammlung};
-
-    \filldraw[color=chameleon2] (-0.3,-1.1) rectangle (1.6,-0.9)
-          node[color=black,pos=0.5,above]{Related Work};
-
-    \filldraw[color=chameleon3] (0.2,-0.4) rectangle (2.4,-0.2)
-          node[color=black,pos=0.5,above]{Analyse};
-
-    \filldraw[color=chameleon1] (2.1,0.3) rectangle (5.7,0.5)
-          node[color=black,pos=0.5,above]{Schutzmöglichkeiten};
-
-    \filldraw[color=chameleon2] (3.2,-0.4) rectangle (5.7,-0.2)
-          node[color=black,pos=0.5,above]{Evaluation};
-
-    \filldraw[color=skyblue1] (0.5,-1.8) rectangle (1.2,-1.6)
-          node[color=black,pos=0.5,above]{API};
-
-    \filldraw[color=skyblue2] (1.7,-1.1) rectangle (4.8,-0.9)
-          node[color=black,pos=0.5,above]{Prototyp};
-
-    \filldraw[color=scarletred2] (1.6,-1.8) rectangle (5.0,-1.6)
-          node[color=black,pos=0.5,above]{Testen};
-
-    % Axis
-    \draw (-3,-2) -- (8,-2);
-    % Note that the snaked line is drawn to 11.1 to force
-    % TikZ to draw the final tick.
-    \draw[snake=ticks,segment length=2.2cm] (-3,-2) -- (8.1,-2);
-
-    % -3.0 April
-    % -0.8 Mai
-    %  1.4 Juni
-    %  3.6 Juli
-    %  5.8 August
-    %  8.0 September
-
-    \node[below] at (-2,-2) {April};
-    \node[below] at (0.2,-2) {Mai};
-    \node[below] at (2.4,-2) {Juni};
-    \node[below] at (4.7,-2) {Juli};
-    \node[below] at (6.9,-2) {August};
-
-    \filldraw[color=chameleon3]  (-3,-3) rectangle (-2.8,-2.8)
-          node[color=black,pos=0.5,right]{Wissenschaftliches Arbeiten};
-    \filldraw[color=skyblue3]    (-3,-3.4) rectangle (-2.8,-3.2)
-          node[color=black,pos=0.5,right]{Entwicklung};
-    \filldraw[color=scarletred2] (-3,-3.8) rectangle (-2.8,-3.6)
-          node[color=black,pos=0.5,right]{Testen};
-  \end{tikzpicture}
-
-\end{frame}
-
 \begin{frame}
   \begin{center}
   {\Huge Fragen?}\\
-  {\Large Hinweise?}\\
-  {\large Tipps?}\\
 
 \vfill
   \texttt{git clone http://home.cs.tum.edu/siegel/dev/thesis.git}
