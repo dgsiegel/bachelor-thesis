@@ -17,11 +17,11 @@ do social engineering attacks against the weakest point. Furthermore, the
 attacks, which are analyzed in chapter \ref{chap:attacks}, can be repeated by
 using the prototype.
 
-The prototype developed for this work should make it possible to find persons
-either by their username or by their real name. It then should evaluate and
-display every possible information, which can be gathered legally, based on the
-analysis in section \ref{ssec:ontology}. The data should be saved locally,
-with the possibility to update it.
+The prototype developed for this work allows to find individuals either by
+their username or by their real name. It then evaluates and displays every
+possible information, which can be gathered legally, based on the analysis in
+section \ref{ssec:ontology}. The data is saved locally, with the possibility to
+update it.
 
 \section{Used programming languages, tools and libraries}
 
@@ -29,7 +29,7 @@ For the prototype, the \textit{Python}\footnote{\url{http://www.python.org/}}
 programming language was used. It is a dynamic object-oriented programming
 language, that offers strong support with many tools and comes with a large
 amount of standard libraries. \textit{Python} allows rapid prototyping, and has
-many libraries built in, used for example to call the \Twitter{} API.
+built in many libraries, used for example to call the \Twitter{} API.
 
 The plotting was done using the
 \textit{matplotlib}\footnote{\url{http://matplotlib.sourceforge.net/}} library,
@@ -38,24 +38,23 @@ is easy accessible through the \textit{Python} programming language.
 
 \section{Design and implementation of the prototype}
 
-The prototype was developed in a modular approach, to allow easy extensibility
-of the prototype. As the \Twitter{} API is in constant change, this helps to
-keep the prototype working and making it easy to extend it for new data
-sources.
+The prototype was developed in a modular approach, to allow easy extensibility.
+As the \Twitter{} API is in constant change, this helps to keep the prototype
+working and allows to extend it for new data sources.
 
 Each information source is developed as a plugin. The plugin downloads the
-required data, parses it and prepares an output, which then can be put together
-to a fact sheet.
+required data, parses it and prepares an output, from which a fact sheet gets
+generated.
 
 The structure of the prototype is outlined in figure \ref{fig:prototype_class}.
-The starting point is the \texttt{Prototype} module, which holds the starting values,
-loads the plugins, runs them and puts together the output. To allow further
-searches for persons, the main module holds several options. The prototype
-currently supports the following:
+The starting point is the \texttt{Prototype} module, which holds the starting
+values, loads the plugins, runs them and puts together the output. To allow
+further searches for people, the main module holds several options. The
+prototype currently supports the following:
 
 \begin{itemize}
   \item Search and analyze a user. If the username passed is not found, a
-  search for the name passed is launched.
+  search is launched.
   \item Search users by using specific keywords
   \item Search users in a specific location
   \item Search users in a specific range
@@ -92,8 +91,8 @@ has an object of the \texttt{TwitterAPI} object, which then creates a new
 values downloaded into files.
 \lstinputlistingln{152}{156}{../src/twitterapi.py}
 
-When the \texttt{TwitterAPICall} object is created, it fills it default values,
-with the one passed by the \texttt{TwitterAPI} object.
+When the \texttt{TwitterAPICall} object is created, it fills it with default
+values, with the one passed by the \texttt{TwitterAPI} object.
 \lstinputlistingln{55}{64}{../src/twitterapi.py}
 
 The \texttt{\_\_getattr\_\_()} method, which is a Python default method, is
@@ -101,18 +100,18 @@ called every time an attribute of an object is accessed. The prototype exploits
 this behaviour for the \Twitter{} API. For example, if the prototype wants to
 call the API function \texttt{/users/show}, in the code it just calls the
 method \texttt{twitter.users.show()}. The previous mentioned function then just
-removes the not existing attribute and appends it as an argument to a new
+removes the non existing attribute and appends it as an argument to a new
 \texttt{TwitterAPICall} object.
 \lstinputlistingln{66}{71}{../src/twitterapi.py}
 
 If there is no attribute left, the object function is called, where the
 prototype exploits the Python intern function \texttt{\_\_call\_\_} to actually
 connect to the \Twitter{} API and download data. The actual downloading is
-quite trivial. The method just determines if a POST or GET HTTP request
-is needed, puts together the username and password, if given, builds the
-request URL, looks if it is already cached, if there are API calls available
-and if so does the actual call to the \Twitter{} API. The result is then cached
-by using the \texttt{FileCache} object.
+quite trivial. The method just determines if a POST or GET HTTP request is
+needed, puts together the username and password, if given, builds the request
+URL. Then, it looks if the query is already cached and if there are API calls
+available. If so, it does the actual call to the \Twitter{} API. The result is
+then cached by using the \texttt{FileCache} object.
 
 \begin{figure}[htb]
   \begin{center}
@@ -142,8 +141,8 @@ plugin was not created yet, it creates the specific plugin object.
 \lstinputlistingln{27}{35}{../src/plugin.py}
 
 The prototype can now call the three methods \texttt{download()},
-\texttt{parse()} and \texttt{output()} of each plugin. The output is merged
-gets written to a file.
+\texttt{parse()} and \texttt{output()} of each plugin. The output gets merged
+and written to a file.
 
 If a new plugin should be added, a new plugin object has to be created, which
 implements the above mentioned methods. Each API call gets cached and therefore
