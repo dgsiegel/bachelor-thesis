@@ -48,7 +48,7 @@ required data, parses it and prepares an output, which then can be put together
 to a fact sheet.
 
 The structure of the prototype is outlined in figure \ref{fig:prototype_class}.
-The starting point is the Prototype module, which holds the starting values,
+The starting point is the \texttt{Prototype} module, which holds the starting values,
 loads the plugins, runs them and puts together the output. To allow further
 searches for persons, the main module holds several options. The prototype
 currently supports the following:
@@ -56,9 +56,9 @@ currently supports the following:
 \begin{itemize}
   \item Search and analyze a user. If the username passed is not found, a
   search for the name passed is launched.
-  \item Search for a specific keywords
-  \item Search for a location
-  \item Search for a range
+  \item Search users by using specific keywords
+  \item Search users in a specific location
+  \item Search users in a specific range
 \end{itemize}
 
 \begin{figure}[ht]
