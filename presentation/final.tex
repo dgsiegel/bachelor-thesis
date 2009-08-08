@@ -18,7 +18,8 @@
 \setbeamerfont{subtitle}{size=\Large}
 \setbeamerfont{author}{size=\large}
 \setbeamerfont{institute}{size=\large}
-\graphicspath{{img/}}
+\graphicspath{{img/}{metapost/}}
+\DeclareGraphicsRule{*}{mps}{*}{}
 
 \author{Daniel Siegel}
 \title{On the new threats of social engineering}% exploiting social networks}
@@ -156,82 +157,78 @@ technology.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Ausbeutung, Manipulation \& Angriff}
-  \begin{center}
-  {\Large
-  Stanley Mark Rifkin\\
-  vs.\\
-  Security Pacific National Bank\\
-  Los Angeles
-  }
-  \end{center}
-\end{frame}
-
-\begin{frame}{Ausbeutung, Manipulation \& Angriff}
-
-\begin{beamercolorbox}[sep=1em]{title page header}
-\textcolor{skyblue3}{\textit{\glqq{}Hi, this is Mike Hansen in International.\grqq{}}}\\
-
-\glqq{}Whats your office number, please?\grqq{}\\
-
-\textcolor{skyblue3}{\textit{\glqq{}286\grqq{}}}\\
-
-\glqq{}Okay, what's the code?\grqq{}\\
-
-\textcolor{skyblue3}{\textit{\glqq{}4789\grqq{}}}\\
-
-\textcolor{skyblue3}{\textit{\glqq{}I need a transaction of Ten million, two-hundred thousand
-dollars.\grqq{}}}\\
-
-\glqq{}Okay, I got that. Now I need the Interoffice settlement number.\grqq{}\\
-
-\textcolor{skyblue3}{\textit{\glqq{}Let me check, I'll call you right
-back.\grqq{}}}\\
-...
-
-\end{beamercolorbox}
-\end{frame}
-
-\begin{frame}{Ausbeutung, Manipulation \& Angriff}
-  \begin{center}
-  {\Huge \textbf{+ 10.000.000 \$}}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Angriff - Human Based Attacks}
+\begin{frame}[t]{Ausbeutung, Manipulation \& Angriff}
+  \begin{columns}
+  \column{.50\textwidth}
+  \vspace{3.8em}
   \begin{itemize}
-    \item Identitätsdiebstahl
-    \item Vortäuschen von Ermächtigungen
-    \item Technischer Support
-    \item Reverse Social Engineering
-    \item Shoulder-Surfing
-    \item Dumpster-Diving
-    \item Persönlicher Auftritt
+    \item Human Based Attacks
+    \begin{itemize}
+      \item Identitätsdiebstahl
+      \item Vortäuschen von Ermächtigungen
+      \item Technischer Support
+      \item Reverse Social Engineering
+      \item Shoulder-Surfing
+      \item Dumpster-Diving
+      \item Persönlicher Auftritt
+    \end{itemize}
   \end{itemize}
+  \column{.50\textwidth}
+  \pause
+  \begin{itemize}
+    \item Computer Based Attacks
+    \begin{itemize}
+      \item Phishing
+      \item Spam
+      \item Malware
+      \item Suggestion vertrauenswürdiger Quelle
+    \end{itemize}
+  \end{itemize}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Angriff - Computer Based Attacks}
+\begin{frame}{Related Work / Social Engineering}
   \begin{itemize}
-    \item Phishing
-    \item Spam
-    \item Malware
-    \item Suggestion vertrauenswürdiger Quelle
+    \item The Art of Deception
+    \begin{itemize}
+      \item K. Mitnick, W. Simon
+      \item ISBN 076454280X
+    \end{itemize}
+    \item Social Phishing
+    \begin{itemize}
+      \item T. Jagatic, N. Johnson, M. Jakobsson, F. Menczer
+      \item http://doi.acm.org/10.1145/1290958.1290968
+    \end{itemize}
+    \item Social Engineering: The “Dark Art”
+    \begin{itemize}
+      \item T. Thornburgh
+      \item http://doi.acm.org/10.1145/1059524.1059554
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Verlaufszyklus eines Angriffs}
   \begin{center}
-    \includegraphics[height=0.75\textheight]{cycle2}
-  \end{center}
-\end{frame}
+    \begin{tikzpicture}[scale=3]
 
-\begin{frame}[t]{Soziale Netzwerke}
-  \begin{center}
-    \includegraphics[width=0.75\textwidth]{growth}
+      \fill[fill=chameleon2] (0,0) -- (0:1) arc (0:90:1) -- cycle
+      node[white,font=\Huge] at (45:0.5) {1};
+      \draw (45:1) -- (45:1.3) node[right] {Information};
 
-    {\tiny
-    http://www.techcrunch.com/2008/08/12/facebook-is-not-only-the-worlds-largest-social-network-it-is-also-the-fastest-growing/
-    }
+      \fill[fill=skyblue1!40] (0,0) -- (270:1) arc (270:360:1) -- cycle
+      node[white,font=\Huge] at (315:0.5) {2};
+      \draw [black!40] (315:1) -- (315:1.3) node[right, black!40] {Vertrauen};
+
+      \fill[fill=scarletred1!40] (0,0) -- (180:1) arc (180:270:1) -- cycle
+      node[white,font=\Huge] at (225:0.5) {3};
+      \draw [black!40] (225:1) -- (225:1.3) node[left, black!40] {Ausbeutung};
+
+      \fill[fill=butter2!40] (0,0) -- (90:1) arc (90:180:1) -- cycle
+      node[white,font=\Huge] at (135:0.5) {4};
+      \draw [black!40] (135:1) -- (135:1.3) node[left, black!40] {Angriff};
+
+    \end{tikzpicture}
+
   \end{center}
 \end{frame}
 
@@ -245,6 +242,28 @@ back.\grqq{}}}\\
   \end{center}
 \end{frame}
 
+\begin{frame}{Soziale Netzwerke - Angriffe}
+  \begin{itemize}
+    \item \textit{Passive} Attacken
+    \item \textit{Aktive} Attacken
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Related Work / Soziale Netzwerke}
+  \begin{itemize}
+    \item Social networks and context-aware spam
+    \begin{itemize}
+      \item  G. Brown, T. Howe, M. Ihbe, A. Prakash, K. Borders
+      \item http://doi.acm.org/10.1145/1460563.1460628
+    \end{itemize}
+    \item Information revelation and privacy in online social networks
+    \begin{itemize}
+      \item R. Gross, A. Acquisti, H.  John
+      \item http://doi.acm.org/10.1145/1102199.1102214
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[t]{Ein konkretes Soziales Netzwerk: Twitter}
   \begin{center}
     \includegraphics[width=0.75\textwidth]{twitter_logo}
@@ -252,7 +271,7 @@ back.\grqq{}}}\\
   \begin{itemize}
     \item Soziales Netzwerk \& Microblogging Anbieter
     \item Gegründet 2006
-    \item Mehr als $\sim$ 1.500.000 User
+    \item Mehr als $\sim$ 1.780.000 User
     \item Genutzt von Privatpersonen \& Unternehmen
     \item \texttt{http://www.twitter.com/\textit{[username]}}
   \end{itemize}
@@ -322,8 +341,8 @@ back.\grqq{}}}\\
 \begin{itemize}
   \item http://apiwiki.twitter.com/Twitter-API-Documentation
   \item GET, POST HTML-Methods
-  \item GET Anfragen beschränkt auf 100 Requests pro Stunde
-  \item json, xml, rss, atom
+  \item GET Anfragen beschränkt auf 150 Requests pro Stunde
+  \item JSON, XML, RSS, Atom
 \end{itemize}
 \vskip1em
 \begin{beamercolorbox}[sep=1em]{title page header}
@@ -356,103 +375,71 @@ url:       &   "http://www.barackobama.com"
 \end{beamercolorbox}
 \end{frame}
 
-\begin{frame}[t]{Prototyp}
+\begin{frame}[t]{Klassifikation}
+  \vspace{-0.85em}
   \begin{center}
-    \includegraphics[width=0.85\textwidth]{contacts}
+    \begin{tikzpicture}[scale=0.52, transform shape,
+                        root concept/.append style={concept color=skyblue1},
+%                       level 1 concept/.append style={concept color=chameleon2},
+                        text=white, mindmap]
+
+      \tikzstyle{level 2 concept}+=[sibling angle=45]
+
+      \path[mindmap]
+        node[concept] {User}
+        child[concept color=scarletred1, grow=0] {
+          node[concept] {Friends}
+          [clockwise from=90]
+          child { node[concept] {Replies} }
+          child { node[concept] {Shared Interests} }
+          child { node[concept] {Friends} }
+          child { node[concept] {Colleagues} }
+          child { node[concept] {Followers} }
+        }
+        child[concept color=butter2, grow=90] {
+          node[concept] at (90:1) {General data}
+          [clockwise from=112.5]
+          child { node[concept] {Name/ Username} }
+          child { node[concept] {Personal description} }
+          child { node[concept] {Homepage} }
+          child { node[concept] {Picture} }
+          child { node[concept] {Time Zone} }
+          child { node[concept] {Location} }
+          child { node[concept] {Profile creation date} }
+          child { node[concept] {Messages} }
+        }
+        child[concept color=chameleon2, grow=180] {
+          node[concept] {Messages} 
+          [clockwise from=295]
+          child { node[concept] {E-mail addresses} }
+          child { node[concept] {Times} }
+          child { node[concept] {Replies} }
+          child { node[concept] {Input sources} }
+          child { node[concept] {Interests} }
+          child { node[concept] {Locations} }
+        };
+    \end{tikzpicture}
   \end{center}
 \end{frame}
 
-\begin{frame}{Szenarien}
-  \begin{itemize}
-    \item Zeit- und Nutzungsverhalten
-    \item Arbeitgeber, Mitarbeiter, Kollegen
-    \item Abwesenheit/Urlaube
-    \item Telefonnummern, E-Mail Adressen
-    \item Geburtstage, Hochzeiten, etc.
-    \item ...
-  \end{itemize}
+\begin{frame}[t]{Prototyp}
+  \begin{center}
+    \includegraphics[width=\textwidth]{prototype_class.1}
+  \end{center}
 \end{frame}
 
-\begin{frame}[t]{Beispiel}
-\vskip2em
-\begin{beamercolorbox}[sep=1em]{title page header}
-\textcolor{plum3}{GET}
-http://\textcolor{skyblue3}{search}.twitter.com/\textcolor{skyblue3}{search}.\textcolor{aluminium3}{json}?=\textcolor{scarletred2}{password}
-\end{beamercolorbox}
+\begin{frame}[t]{Prototyp - API Call}
+  \vspace{-0.85em}
+  \begin{center}
+    \includegraphics[height=0.82\textheight]{prototype_state.1}
+  \end{center}
 \end{frame}
 
-\begin{frame}[t]{Beispiel (1)}
-\vskip2em
-\begin{beamercolorbox}[sep=1em]{title page header}
-\glqq{}@MattBrewer your nerddinner.com password is "imadork"\grqq{}
-
-\vspace{2em}
-{\scriptsize \textcolor{aluminium1}{
-22 minutes ago from Tweetie in reply to MattBrewer\\
-(http://twitter.com/matt2hews/status/1893008221)
-}}
-\end{beamercolorbox}
-\end{frame}
-
-\begin{frame}[t]{Beispiel (2)}
-\vskip2em
-\begin{beamercolorbox}[sep=1em]{title page header}
-\glqq{}You've been sent a picture message by 447983397493 open it at http://www.vodafone.co.uk/g...  your password is bnh24bfu\grqq{}
-
-\vspace{2em}
-{\scriptsize \textcolor{aluminium1}{
-40 minutes ago from Ping.fm\\
-(http://twitter.com/markiemarkify/statuses/1892911013
-}}
-\end{beamercolorbox}
-\end{frame}
-
-\begin{frame}[t]{Beispiel (3)}
-\vskip2em
-\begin{beamercolorbox}[sep=1em]{title page header}
-\glqq{}@MarkLittlewood Hi Mark, great entry! Google photobucket, login:summerpudding2009 password: summerpudding upload shots with name on\grqq{}
-
-\vspace{2em}
-{\scriptsize \textcolor{aluminium1}{
-about 1 hour ago from web NickiePhilbin\\
-(http://twitter.com/NickiePhilbin/status/1892736072)
-}}
-\end{beamercolorbox}
-\end{frame}
-
-\begin{frame}{Related Work / Social Engineering}
-  \begin{itemize}
-    \item The Art of Deception
-    \begin{itemize}
-      \item K. Mitnick, W. Simon
-      \item ISBN 076454280X
-    \end{itemize}
-    \item Social Phishing
-    \begin{itemize}
-      \item T. Jagatic, N. Johnson, M. Jakobsson, F. Menczer
-      \item http://doi.acm.org/10.1145/1290958.1290968
-    \end{itemize}
-    \item Social Engineering: The “Dark Art”
-    \begin{itemize}
-      \item T. Thornburgh
-      \item http://doi.acm.org/10.1145/1059524.1059554
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Related Work / Social Networks}
-  \begin{itemize}
-    \item Social networks and context-aware spam
-    \begin{itemize}
-      \item  G. Brown, T. Howe, M. Ihbe, A. Prakash, K. Borders
-      \item http://doi.acm.org/10.1145/1460563.1460628
-    \end{itemize}
-    \item Information revelation and privacy in online social networks
-    \begin{itemize}
-      \item R. Gross, A. Acquisti, H.  John
-      \item http://doi.acm.org/10.1145/1102199.1102214
-    \end{itemize}
-  \end{itemize}
+\begin{frame}[t]{Prototyp - Plugin}
+  \vspace{-0.85em}
+  \begin{center}
+    \includegraphics[height=0.82\textheight]{prototype_activity.1}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Related Work / Twitter}
@@ -470,11 +457,16 @@ about 1 hour ago from web NickiePhilbin\\
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Offene Fragen}
+\begin{frame}
+  \begin{center}
+  {\Huge DEMO}\\
+  \end{center}
+\end{frame}
+
+\begin{frame}{Evaluation}
   \begin{itemize}
-    \item Ersetzen Soziale netzwerke die informationssammlung des Social Engineers?
-    \item Analyse weiterer Szenarien, Probleme und Grenzen bei der Informationsgewinnung
-    \item Wie sieht ein Generischer Prototyp aus?
+    \item New threats
+    \item ...
   \end{itemize}
 \end{frame}
 
