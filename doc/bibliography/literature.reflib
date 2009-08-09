@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
 <manage_target braces="true" utf8="true">literature.bib</manage_target>
-<library_folder monitor="false"></library_folder>
+<library_folder monitor="true"></library_folder>
 <taglist>
   <tag>
     <uid>0</uid>
@@ -25,7 +25,7 @@
     <tagged>0</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1460563.1460628</bib_doi>
-    <bib_title>Social networks and context-aware spam</bib_title>
+    <bib_title>Social Networks and Context-Aware Spam</bib_title>
     <bib_authors>Garrett Brown and Travis Howe and Micheal Ihbe and Atul Prakash and Kevin Borders</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -47,15 +47,15 @@
     <bib_type>techreport</bib_type>
     <bib_doi></bib_doi>
     <bib_title>Privatsphärenschutz in Soziale-Netzwerke-Plattformen</bib_title>
-    <bib_authors>{Fraunhofer-Institut-Institut für Sichere Informationstechnologie SIT}</bib_authors>
+    <bib_authors>{Fraunhofer Institut für Sichere Informationstechnologie SIT}</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
     <bib_year>2008</bib_year>
-    <bib_extra key="address">Rheinstraße 75, 64295 Darmstadt, Deutschland</bib_extra>
+    <bib_extra key="address">Rhein\-straße 75, 64295 Darmstadt, Germany</bib_extra>
     <bib_extra key="Editor">SIT, Fraunhofer-Institut-Institut für Sichere Informationstechnologie</bib_extra>
-    <bib_extra key="institution">{Fraunhofer-Institut-Institut für Sichere Informationstechnologie SIT}</bib_extra>
+    <bib_extra key="institution">{Fraunhofer Institut für Sichere Informationstechnologie SIT}</bib_extra>
   </doc>
   <doc>
     <filename>file:///home/dgsiegel/uni/bachelor/papers/gross2005.pdf</filename>
@@ -65,7 +65,7 @@
     <tagged>0</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1102199.1102214</bib_doi>
-    <bib_title>Information revelation and privacy in online social networks</bib_title>
+    <bib_title>Information Revelation and Privacy in Online Social Networks</bib_title>
     <bib_authors>Ralph Gross and Alessandro Acquisti and Heinz III, H.  John</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -107,36 +107,6 @@
     <bib_number></bib_number>
     <bib_pages></bib_pages>
     <bib_year>2004</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_engineering.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>socialenginee-2</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>social_engineering</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2007</bib_year>
-  </doc>
-  <doc>
-    <filename>file:///home/dgsiegel/uni/bachelor/papers/social_phishing.pdf</filename>
-    <relative_filename></relative_filename>
-    <key>socialphishin</key>
-    <notes></notes>
-    <bib_type>Article</bib_type>
-    <bib_doi></bib_doi>
-    <bib_title>social_phishing</bib_title>
-    <bib_authors></bib_authors>
-    <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
-    <bib_number></bib_number>
-    <bib_pages></bib_pages>
-    <bib_year>2007</bib_year>
   </doc>
   <doc>
     <filename></filename>
@@ -186,7 +156,7 @@
     <tagged>2</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1348549.1348556</bib_doi>
-    <bib_title>Why we twitter: understanding microblogging usage and communities</bib_title>
+    <bib_title>Why We Twitter: Understanding Microblogging Usage and Communities</bib_title>
     <bib_authors>Java, Akshay and Song, Xiaodan and Finin, Tim and Tseng, Belle</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -207,7 +177,7 @@
     <tagged>2</tagged>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1397735.1397741</bib_doi>
-    <bib_title>A few chirps about twitter</bib_title>
+    <bib_title>A Few Chirps About Twitter</bib_title>
     <bib_authors>Krishnamurthy, Balachander and Gill, Phillipa and Arlitt, Martin</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -215,7 +185,7 @@
     <bib_pages>19-24</bib_pages>
     <bib_year>2008</bib_year>
     <bib_extra key="address">New York, NY, USA</bib_extra>
-    <bib_extra key="booktitle">WOSP ’08: Proceedings of the first workshop on Online social networks</bib_extra>
+    <bib_extra key="booktitle">WOSN ’08: Proceedings of the first workshop on Online social networks</bib_extra>
     <bib_extra key="Isbn">978-1-60558-182-8</bib_extra>
     <bib_extra key="Location">Seattle, WA, USA</bib_extra>
     <bib_extra key="publisher">ACM</bib_extra>
@@ -228,7 +198,7 @@
     <tagged>2</tagged>
     <bib_type>misc</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>Twitter growth explodes in a year</bib_title>
+    <bib_title>Twitter Growth Explodes in a Year</bib_title>
     <bib_authors>Dan Whitworth</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -263,7 +233,7 @@
     <notes></notes>
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>The new hacker’s dictionary (3rd ed.)</bib_title>
+    <bib_title>The New Hacker’s Dictionary (3rd ed.)</bib_title>
     <bib_authors>Raymond, Eric S.</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -281,7 +251,7 @@
     <notes></notes>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1059524.1059554</bib_doi>
-    <bib_title>Social engineering: the &quot;Dark Art&quot;</bib_title>
+    <bib_title>Social Engineering: The “Dark Art”</bib_title>
     <bib_authors>Thornburgh, Tim</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -301,7 +271,8 @@
     <notes></notes>
     <bib_type>inproceedings</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1029533.1029577</bib_doi>
-    <bib_title>The urgency for effective user privacy-education to counter social engineering attacks on secure computer systems</bib_title>
+    <bib_title>The Urgency for Effective User Privacy-education to
+Counter Social Engineering Attacks on Secure Computer Systems</bib_title>
     <bib_authors>Orgill, Gregory L. and Romney, Gordon W. and Bailey, Michael G. and Orgill, Paul M.</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
@@ -321,7 +292,7 @@
     <notes></notes>
     <bib_type>article</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1067721.1067728</bib_doi>
-    <bib_title>Hacking human: data-archaeology and surveillance in social networks</bib_title>
+    <bib_title>Hacking Human: Data-Archaeology and Surveillance in Social Networks</bib_title>
     <bib_authors>Nolan, Jason and Levesque, Michelle</bib_authors>
     <bib_journal>SIGGROUP Bull.</bib_journal>
     <bib_volume>25</bib_volume>
@@ -338,7 +309,7 @@
     <notes></notes>
     <bib_type>article</bib_type>
     <bib_doi>http://doi.acm.org/10.1145/1290958.1290968</bib_doi>
-    <bib_title>Social phishing</bib_title>
+    <bib_title>Social Phishing</bib_title>
     <bib_authors>Jagatic, Tom N. and Johnson, Nathaniel A. and Jakobsson, Markus and Menczer, Filippo</bib_authors>
     <bib_journal>Commun. ACM</bib_journal>
     <bib_volume>50</bib_volume>
@@ -356,7 +327,7 @@
     <notes></notes>
     <bib_type>misc</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>What is social engineering?</bib_title>
+    <bib_title>What is Social Engineering?</bib_title>
     <bib_authors>{Microsoft Inc.}</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
