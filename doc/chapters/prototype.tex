@@ -10,7 +10,7 @@ chapter.
 The goal is to develop a prototype, which can cull and evaluate data of one or
 more users of the \Twitter{} social network. The produced data should then be
 assigned to real people, in order to create a fact sheet for a social engineer.
-It should be shown, that it is easy to file employees of a certain company or a
+It should be shown that it is easy to file employees of a certain company or a
 private person, just by using legally available data, put online by the
 individuals themselves. The filed data should then enable a social engineer to
 do social engineering attacks against the weakest point. Furthermore, the
@@ -84,23 +84,23 @@ anonymously to the \Twitter{} API.
 \lstinputlistingln{38}{38}{../src/prototype.py}
 
 First, the API object gets created, then it calls the \texttt{\_\_init\_\_()}
-method of the \texttt{TwitterAPICall} object. This means, that the prototype
+method of the \texttt{TwitterAPICall} object. This means that the prototype
 has an object of the \texttt{TwitterAPI} object, which then creates a new
 \texttt{TwitterAPICall} object each time called. At the same time the
 \texttt{FileCache} object is created and passed on, which simply stores the
 values downloaded into files.
 \lstinputlistingln{152}{156}{../src/twitterapi.py}
 
-When the \texttt{TwitterAPICall} object is created, it fills it with default
-values, with the one passed by the \texttt{TwitterAPI} object.
+When the \texttt{TwitterAPICall} object is created, it fills the default
+values with those passed by the \texttt{TwitterAPI} object.
 \lstinputlistingln{55}{64}{../src/twitterapi.py}
 
 The \texttt{\_\_getattr\_\_()} method, which is a Python default method, is
 called every time an attribute of an object is accessed. The prototype exploits
 this behaviour for the \Twitter{} API. For example, if the prototype wants to
-call the API function \texttt{/users/show}, in the code it just calls the
-method \texttt{twitter.users.show()}. The previous mentioned function then just
-removes the non existing attribute and appends it as an argument to a new
+call the API function \texttt{/users/show}, it just calls the method
+\texttt{twitter.users.show()}. The previous mentioned function then just
+removes the non-existing attribute and appends it as an argument to a new
 \texttt{TwitterAPICall} object.
 \lstinputlistingln{66}{71}{../src/twitterapi.py}
 
@@ -135,7 +135,7 @@ just holds the methods \texttt{download()}, \texttt{parse()} and
 
 Now, each plugin has to be addressed somehow. As it was dynamically loaded,
 there is no structure, which holds the plugin itself yet. However, the
-\texttt{Plugin} objects knows, which subclasses or children were loaded. The
+\texttt{Plugin} objects knows which subclasses or children were loaded. The
 method \texttt{find\_plugins()} returns a list of the loaded plugins. If a
 plugin was not created yet, it creates the specific plugin object.
 \lstinputlistingln{27}{35}{../src/plugin.py}
@@ -146,7 +146,7 @@ and written to a file.
 
 If a new plugin should be added, a new plugin object has to be created, which
 implements the above mentioned methods. Each API call gets cached and therefore
-it is no overhead, if several modules need the same data to work with. The API
+it is no overhead if several modules need the same data to work with. The API
 object just downloads the required data once and then just passes the cached
 data.
 \lstinputlistingln{1}{22}{../src/plugins/testplugin.py}

@@ -2,8 +2,8 @@
 \label{chap:twitter_profile_data}
 
 \begin{description}
-\item[Name] This fields tells the real name of a user, it is limited to 20
-            characters. It is required to enter a name, albeit a bogus name is
+\item[Name] This fields tells the real name of a user. It is limited to 20
+            characters. Further, it is required to enter a name, albeit a bogus name is
             also accepted. The field is required.\\
             \textit{Example: Peter Sample}
 \item[Username] The username is presented with this field. A username is needed
@@ -11,8 +11,8 @@
                 Therefore only letters, numbers and underscore are allowed. The maximum length
                 is set to 15 characters. The field is required.\\
                 \textit{Example: petersample}
-\item[User ID] The user id which is handed out automatically. The sequence is
-               not known, however it is mostly agreed, that the user id is not given out
+\item[User ID] The user ID which is handed out automatically. The sequence is
+               not known, however it is mostly agreed, that the user ID is not given out
                sequentially.\\
                \textit{Example: 1234567}
 \item[E-mail] Though not visible publicly, a \Twitter{} user has to provide an
@@ -26,13 +26,13 @@
                      websites, like the blog of the owner. It can link to
                      any site on the Internet. The shown component of the
                      URL is 17 characters. Except XSS prevention,
-                     \Twitter{} does not rewrite of the URL, and port numbers
+                     \Twitter{} does not rewrite the URL, and port numbers
                      after the TLD, spaces, German umlauts and UTF-8 characters were
                      accepted.\\
                      \textit{Example:} \url{http://www.petersample.com/},\\
                      \texttt{http://www.peter sample.com:8080/äöü$\Gamma\Lambda\Sigma\Psi$.htm}
 \item[One Line Bio] A short sentence can be shown on the profile page, where a
-                    user can describe himself. It it limited to 160
+                    user can describe himself. It is limited to 160
                     characters.\\
                     \textit{Example: I am a computer science expert and work
                     for example.com}
@@ -42,23 +42,23 @@
 \item[Picture] A user can insert a picture of himself, although it is not
                required to do so. Moreover, if a user publishes an image, it does not have to
                show himself, but can also be anything else.
-\item[Profile Creation date] The date, the profile was created.\\
+\item[Profile Creation date] The date the profile was created.\\
               \textit{Example: Fri Nov 02 00:17:11 +0000 2007}
-\item[Following] Describes a list of users, the profile owner is \textit{following}.
+\item[Following] Describes a list of users the profile owner is \textit{following}.
                  To see the list, one has to be logged in.
 \item[Followers] This gives us a list of users on the \Twitter{} network, who
                  are \textit{following} the profile owner. To see the list, one has to be logged in.
-\item[Friends] This are users, who have a bidirectional connection. That means,
+\item[Friends] These are users who have a bidirectional connection. That means,
                that user A is following user B and vice versa.
 \item[Favorites] A user can mark his messages or the messages from other users as
-                 a favorite, which displays a
-                 yellow star beneath them. A users favorite messages can be viewed
+                 a favourites, which displays a
+                 yellow star beneath them. A user's favorite messages can be viewed
                  by visiting \url{http://twitter.com/favorites?user=[username]}.
-\item[Messages] Finally the messages, which are composed by the actual message,
+\item[Messages] A message is composed by the actual message text,
                 which is limited to 140 characters, the time, when the message
                 was written and by which mean. A message is identified by a unique
-                id, e.g. 1767572233 and can be accessed by
-                \url{http://twitter.com/[username]/status/[message id]}.
+                ID, e.g. 1767572233 and can be accessed by
+                \url{http://twitter.com/[username]/status/[message ID]}.
 
                 \Twitter{} also offers special commands, which can enhance a
                 message or turn a \Twitter{} into a query tool.
@@ -105,7 +105,7 @@
       \textit{Answer: followers: 135 following: 47}
 
     \item[INVITE phone number]
-      sends an invite SMS to the phone number\\
+      sends an invitation SMS to the phone number\\
       \textit{Example: INVITE 123 456 7890}
 
 \end{description}
