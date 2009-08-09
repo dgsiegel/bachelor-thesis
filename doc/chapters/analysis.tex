@@ -1,4 +1,4 @@
-\chapter{Analysis of the social network \Twitter}
+\chapter{Analysis of the Social Network \Twitter}
 \label{chap:analysis}
 
 The chapter takes a closer look at a concrete social network in order to
@@ -130,7 +130,7 @@ listed in figure \ref{fig:twitter_io}. Several of those are or were
 discontinued for a certain amount of time, but either re-enabled or provided by
 a third party company.
 
-\section{\Twitter{} profile data}
+\section{\Twitter{} Profile Data}
 \label{sec:twitter_profile_data}
 
 As already mentioned, a \Twitter{} profile page consists of a series of
@@ -139,7 +139,7 @@ which can be accessed is described in appendix \ref{chap:twitter_profile_data}.
 However a social engineering attack does not require all elements. However,
 those needed, are described in section \ref{sec:relevant_data}.
 
-\section{Message classification}
+\section{Message Classification}
 
 In order to see, what and how messages can be useful for an attack, a social
 engineer might be interested in a classification of the messages of the victim.
@@ -163,12 +163,12 @@ in their dataset contained a public conversation and about 21\% of the users in
 their dataset used this type of messaging~\cite{java2007}. Of course, there is
 no data available about private messages.
 
-\item[Reporting news]
+\item[Reporting News]
 Another big piece of the cake is done by users, who report or comment news and
 events. Some of them are automated and post weather reports, other are
 eyewitnesses and report events in their location.
 
-\item[Sharing information/URLs]
+\item[Sharing Information/URLs]
 Many users also share information and websites, and therefore uses services,
 like \textit{TinyURL}\footnote{\url{http://tinyurl.com/}} or
 \textit{tr.im}\footnote{\url{http://tr.im/}}. According to Java et al.,
@@ -177,10 +177,10 @@ about 13\% of all posts in the dataset contain at least one URL~\cite{java2007}.
 \end{description}
 
 
-\section{Relevant data and security risks for individuals and companies}
+\section{Relevant Data and Security Risks for Individuals and Companies}
 \label{sec:relevant_data}
 
-\subsection{The challenge of extracting data automatically}
+\subsection{The Challenge of Extracting Data Automatically}
 
 The \Twitter{} social network gives access to a \textit{REST} API, which can be
 used by calling either \url{twitter.com} or \url{search.twitter.com}. The first
@@ -208,7 +208,7 @@ e.g. acquiring as much data as possible about a single user and then repeat the
 same for several other users, who are in contact with him and might be
 interesting for an attack.
 
-\subsection{Ontology and classification of the data}
+\subsection{Ontology and Classification of the Data}
 \label{ssec:ontology}
 
 The \Twitter{} API offers a wide range of methods, admittedly in the first
@@ -242,21 +242,21 @@ work. For a social engineering attack, the following data is interesting.
         node[concept] at (90:1) {General data}
         [clockwise from=112.5]
         child { node[concept] {Name/ Username} }
-        child { node[concept] {Personal description} }
+        child { node[concept] {Personal Description} }
         child { node[concept] {Homepage} }
         child { node[concept] {Picture} }
         child { node[concept] {Time Zone} }
         child { node[concept] {Location} }
-        child { node[concept] {Profile creation date} }
+        child { node[concept] {Profile Creation Date} }
         child { node[concept] {Messages} }
       }
       child[concept color=chameleon2, grow=180] {
         node[concept] {Messages} 
         [clockwise from=295]
-        child { node[concept] {E-mail addresses} }
+        child { node[concept] {E-mail Addresses} }
         child { node[concept] {Times} }
         child { node[concept] {Replies} }
-        child { node[concept] {Input sources} }
+        child { node[concept] {Input Sources} }
         child { node[concept] {Interests} }
         child { node[concept] {Locations} }
       };
@@ -267,7 +267,7 @@ work. For a social engineering attack, the following data is interesting.
 \end{figure}
 
 
-\subsubsection{General data about the user}
+\subsubsection{General Data about the User}
 \label{sssec:general_data}
 \Twitter{} offers some static fields, which can be altered by the user, but
 remain mostly the same over the year. Some other information is created
@@ -299,7 +299,7 @@ lives or works.
 \item[Location] Together with the Time Zone, an attacker now
 could actually define his work place and home more precise.
 
-\item[Profile Creation date] Tells the attacker
+\item[Profile Creation Date] Tells the attacker
 since when the user is on \Twitter{}. That might be a good indication,
 whether he also uses other services and since when.
 
@@ -314,7 +314,7 @@ the friends can be used for attacks too, as most of them are real friends
 or colleagues.
 \end{description}
 
-\subsubsection{E-mail addresses}
+\subsubsection{E-mail Addresses}
 
 As already described earlier, the e-mail addresses of the users are not visible
 throughout \Twitter{}, though the addresses can be gathered in most cases.
@@ -331,7 +331,7 @@ down working hours and working days or periods the user is using a computer.
 Additional hours, the user is not online can be tracked too, for example
 when the user is on holidays.
 
-\subsubsection{Replies and friends}
+\subsubsection{Replies and Friends}
 
 \Twitter{} itself does not publish any user's friends, however it promotes
 followers and users who follow the candidate. With this data however, the
@@ -341,7 +341,7 @@ actually friends with. By analysing the replies of messages, one can
 understand, with which of the friends, the user has most contact with. This
 shows then a quite good representation of the users friends and or colleagues.
 
-\subsubsection{Input sources}
+\subsubsection{Input Sources}
 
 The \Twitter{} input sources give an overview, what methods the user uses to
 post updates. For example, if he is using a \Twitter{} client, that is only
@@ -367,12 +367,12 @@ marks keywords as key value pairs and actually promotes keys like
 \textit{location}, \textit{lat} and \textit{long} for location, latitude and longitude
 positions.
 
-\subsubsection{Text search}
+\subsubsection{Text Search}
 
 Finally a text search can be used to get further information about a certain
 topic the user wrote about. 
 
-\section{Threats and risks}
+\section{Threats and Risks}
 
 All of the above mentioned fields and data, create a threat to the user himself
 and also to other users, who are in contact with him. The threat and risk does
@@ -412,7 +412,7 @@ out of analysing the messages, there are not many ways to exclude the risk.
 However, there are various methods to minimize the likeliness of a social
 engineering attack, based on the data published on \Twitter{}.
 
-\subsection{Protection for the user}
+\subsection{Protection for the User}
 
 The first way to minimize the risk, would be to protect the updates, which
 basically means, that only users, who are approved by the author may see them.
