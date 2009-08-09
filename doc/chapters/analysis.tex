@@ -9,9 +9,9 @@ individuals.
 
 The requirements for the choice were, as already mentioned, a large number of
 users, content, which is created by the users themselves and which is
-relevant for them and an API, the prototype can use for harvesting the data.
+relevant for them and an API, which can be utilized by the prototype for harvesting the data.
 Two big social networks fulfilled the requirements, \textit{Facebook} and \Twitter. Both are
-widely used, have a large number of users, contain a lot of content created by the
+widely employed, have a large number of users, contain a lot of content created by the
 users, and an API, which can be accessed by a \textit{REST} interface.
 
 \textit{Facebook} however seems to be more restrictive than \Twitter{} when it
@@ -122,8 +122,8 @@ engineer.
 \end{figure}
 
 A sample \Twitter{} profile page is shown in figure
-\ref{fig:twitter_screenshot}. It features several elements, which we will
-discuss in the next section. 
+\ref{fig:twitter_screenshot}. It features several elements, which will be
+discussed in the next section.
 
 \Twitter{} messages can be sent and received by a variety of methods, all
 listed in figure \ref{fig:twitter_io}. Several of those are or were
@@ -136,8 +136,8 @@ a third party company.
 As already mentioned, a \Twitter{} profile page consists of a series of
 elements, which can be used for harvesting data. The complete profile data,
 which can be accessed is described in appendix \ref{chap:twitter_profile_data}.
-However a social engineering attack does not require all elements. However,
-those needed, are described in section \ref{sec:relevant_data}.
+A social engineering attack does not require all elements, however those needed
+are described in section \ref{sec:relevant_data}.
 
 \section{Message Classification}
 
@@ -169,7 +169,7 @@ events. Some of them are automated and post weather reports, other are
 eyewitnesses and report events in their location.
 
 \item[Sharing Information/URLs]
-Many users also share information and websites, and therefore uses services,
+Many users also share information and websites, and therefore utilize services,
 like \textit{TinyURL}\footnote{\url{http://tinyurl.com/}} or
 \textit{tr.im}\footnote{\url{http://tr.im/}}. According to Java et al.,
 about 13\% of all posts in the dataset contain at least one URL~\cite{java2007}.
@@ -185,17 +185,17 @@ about 13\% of all posts in the dataset contain at least one URL~\cite{java2007}.
 The \Twitter{} social network gives access to a \textit{REST} API, which can be
 used by calling either \url{twitter.com} or \url{search.twitter.com}. The first
 one is used for account settings and methods, posting updates and several other
-options related to users, their relationships and updates. The latter one is used
-for searching for certain updates of users or users themselves. The API
-supports \textit{JSON}, \textit{XML}, \textit{RSS} and \textit{Atom} as output
-formats, although just \textit{JSON} is supported on every API method.
+options related to users, their relationships and updates. The latter one is
+utilized for searching for certain updates of users or users themselves. The
+API supports \textit{JSON}, \textit{XML}, \textit{RSS} and \textit{Atom} as
+output formats, although just \textit{JSON} is supported on every API method.
 
 Most API methods require a username and a password, however this is not a
 problem in itself, as a \Twitter{} account can be created within minutes by
 using an e-mail address. The real challenge however is the limit of 150 API
-calls per hour. If a user is logged in, the user has 150 calls, which he can
-use on API calls. If the user is not logged in, i.e. an anonymous user, the IP
-address is used for tracking this user. To gather a very deep information
+calls per hour. If a user is logged in, he has 150 calls, which he can
+utilize on API calls. If the user is not logged in, i.e. an anonymous user, the IP
+address is used for tracking him. To gather a very deep information
 visualisation of a user, 150 calls are not enough, as for example many users
 have more than 150 friends. However, there are three ways around this problem:
 The first one is to just use the important data, leaving a deep information
@@ -280,34 +280,32 @@ already usable for gaining a penetrative overview of a person.
 \item[Name] Gives the real name of the user, which can be used for
 phishing mails or social engineering attacks, where a name is needed.
 
-\item[Username] Many users use the same username on different
+\item[Username] Many users have the same username on different
 services, like e-mail or other social services. This can be used for some types
 of attacks.
 
-\item[Description] This description might be useful for gathering other useful
+\item[Description] This description might be useful for gathering other
 information, such as workplace or interests.
 
-\item[Homepage] A personal homepage might give additional
-information about the user.
+\item[Homepage] A personal homepage might give additional information about the
+user.
 
-\item[Picture] Gives an idea, how the person might
-look like.
+\item[Picture] Shows how the person might look like.
 
-\item[Time Zone] Gives an idea, where the person
-lives or works.
+\item[Time Zone] Gives an idea, where the person lives or works.
 
-\item[Location] Together with the Time Zone, an attacker now
-could actually define his work place and home more precise.
+\item[Location] Together with the Time Zone, an attacker now could actually
+define his work place and home more precise.
 
-\item[Profile Creation Date] Tells the attacker
-since when the user is on \Twitter{}. That might be a good indication,
-whether he also uses other services and since when.
+\item[Profile Creation Date] Tells the attacker since when the user is on
+\Twitter{}. That might be a good indication, whether he also uses other
+services and since when.
 
-\item[Messages] The Message count could tell how computer active a person is 
-or how interested he is in a certain topic.
+\item[Messages] The Message count could tell how computer active a person is or
+how interested he is in a certain topic.
 
-\item[Followers] An interpretation of the followers count may say how
-famous he is and how much effect he could have on other people.
+\item[Followers] An interpretation of the followers count may say how famous he
+is and how much effect he could have on other people.
 
 \item[Friends] While the number of friends is not that interesting,
 the friends can be used for attacks too, as most of them are real friends
@@ -329,7 +327,7 @@ about contacting them at a special address or that they changed to a new one.
 An analysis of the time to write messages can be a good instrument to track
 down working hours and working days or periods the user is using a computer.
 Additional hours, the user is not online can be tracked too, for example
-when the user is on holidays.
+when the user is on holiday.
 
 \subsubsection{Replies and Friends}
 
@@ -338,12 +336,12 @@ followers and users who follow the candidate. With this data however, the
 \textit{hidden} network can be identified, which basically is a graph, that
 only consists of bidirectional connections. This is the network, the user is
 actually friends with. By analysing the replies of messages, one can
-understand, with which of the friends, the user has most contact with. This
-shows then a quite good representation of the users friends and or colleagues.
+understand, with who of the friends, the user has most contact. This
+gives a quite good representation of the users friends or colleagues.
 
 \subsubsection{Input Sources}
 
-The \Twitter{} input sources give an overview, what methods the user uses to
+The \Twitter{} input sources give an overview, what methods the user utilized to
 post updates. For example, if he is using a \Twitter{} client, that is only
 available for a certain operating system, this could be exploited. If the
 source is mostly SMS, the location is getting even more important, as location
@@ -427,7 +425,7 @@ information. Even, if a user would accomplish this, lots of information would
 be still easily accessible, like the time analysis, his friends, colleagues
 and much more.
 
-At last, a user could not use a social network like \Twitter{}. This certainly
+At last, a user could not utilize a social network like \Twitter{}. This certainly
 would exclude the chance of being a victim in a social engineering attack,
 based on the data found on \Twitter{}. However, everyone should decide if this
 solution is suitable.
@@ -450,6 +448,6 @@ harder. But to decide, which data is harmless and which could be used for an
 attack is very difficult, as both fetch almost the same data. The only
 difference could be the fact, that an attacker is interested more into a single
 user, while an unoffending \Twitter{} client might be more interested in many
-users. Although, if there would be a way to accomplish this, it would be
-probably the only countermeasure, which really would hinder an attacker of
-gaining information.
+users. Although, if there would be a way to accomplish this, this is probably
+the only countermeasure, which really can hinder an attacker of gaining
+information.

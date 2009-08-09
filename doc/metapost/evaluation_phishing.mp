@@ -8,7 +8,7 @@ beginfig(1);
   Activity.picks("Attacker picks person");
   Activity.info("Attacker fetches more", "information about the victim");
   Activity.realname("Acquire real name");
-  Activity.address("Acquire e-mail adress");
+  Activity.address("Acquire e-mail address");
   Activity.mail("Compose & send", "phishing mail");
   Activity.friends("Keyword search on", "victims friends");
   End.e;
