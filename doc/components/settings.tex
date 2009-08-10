@@ -9,6 +9,12 @@
 \graphicspath{{figures/}{metapost/}}
 \DeclareGraphicsRule{*}{mps}{*}{}
 
+\parskip1.5ex
+\linespread{1.25}
+
+\newboolean{print}
+\setboolean{print}{false}
+
 \lstset{
   basicstyle={\scriptsize\ttfamily},
   breaklines=true,
@@ -35,9 +41,6 @@
   xrightmargin=10pt,
 }
 
-\parskip1.5ex
-\linespread{1.25}
-
 \hypersetup{%
   colorlinks        = true,
   anchorcolor       = red,
@@ -53,6 +56,26 @@
   pdfsubject        = \doctype,
   pdftitle          = \title,
 }
+
+\ifthenelse{\boolean{print}}{
+  \hypersetup{%
+    anchorcolor       = black,
+    breaklinks        = black,
+    citecolor         = black,
+    linkcolor         = black,
+    urlcolor          = black,
+  }
+  \lstset{
+    commentstyle={\color{black}},
+    keywordstyle=[1]{\color{black}},
+    keywordstyle=[2]{\color{black}},
+    keywordstyle=[3]{\bfseries},
+    keywordstyle=[4]{\color{black}},
+    keywordstyle=[5]{\color{black}},
+    rulecolor=\color{black!30},
+    stringstyle={\color{black!80}},
+  }
+}{}
 
 % set the bibliography style
 %\bibliographystyle{styles/bauermaNum}
