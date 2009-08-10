@@ -23,7 +23,7 @@ Following data is needed:
 \begin{itemize}
   \item Real name of the victim
   \item E-mail address of the victim
-  \item The Knowledge, that the victim is a customer of an electronic
+  \item The Knowledge that the victim is a customer of an electronic
   payment service, like \textit{PayPal}, \textit{Amazon} or \textit{eBay}
 \end{itemize}
 
@@ -36,8 +36,8 @@ $ python prototype.py -k "paypal"
 \end{lstlisting}
 
 This opens a new website on \url{http://search.twitter.com}, which shows the
-attacker people, who quoted the word \textit{paypal} in one of their messages.
-The attacker now picks a person with the username \textit{petersample}, who writes
+attacker people who quoted the word \textit{paypal} in one of their messages.
+The attacker now picks a person with the username \textit{petersample} who writes
 
 \begin{quote}
 did really some transactions over paypal this week, works really great!
@@ -52,7 +52,7 @@ $ python prototype.py -u "petersample"
 \end{lstlisting}
 
 Now this produces a fact sheet about Peter Sample. As the attacker already
-knows, that the victim is using \textit{PayPal}, he just needs the real name
+knows that the victim is using \textit{PayPal}, he just needs the real name
 and the e-mail address. The output of the prototype is displayed in figure
 \ref{fig:prototype_user}. The attacker now knows the real name. The e-mail
 address was also found by the prototype and is displayed in figure
@@ -90,7 +90,7 @@ Sample's friends, which the prototype also outputs.
 
 In the attack described in section \ref{sec:insider_attack}, the attacker
 starts again with a keyword search, as he wants to find an employee of Sample
-Company Inc. Quite quickly he finds \textit{petersample}, who seems to work for
+Company Inc. Quite quickly he finds \textit{petersample} who seems to work for
 one particular company. He launches an information retrieval about that user
 and gets an output like in figure \ref{fig:prototype_user2}.
 
@@ -119,7 +119,7 @@ and gets an output like in figure \ref{fig:prototype_user2}.
 \end{figure}
 
 Now he knows the real name, the company and department Peter Sample works for,
-the workgroup inside the company, and has an approximate idea where the victim
+the workgroup inside the company and has an approximate idea where the victim
 could live. A text search about phone specific terms, produces the output
 shown in figure \ref{fig:prototype_phone}. The employee number is
 trickier to get, as one must rely that the employee posts this number in a
@@ -128,7 +128,7 @@ call Peter Sample at his phone number.
 
 The prototype also shows the times Peter Sample mostly writes his updates, as
 shown in figure \ref{fig:prototype_times}, and therefore is most probably
-available, and not having holiday for example. That was also done in the
+available and not having holiday for example. That was also done in the
 original scenario, however this time much less information is needed, as most
 data can already be retrieved from the social network. Next, he needs the residence
 of Peter Sample, which the prototype also supports and is displayed in figure
@@ -181,7 +181,7 @@ analyzing company employees.
 Attacks and information retrieval are possible with the prototype. That was
 shown in the above scenarios. One big barrier though remains private and
 sensitive data, at least if a user of a social network identifies specific data
-as sensitive. However many users do not, and post e-mail addresses, residence
+as sensitive. However many users do not and post e-mail addresses, residence
 addresses, phone numbers, passwords and further more.
 
 Automatically harvesting this data makes the life of a social engineer
@@ -215,8 +215,8 @@ demonstrated in this work. The question one should pose here is, what new
 threats this work did discover. As already stated before, the threat is not
 generated from the possibility to gather information, it is brought forth by
 social engineering attacks, which are based on such information. The work
-showed, that it is possible to gather large amount of sensitive data of several
-users fast and almost anonymously. This means, that the research phase of a
+showed that it is possible to gather large amount of sensitive data of several
+users fast and almost anonymously. This means that the research phase of a
 social engineering attack can be almost replaced and done automatically,
 depending on the attack scenario. By fetching the data automatically and
 without knowledge of the victim, the attacker can prepare the attack while
@@ -224,7 +224,7 @@ remaining hidden and not exposing himself to the danger of being discovered.
 
 Taking this approach one step further, automatic harvesting and attacks could
 be a future scenario. An attacker could define some social engineering attacks,
-like the phishing mail attack, which was shown before, and let them run over a
+like the phishing mail attack, which was shown before and let them run over a
 social network. As there is no way to stop such an attack, this would have an
 enormous impact. Brown et al.~\cite{brown2008} for example were able to create
 a context-aware phishing mail attack inside a social network, which was

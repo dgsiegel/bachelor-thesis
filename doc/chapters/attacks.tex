@@ -1,14 +1,14 @@
 \chapter{Selection of Social Engineering Attacks}
 \label{chap:attacks}
 
-The previous chapter showed already sample social engineering attacks, the
+The previous chapter has shown sample social engineering attacks, the
 threats it exposes and their countermeasures. The work wants to assign now selected
 social engineering attacks to social networks and find out what new threats
 they disclose. Furthermore, the attacks should constitute a part of the demand
 of the prototype, which will be developed.
 
-All of the following attacks are described by Mitnick and Simon
-\cite{mitnick2003} and have happened in the past.
+All of the following attacks are described by Mitnick and
+Simon~\cite{mitnick2003} and happened in the past.
 
 \section[Phishing Mail]{Phishing Mail (\cite[pp. 97-100]{mitnick2003})}
 \label{sec:phishing_mail}
@@ -63,23 +63,22 @@ PayPal Team
 
 \end{quote}
 
-One might notice several signs in the message, that can lead to the belief,
-that something is wrong with the e-mail. For example, the semicolon after the
-greeting line, the blemished text about 
-\glqq{}our valued customer service with excellent service and in the\grqq{} and
-most noticeable the URL, which does not lead to \url{http://www.paypal.com} but
-to a different domain. Edgar clicked on the link, entered the information
-requested, which was name, address, phone number and credit card number. Then,
-he was waiting for the \$5 gift to show up, but what showed up was a list of
-charges he never purchased on his credit card bill.
+One might notice several signs in the message that can lead to the belief that
+something is wrong with the e-mail. For example, the semicolon after the
+greeting line, the blemished text about \glqq{}our valued customer service with
+excellent service and in the\grqq{} and most noticeable the URL, which does not
+lead to \url{http://www.paypal.com} but to a different domain. Edgar clicked on
+the link, entered the information requested: his name, address, phone number
+and credit card number. He then waited for the \$5 gift to show up, but what
+showed up was a list of charges he never purchased on his credit card bill.
 
 The victim is not a single one, there are many scams which look like the above.
 The attack was also prepared properly, as they knew that Edgar was a PayPal
 customer. If he would not have been, the attack certainly wouldn't have worked.
 
-To make the attack even more realistic and effective, the message could have also
-been sent to the victim's friends and colleagues, if they are also a member of
-the same electronic payment service.
+To make the attack even more realistic and effective, the message could have
+also been sent to the victim's friends and colleagues, if they were to be a
+member of the same electronic payment service.
 
 \begin{table*}[ht]
   \centering
@@ -104,18 +103,18 @@ the same electronic payment service.
 
 Another real case scenario was an attack, which involved stealing source code
 from a company containing the encryption algorithms and firmware used in the
-company radio products. Its relevance is the fact that this was an attack
+company radio products. The relevant fact is that this was an attack
 against a company, involving information gathering about the company structure,
 security devices used inside the company and having several employees as
 victims. Due to its manifold character, this attack could be extended to
 similar attacks which even could require less information.
 
-The attacker, called \textit{Danny} by Mitnick, began his information retrieval
+The attacker, named \textit{Danny} by Mitnick, began his information retrieval
 on the Internet. He luckily found a years-old message written by an employee of
 the affected company and posted to a public readable newsgroup. This message
 contained a signature including the employee's name, his phone number and
-workgroup. He now had to check if that person still works for that company. He
-called the employee, who indeed was still working for the same company, and
+workgroup. He now had to check if that person still worked for that company. He
+called the employee who indeed was still working for the same company and
 manipulated him to reveal the names of the servers the employees used for
 development work.
 
@@ -124,7 +123,7 @@ In addition, every employee in the company had a small electronic device called
 managed to get enough pieces of information about the company together to
 masquerade as a real employee. He now had an employee's name, residence
 address, phone number, department and employee number, the manager's name and
-phone number. Furthermore he knew the servers he needed access for.
+phone number. Furthermore, he knew the servers he needed access for.
 
 Danny now waited for a snow storm in the location of the employee's residence.
 As it was winter, he did not have to wait very long and he launched the attack.
@@ -136,7 +135,7 @@ The attack went as follows~\cite[p. 86]{mitnick2003}:
 \begin{quote}
 \textit{Danny:} \glqq{}This is Bob Billings. I work in the Secure Communications Group. I'm at
 home right now and I can't drive in because of the storm. And the problem is
-that I need to access my workstation and the server from home, and I left my
+that I need to access my workstation and the server from home and I left my
 Secure ID in my desk. Can you go fetch it for me? Or can somebody? And then
 read off my code when I need to get in? Because my team has a critical deadline
 and there's no way I can get my work done. And there's no way I can get to the
@@ -156,7 +155,7 @@ drive in.\grqq{}\\
 \end{quote}
 
 The operator of course was uncomfortable walking into the office desk and
-looking through foreign property. But he was uncomfortable not helping either,
+looking through other people's belongings. But he was uncomfortable not helping either,
 so he asked his manager and actually vouched for the attacker. The manager
 wanted to speak to the attacker personally and the operator gave him the name
 and phone number.
@@ -190,9 +189,9 @@ The attacker then called the manager and explained the same story again,
 mentioning that his team has a critical deadline. The manager then allowed him
 to use the \textit{Secure ID} device in the IT department just for the weekend.
 From now on, Danny just needed to call in and ask the operators to pass him the
-\textit{Secure ID} token. Furthermore he was able to get a temporary account to
-bypass the firewall restrictions, directly from the operator. Now, he had the
-whole weekend to find a security hole which he found.
+\textit{Secure ID} token. Furthermore, he was able to get a temporary account to
+bypass the firewall restrictions, directly from the operator. So, he now had
+the whole weekend to find a security hole which he found.
 
 \section{The Bank Heist}
 \label{sec:bank_heist}
@@ -223,8 +222,8 @@ structure and the already mentioned secret information.
   \caption{Overview of the required data of the phishing attack.}
 \end{table*}
 
-The bank heist was executed in 1978 by Stanley Mark Rifkin. It was the largest bank
-robbery in U.S. history by that time. He stole 10.2 million U.S. dollars
+The bank heist was conducted in 1978 by Stanley Mark Rifkin. It was the largest
+bank robbery in U.S. history by that time. He stole 10.2 million U.S. dollars
 through wire transfer just by using a telephone and social engineering
 techniques.
 
@@ -232,13 +231,13 @@ Rifkin was working for a company under contract developing a backup system for
 the Security Pacific National Bank and more specific for the wire transfer
 system. As he was working inside the wire transfer room, he had the possibility
 to learn the process of bank wire transfer. As the bank changed the
-required transfer code daily, most employees did write the code down in order
-to not have to memorize it every day. Then he tried to adept the names, room
+required transfer code daily, most employees did write the code down, in order
+to not have to remember it every day. Then he tried to adept the names, room
 numbers and employee numbers. One day he additionally memorized the daily code and
 executed a wire transfer over a callbox outside of the bank. Rifkin transfered
 over 10 million U.S. dollars to a bank in Switzerland by just using the
 information he already had gained and social engineering techniques.
 
 Then he picked up the money in Switzerland, changed it into diamonds and flew
-back to the United States. As he tried to sell them there, the FBI quickly
-captured him.
+back to the United States. When he tried to sell them in the U.S., the FBI
+quickly caught him.

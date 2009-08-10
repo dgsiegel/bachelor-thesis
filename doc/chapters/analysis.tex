@@ -8,14 +8,15 @@ concentrate on a big social network, which is widely used by employees and
 individuals.
 
 The requirements for the choice were, as already mentioned, a large number of
-users, content, which is created by the users themselves and which is
-relevant for them and an API, which can be utilized by the prototype for harvesting the data.
-Two big social networks fulfilled the requirements, \textit{Facebook} and \Twitter. Both are
-widely employed, have a large number of users, contain a lot of content created by the
-users, and an API, which can be accessed by a \textit{REST} interface.
+users, content, which is created by the users themselves and which is relevant
+for them and an API, which can be utilized by the prototype for harvesting the
+data. Two big social networks fulfilled the requirements: \textit{Facebook}
+and \Twitter. Both are widely employed, have a large number of users, contain a
+lot of content created by the users and an API which can be accessed by a
+\textit{REST} interface.
 
 \textit{Facebook} however seems to be more restrictive than \Twitter{} when it
-comes to allowing an application to use their API, as each application needs to
+comes to allowing an application to use their API, as each application must
 have an application key supplied by \textit{Facebook}. Furthermore, the
 \textit{Facebook}
 API\footnote{\url{http://wiki.developers.facebook.com/index.php/API}} is quite
@@ -25,16 +26,16 @@ The \Twitter{}
 API\footnote{\url{http://apiwiki.twitter.com/Twitter-API-Documentation}} on the
 other side is constructed for getting and setting data, which supports the
 development of a prototype. Furthermore, using the large number of messages
-written by each \Twitter{} user can tell a lot more, than just using static
-fields, like interests or similar. This will be shown later in this chapter.
+written by each \Twitter{} user can tell a lot more than just using static
+fields, e.g. interests or similar. This will be shown later in this chapter.
 At last, \Twitter{} was chosen due to many already existing programs and
 platform bindings\footnote{\url{http://apiwiki.twitter.com/Libraries}}.
 
-\Twitter{} is a popular social networking and micro-blogging service, that
+\Twitter{} is a popular social networking and micro-blogging service that
 enables users to post messages and to let other users read those messages.
-The term \textit{micro-blogging} describes a form of communication, that
-consists of brief messages in text form, which then can be send over a variety
-of ways, like instant messages, mobile phones, e-mail or other~\cite{java2007}.
+The term \textit{micro-blogging} describes a form of communication that
+consists of brief messages in text form, which then can be sent by a variety
+of ways, e.g. instant messages, mobile phones, e-mail or other~\cite{java2007}.
 
 \begin{figure}[hbt]
   \centering
@@ -44,22 +45,22 @@ of ways, like instant messages, mobile phones, e-mail or other~\cite{java2007}.
   \label{fig:twitter_screenshot}
 \end{figure}
 
-Micro-blogging itself is relatively new, though already widely used and
+Micro-blogging is relatively new, though already widely used and
 provided by services like
 \textit{Twitter}\footnote{\url{http://www.twitter.com}},
 \textit{identi.ca}\footnote{\url{http://identi.ca}},
 \textit{Jaiku}\footnote{\url{http://www.jaiku.com}} and others. It is a faster
 way to communicate compared to other means of communication, like
-blogging~\cite{java2007}. It requires less time to think and write a message,
+blogging~\cite{java2007}. It requires less time to think and write a message
 and this of course implements much quicker \textit{write rate}. This is of
-course one of the main differences between blogging and micro-blogging, whereas
-an author spends several minutes to hours to think up and write a blog post. As
-it now takes less time to think and write a message, the frequency one can
-write them increases and a micro-blogger may post several messages a day.
+course one of the main differences between blogging and micro-blogging, where
+an author spends several minutes or up to hours to think up and write a blog post. As
+it now takes less time to think and write a message, the frequency
+increases and a micro-blogger may post several messages a day.
 
 \Twitter{} is one of the most popular micro-blogging services~\cite{java2007}
 and currently exhibiting more than a million users. The accurate number
-unfortunately is not available, however the estimation is about 1.4 million
+unfortunately is not available. However, the estimation is about 1.4 million
 users in 2008~\cite{krishnamurthy2008} and more than 1.78 million users in
 2009~\cite{whitworth2009}.
 
@@ -70,15 +71,15 @@ course, other services like instant messaging also offers a way to communicate
 such information, however micro-blogging allows to do this publicly.
 
 Users may choose to make their messages visible to all users (even those not
-logged into \Twitter{}) or to just make them available to \textit{friends}.
-If the messages are marked as public, they will be displayed in
-the public timeline, which can be accessed by the URL
-\url{http://twitter.com/public_timeline}.
-A \textit{friend} is a relation inside the \Twitter{} platform, and allows a user
-to \textit{follow} the messages from other members, who are added as a
-\textit{friend}. Users, who are not a friend to another user can still follow
-the user, who they are not friend with, but are then called \textit{follower}.
-The friend relation is not forced to be mutual, but can be single-way too.
+logged onto \Twitter{}) or to just make them available to \textit{friends}.  If
+the messages are marked as public, they will be displayed in the public
+timeline which can be accessed by the URL
+\url{http://twitter.com/public_timeline}.  A \textit{friend} is a relation
+inside the \Twitter{} platform and allows a user to \textit{follow} the
+messages from other members who are added as a \textit{friend}. Users who are
+not friends to another user can still follow the user who they are not friends
+with, but are then called a \textit{follower}. The friend relation is not
+forced to be mutual, but can be single-way too.
 
 The main types of user interactions are daily chatter, conversations, sharing
 information and reporting news~\cite{java2007}. This of course leads us to
@@ -164,12 +165,12 @@ their dataset used this type of messaging~\cite{java2007}. Of course, there is
 no data available about private messages.
 
 \item[Reporting News]
-Another big piece of the cake is done by users, who report or comment news and
+Another big piece of the cake is done by users who report or comment news and
 events. Some of them are automated and post weather reports, other are
 eyewitnesses and report events in their location.
 
 \item[Sharing Information/URLs]
-Many users also share information and websites, and therefore utilize services,
+Many users also share information and websites and therefore utilize services,
 like \textit{TinyURL}\footnote{\url{http://tinyurl.com/}} or
 \textit{tr.im}\footnote{\url{http://tr.im/}}. According to Java et al.,
 about 13\% of all posts in the dataset contain at least one URL~\cite{java2007}.
@@ -199,13 +200,13 @@ address is used for tracking him. To gather a very deep information
 visualisation of a user, 150 calls are not enough, as for example many users
 have more than 150 friends. However, there are three ways around this problem:
 The first one is to just use the important data, leaving a deep information
-visualisation of e.g. friends aside, the second is to create many accounts, and
-then change the accounts during acquiring the data, and the last one is not to log
+visualisation of e.g. friends aside, the second is to create many accounts and
+then change the accounts during acquiring the data. The last one is not to log
 into \Twitter{} and acquiring the data anonymously, while changing the IP
 address after 150 calls. However, some API methods require the user to be
 logged in. A compromise between these methods might be the best option,
 e.g. acquiring as much data as possible about a single user and then repeat the
-same for several other users, who are in contact with him and might be
+same for several other users who are in contact with him and might be
 interesting for an attack.
 
 \subsection{Ontology and Classification of the Data}
@@ -316,9 +317,9 @@ or colleagues.
 
 As already described earlier, the e-mail addresses of the users are not visible
 throughout \Twitter{}, though the addresses can be gathered in most cases.
-Brown et al. for example described, that an e-mail address can be constructed out
-of a naming scheme of given data, like the username or the real name
-\cite{brown2008}. Another possibility is to look through the messages for
+Brown et al. for example described that an e-mail address can be constructed
+out of a naming scheme of given data, like the username or the real
+name~\cite{brown2008}. Another possibility is to look through the messages for
 anything that looks like an e-mail address. Quite often users write messages,
 about contacting them at a special address or that they changed to a new one.
 
@@ -333,16 +334,16 @@ when the user is on holiday.
 
 \Twitter{} itself does not publish any user's friends, however it promotes
 followers and users who follow the candidate. With this data however, the
-\textit{hidden} network can be identified, which basically is a graph, that
+\textit{hidden} network can be identified, which basically is a graph that
 only consists of bidirectional connections. This is the network, the user is
-actually friends with. By analysing the replies of messages, one can
+actually friends with. By analyzing the replies of messages, one can
 understand, with who of the friends, the user has most contact. This
 gives a quite good representation of the users friends or colleagues.
 
 \subsubsection{Input Sources}
 
 The \Twitter{} input sources give an overview, what methods the user utilized to
-post updates. For example, if he is using a \Twitter{} client, that is only
+post updates. For example, if he is using a \Twitter{} client that is only
 available for a certain operating system, this could be exploited. If the
 source is mostly SMS, the location is getting even more important, as location
 tracking could be done in this case. Also there could be a relation between the
@@ -359,8 +360,8 @@ using text to describe the interest.
 
 Also, many messages include information about the current location, for example
 if they arrive at the workplace, at conferences or other. This data can be
-filtered by analysing the messages. A promising project, that could be used
-here is \textit{TwitterData}\footnote{\url{http://twitterdata.org/}}, which
+filtered by analyzing the messages. A promising project that could be used
+here is \textit{TwitterData}\footnote{\url{http://twitterdata.org/}} which
 marks keywords as key value pairs and actually promotes keys like
 \textit{location}, \textit{lat} and \textit{long} for location, latitude and longitude
 positions.
@@ -373,12 +374,12 @@ topic the user wrote about.
 \section{Threats and Risks}
 
 All of the above mentioned fields and data, create a threat to the user himself
-and also to other users, who are in contact with him. The threat and risk does
-not directly come from the information gained, but from the fact, that every
+and also to other users who are in contact with him. The threat and risk does
+not directly come from the information gained, but from the fact that every
 piece of information a social engineer can bring together, builds an even
-better base or starting point for a social engineering attack
-\cite{mitnick2003}. This means, that the information itself, does not create a
-threat, however, the social engineering attack does. Even with useless
+better base or starting point for a social engineering
+attack~\cite{mitnick2003}. This means that the information itself, does not
+create a threat, however, the social engineering attack does. Even with useless
 information at first glance, an attack can be driven. For example, if a user
 shares his location and what he is doing job-wise, his workplace and position
 can easily be found.
@@ -388,7 +389,7 @@ create a quite expletive ontology about a person just with the fields and data
 mentioned above, further attacks are supposable.
 
 Another matter is the almost hidden information retrieval possibility. If a
-social engineer has to create a contact to his victim or to other people, who
+social engineer has to create a contact to his victim or to other people who
 are in contact with the victim over the telephone or e-mail, the attacker could
 be detected. In this scenario however, only the provider of the social network
 can track the information retrieval. If the attacker now does not stand out in
@@ -397,7 +398,7 @@ network, there is probably no way to detect the attacker. This is a very vital
 matter for a successful social engineering attack.
 
 The prototype, which is described in the next chapter, will make use of exposed
-data, building a fact sheet about the user and people, who are in contact with
+data, building a fact sheet about the user and people who are in contact with
 each other. This is then used to create a social engineering attack, showing
 that attacks based on data of social networks are already possible.
 
@@ -406,14 +407,14 @@ that attacks based on data of social networks are already possible.
 The nature of a social network, especially \Twitter{} is sharing data.
 Therefore it is difficult to encounter attacks and there has to be a trade-off
 between utility and security~\cite{brown2008}. Given also, that most data come
-out of analysing the messages, there are not many ways to exclude the risk.
+out of analyzing the messages, there are not many ways to exclude the risk.
 However, there are various methods to minimize the likeliness of a social
 engineering attack, based on the data published on \Twitter{}.
 
 \subsection{Protection for the User}
 
 The first way to minimize the risk, would be to protect the updates, which
-basically means, that only users, who are approved by the author may see them.
+basically means that only users who are approved by the author may see them.
 This however lacks in two facts: first, the fields described in section
 \ref{sssec:general_data} are still visible. Second, the attacker could just
 become a friend with the victim and gain access to the messages.
@@ -446,7 +447,7 @@ At last, the social network could limit the API calls and track them more
 precisely, so that an automatic extraction is no more possible or at least made
 harder. But to decide, which data is harmless and which could be used for an
 attack is very difficult, as both fetch almost the same data. The only
-difference could be the fact, that an attacker is interested more into a single
+difference could be the fact that an attacker is interested more into a single
 user, while an unoffending \Twitter{} client might be more interested in many
 users. Although, if there would be a way to accomplish this, this is probably
 the only countermeasure, which really can hinder an attacker of gaining
